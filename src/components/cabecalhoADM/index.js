@@ -20,10 +20,10 @@ export default function CabecalhoAdm(){
                 </section>
 
                 <section className='cabecalho-adm-dois'>
-                    <Link>Home</Link>
-                    <Link>Produto</Link>
-                    <Link>Clientes</Link>
-                    <Link>Listas de Pedidos</Link>
+                    <Link id='home' to={'/inicialAdm'}>Home</Link>
+                    <Link id='produto'>Produto</Link>
+                    <Link id='cliente' to={'/listaCliente'}>Clientes</Link>
+                    <Link id='pedidos'>Listas de Pedidos</Link>
                 </section>
             </header>
         </main>

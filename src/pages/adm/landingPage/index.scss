@@ -3,6 +3,16 @@
     font-family: 'Inter', sans-serif;
     flex-direction: column;
 
+    .pagina-cabecalho-adm{
+
+        .cabecalho-adm-dois{
+            #home{
+                color: #0083ca;
+                text-decoration: underline;
+            }
+        }
+    }
+
     .inicial-adm-um{
         display: flex;
         flex-direction: row;
