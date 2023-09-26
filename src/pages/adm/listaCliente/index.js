@@ -10,6 +10,7 @@ export default function ListaCliente() {
         let url = 'http://localhost:5000/listar/cliente';
         let resp = await axios.get(url);
         setClientes([...resp.data]);
+
     }
 
     return (

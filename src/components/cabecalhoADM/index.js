@@ -21,7 +21,7 @@ export default function CabecalhoAdm(){
 
                 <section className='cabecalho-adm-dois'>
                     <Link id='home' to={'/inicialAdm'}>Home</Link>
-                    <Link id='produto'>Produto</Link>
+                    <Link id='produto' to={'/listaProduto'}>Produto</Link>
                     <Link id='cliente' to={'/listaCliente'}>Clientes</Link>
                     <Link id='pedidos'>Listas de Pedidos</Link>
                 </section>

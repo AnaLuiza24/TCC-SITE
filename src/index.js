@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPageADM from './pages/adm/landingPage';
 import Cadastro from './pages/client/cadastro';
 import ListaCliente from './pages/adm/listaCliente';
+import ListaProduto from './pages/adm/listaProduto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         <Route path='/inicialAdm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
         <Route path='/listaCliente' element={<ListaCliente />} />
+        <Route path='/listaProduto' element={<ListaProduto />} /> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
