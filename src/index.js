@@ -10,6 +10,7 @@ import LandingPageADM from './pages/adm/landingPage';
 import Cadastro from './pages/client/cadastro';
 import ListaCliente from './pages/adm/listaCliente';
 import ListaProduto from './pages/adm/listaProduto';
+import AdicionarProduto from './pages/adm/adicionarProduto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,7 +24,8 @@ root.render(
         <Route path='/inicialAdm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
         <Route path='/listaCliente' element={<ListaCliente />} />
-        <Route path='/listaProduto' element={<ListaProduto />} /> 
+        <Route path='/listaProduto' element={<ListaProduto />} />
+        <Route path='/adicionarProduto' element={<AdicionarProduto />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

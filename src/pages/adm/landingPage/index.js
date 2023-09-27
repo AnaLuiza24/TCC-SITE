@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import './index.scss';
 
@@ -7,20 +8,20 @@ export default function LandingPageADM() {
             <CabecalhoAdm />
             <header>
                 <section className='inicial-adm-um'>
-                    <div>
+                    <Link>
                         <img alt='vendas' src='./assets/images/crescimento.png' style={{width: '35px'}}/>
                         <h4>Vendas</h4>
-                    </div>
+                    </Link>
 
-                    <div>
+                    <Link to={'/adicionarProduto'}>
                         <img alt='produtos' src='./assets/images/etiqueta.png' style={{width: '30px'}}/>
                         <h4>Cadastro de Produtos</h4>
-                    </div>
+                    </Link>
 
-                    <div>
+                    <Link>
                         <img alt='entregas' src='./assets/images/entrega.png' style={{width: '40px'}}/>
                         <h4>Lista de Pedidos</h4>
-                    </div>
+                    </Link>
                 </section>
 
 
