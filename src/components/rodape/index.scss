@@ -1,6 +1,7 @@
 .pagina-rodape{
     display: flex;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
 
     footer{
         display: flex;
@@ -16,6 +17,7 @@
 
             .rodape-images{
                 display: flex;
+                gap: 10px;
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
