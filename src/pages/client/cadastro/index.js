@@ -17,7 +17,7 @@ export default function Cadastro() {
     async function inserir() {
         try {
             if (senha === confirmarSenha || senha.length > 6) {
-                let url = 'http://localhost:5000/adicionar/cliente';
+                let url = 'http://localhost:5037/adicionar/cliente';
 
                 let pessoa = {
                     nome: nome,
@@ -29,6 +29,7 @@ export default function Cadastro() {
                 let r = await axios.put(url, pessoa)
 
                 window.location.reload()
+                return r;
             }
 
         } catch (err) {

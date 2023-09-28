@@ -11,12 +11,14 @@ import Cadastro from './pages/client/cadastro';
 import ListaCliente from './pages/adm/listaCliente';
 import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
+import LandingPage from './pages/client/ladingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<LandingPage />} />
         <Route path='/sobreNos' element={<SobreNos />} />
         <Route path='/politicaPrivacidade' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />

@@ -7,13 +7,13 @@ export default function ListaProduto() {
     const [produtos, setProdutos] = useState([]);
 
     async function buscar(){
-        let url = 'http://localhost:5000/listar/produtos';
+        let url = 'http://localhost:5037/listar/produtos';
         let resp = await axios.get(url);
         setProdutos([...resp.data]);
     }
 
     async function deletar(id){
-        let url = 'http://localhost:5000/deletar/' + id;
+        let url = 'http://localhost:5037/deletar/' + id;
         let resp = await axios.delete(url);
         buscar();
 

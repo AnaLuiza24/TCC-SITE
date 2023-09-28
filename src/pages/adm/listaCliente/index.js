@@ -7,7 +7,7 @@ export default function ListaCliente() {
     const [clientes, setClientes] = useState([]);
 
     async function buscar(){
-        let url = 'http://localhost:5000/listar/cliente';
+        let url = 'http://localhost:5037/listar/cliente';
         let resp = await axios.get(url);
         setClientes([...resp.data]);
 

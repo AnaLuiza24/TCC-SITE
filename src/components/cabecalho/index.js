@@ -23,7 +23,7 @@ export default function Cabecalho() {
                 </section>
 
                 <section className='cabecalho-dois'>
-                    <Link>Home</Link>
+                    <Link id='home' to={'/'}>Home</Link>
                     <Link>Smartphones</Link>
                     <Link>Acessórios</Link>
                     <Link>Fale conosco</Link>

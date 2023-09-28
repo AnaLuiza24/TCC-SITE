@@ -8,7 +8,7 @@ export default function LoginAdm() {
     const [senha, setSenha] = useState('');
 
     async function Buscar() {
-        let r = await axios.get('http://localhost:5000/consultar?email='+email+'&senha='+senha);
+        let r = await axios.get('http://localhost:5037/consultar?email='+email+'&senha='+senha);
         return r;
         
     }
