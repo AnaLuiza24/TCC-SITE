@@ -2,14 +2,42 @@ import Cabecalho from '../../../components/cabecalho';
 import CaixaProduto from '../../../components/caixaProduto';
 import Rodape from '../../../components/rodape';
 import './index.scss';
+import Quadrado from '../../../components/celular';
+
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function LandingPage() {
+
+    const data = [
+       { id: '1' , image: '/assets/images/banner_figma.png'},
+       { id: '2' , image: '/assets/images/Banner.png'},
+       { id: '3' , image: '/assets/images/banner_tcc.png'},
+
+    ]
+
     return(
         <main className='pagina-inicial'>
             <Cabecalho />
             <header className='inicial-principal'>
                 <section className='inicial-carrossel'>
+                    <Swiper
+                        slidesPerView={1}
+                        pagination={{ clickable: true}}
+                        navigation
+                    >
+                        {data.map( (item) => (
+                            <SwiperSlide key={item.id}>
+                                <img
+                                    src={item.image}
+                                    alt="Slider"
+                                    className="slide-item"
+                                />
+                                
+                            </SwiperSlide>
 
+                        ))}
+                        
+                    </Swiper>
                 </section>
 
                 <section className='inicial-opcoes'>
@@ -30,7 +58,7 @@ export default function LandingPage() {
                     </div>
 
                     <div>
-                        <CaixaProduto />
+                        
                     </div>
                 </section>
 

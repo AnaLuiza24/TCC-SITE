@@ -12,6 +12,15 @@ import ListaCliente from './pages/adm/listaCliente';
 import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
+import {register} from 'swiper/element/bundle'
+
+register();
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
