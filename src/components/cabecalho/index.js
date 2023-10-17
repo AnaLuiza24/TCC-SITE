@@ -6,7 +6,9 @@ export default function Cabecalho() {
         <main className='pagina-cabecalho'>
             <header>
                 <section className='cabecalho-um'>
-                    <img src='./assets/images/logo.png' alt='logo' id='logo' />
+                    <Link to={'/'}>
+                        <img src='./assets/images/logo.png' alt='logo' id='logo' />
+                    </Link>
 
                     <div className='busca'>
                         <input type='text' placeholder='Busca' />
@@ -14,7 +16,7 @@ export default function Cabecalho() {
                     </div>
 
                     <div className='cabecalho-itens'>
-                        <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho'/>
+                        <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' />
                         <div className='cabecalho-login'>
                             <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
                             <img src='./assets/images/seta.png' alt='seta' />
