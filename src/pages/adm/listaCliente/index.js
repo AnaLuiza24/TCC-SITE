@@ -5,12 +5,11 @@ import { useState } from 'react';
 
 export default function ListaCliente() {
     const [clientes, setClientes] = useState([]);
+    const [busca, setBusca] = useState('')
 
     async function buscar(){
-        let url = 'http://localhost:5037/listar/cliente';
-        let resp = await axios.get(url);
+        let resp = await axios.get('http://localhost:5037/listar/cliente?nome=' + busca);
         setClientes([...resp.data]);
-
     }
 
     return (
@@ -24,7 +23,7 @@ export default function ListaCliente() {
                     </div>
 
                     <div className='busca'>
-                        <input type='text' placeholder='Buscar por nome' />
+                        <input type='text' placeholder='Buscar por nome' value={busca} onChange={e => setBusca(e.target.value)}/>
                         <img src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
                     </div>
                 </section>

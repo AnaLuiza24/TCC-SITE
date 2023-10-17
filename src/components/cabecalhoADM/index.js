@@ -6,7 +6,9 @@ export default function CabecalhoAdm(){
         <main className='pagina-cabecalho-adm'>
             <header>
                 <section className='cabecalho-adm-um'>
-                    <img src='./assets/images/logo.png' alt='logo' id='logo'/>
+                    <Link to={'/inicialAdm'}>
+                    <img src='./assets/images/logo.png' alt='logo' id='logo' />
+                    </Link>
 
                     <div className='busca'>
                         <input type='text' placeholder='Busca' />
