@@ -12,6 +12,7 @@ import ListaCliente from './pages/adm/listaCliente';
 import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
+import App from './pages/menu';
 import {register} from 'swiper/element/bundle'
 
 register();
@@ -37,6 +38,7 @@ root.render(
         <Route path='/listaCliente' element={<ListaCliente />} />
         <Route path='/listaProduto' element={<ListaProduto />} />
         <Route path='/adicionarProduto' element={<AdicionarProduto />} />
+        <Route path='/app' element={<App />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
