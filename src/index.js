@@ -12,14 +12,16 @@ import ListaCliente from './pages/adm/listaCliente';
 import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
+import Pagamento from './pages/client/pagamento';
 import {register} from 'swiper/element/bundle'
+import Nendereco from './pages/client/Endereço';
 
 register();
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar';
-import 'swiper/css/autoplay';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -37,6 +39,9 @@ root.render(
         <Route path='/listaCliente' element={<ListaCliente />} />
         <Route path='/listaProduto' element={<ListaProduto />} />
         <Route path='/adicionarProduto' element={<AdicionarProduto />} />
+        <Route path='/pagamento' element={<Pagamento />} />
+        <Route path='/editendereco' element={<Nendereco />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
