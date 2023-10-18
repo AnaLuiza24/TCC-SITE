@@ -1,5 +1,6 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export default function Cabecalho() {
     return (
@@ -28,9 +29,10 @@ export default function Cabecalho() {
                     <Link id='home' to={'/'}>Home</Link>
                     <Link>Smartphones</Link>
                     <Link>Acessórios</Link>
-                    <a href='#inicial-fale-conosco'>Fale conosco</a>
+                    <AnchorLink href='#fale-conosco'>Fale conosco</AnchorLink>
                 </section>
-            </header>
+            </header>      
         </main>
-    )
+    ) 
+    
 }

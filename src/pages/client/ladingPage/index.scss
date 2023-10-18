@@ -6,6 +6,7 @@
     .pagina-cabecalho {
 
         .cabecalho-dois {
+
             #home {
                 color: #0083ca;
                 text-decoration: underline;
@@ -38,6 +39,12 @@
 
                 img {
                     width: 500px;
+                
+                    transition: transform 0.3s ease-in-out;
+                    
+                    & :hover{
+                        transform: translateY(-50px);
+                    }
                 }
             }
         }

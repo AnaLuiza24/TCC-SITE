@@ -4,10 +4,9 @@ import './index.scss';
 export default function Nendereco() {
   return (
     <main className='pagina-nendenreco'>
-        <div className='Cabecalho'>
             <Cabecalho />
-        </div>
-        <div className='just'>
+
+        <section className='pagina-novo-endereco-principal'>
             <div className='borda'>
                 <div className='novo-endereco'>
 
@@ -77,7 +76,7 @@ export default function Nendereco() {
                 </div>
             </div>
 
-        </div>
+        </section>
     </main>
   )
 }
