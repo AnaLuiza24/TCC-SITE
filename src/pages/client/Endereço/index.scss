@@ -68,8 +68,14 @@
                 flex-direction: row;
                 
                 button {
+                    background: none;
+                    border: none;
                     color: #FF0000;
                     font-size: 14px;
+                }
+
+                button:hover {
+                    color: #ff00008c;
                 }
             }
         }
@@ -121,7 +127,14 @@
                 }
 
                 button {
+                    background: none;
+                    border: none;
                     color: #FF0000;
+                    font-size: 14px;
+                }
+
+                button:hover {
+                    color: #ff00008c;
                 }
             }
         }
