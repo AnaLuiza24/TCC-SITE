@@ -28,7 +28,7 @@ export default function Cabecalho() {
                     <Link id='home' to={'/'}>Home</Link>
                     <Link>Smartphones</Link>
                     <Link>Acessórios</Link>
-                    <Link>Fale conosco</Link>
+                    <a href='#inicial-fale-conosco'>Fale conosco</a>
                 </section>
             </header>
         </main>

@@ -24,7 +24,9 @@ export default function LandingPage() {
                         slidesPerView={1}
                         pagination={{ clickable: true}}
                         navigation
+                        autoplay={{delay: 2000}}
                     >
+
                         {data.map( (item) => (
                             <SwiperSlide key={item.id}>
                                 <img
