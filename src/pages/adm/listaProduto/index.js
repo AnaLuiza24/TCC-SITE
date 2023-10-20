@@ -5,9 +5,10 @@ import { useState } from 'react';
 
 export default function ListaProduto() {
     const [produtos, setProdutos] = useState([]);
+    const [busca, setBusca] = useState('')
 
     async function buscar(){
-        let url = 'http://localhost:5037/listar/produtos';
+        let url = 'http://localhost:5037/listar/produtos?nome=' + busca;
         let resp = await axios.get(url);
         setProdutos([...resp.data]);
     }
@@ -32,7 +33,7 @@ export default function ListaProduto() {
                     </div>
 
                     <div className='busca'>
-                        <input type='text' placeholder='Buscar por nome' />
+                        <input type='text' placeholder='Buscar por nome' value={busca} onChange={e => setBusca(e.target.value)}/>
                         <img src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
                     </div>
                 </section>

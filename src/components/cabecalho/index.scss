@@ -38,6 +38,7 @@
             input{
                 border: none;
                 outline: none;
+                background: none;
             }
         }
 
@@ -66,6 +67,8 @@
         }
     }
 
+    
+
     .cabecalho-dois{
         display: flex;
         justify-content: center;
@@ -76,6 +79,7 @@
         width: 100%;
         border-top: 1px solid #00000018;
         border-bottom: 1px solid #00000018;
+        
 
         a{
             text-decoration: none;

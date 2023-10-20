@@ -3,6 +3,10 @@
     flex-direction: column;
     font-family: 'Inter', sans-serif;
 
+    input{
+        outline: none;
+    }
+
     .adicionar-produto-principal {
         padding: 70px 0px 0px 70px;
 

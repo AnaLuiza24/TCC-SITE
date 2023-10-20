@@ -1,0 +1,158 @@
+.pagina-nendenreco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    .pagina-novo-endereco-principal {
+        display: flex;
+        padding: 50px 0px 0px 0px;
+        align-items: center;
+        justify-content: center;
+        background-color: #EFEFEF;
+    }
+
+    .borda {
+        display: flex;
+        padding: 60px;
+        flex-direction: column;
+        height: 900px;
+        border-radius: 20px;
+        width: 900px;
+        background-color: #fff;
+
+        .nc {
+            p{
+                font-size: 13px;
+            }
+        }
+
+        .nd {
+            padding: 30px 0px 00px 0px;
+            line-height: 25px;
+
+            .nomed {
+                height: 30px;
+                border-radius: 3px;
+                border: 2px solid #d1d1d1ff;
+                width: 300px;
+            }
+        }
+
+        .cpf {
+            padding: 20px 0px 0px 0px;
+            line-height: 25px;
+
+            input {
+                height: 30px;
+                border-radius: 3px;
+                border: 2px solid #d1d1d1ff;
+            }
+        }
+
+        .end {
+            padding: 20px 0px 20px 0px;
+        }
+
+        .cep {
+            line-height: 25px;
+            display: flex;
+            flex-direction: column;
+            input {
+                height: 30px;
+                border-radius: 3px;
+                border: 2px solid #d1d1d1ff; 
+            }
+
+            .ip {
+                gap: 25px;
+                display: flex;
+                flex-direction: row;
+                
+                button {
+                    background: none;
+                    border: none;
+                    color: #FF0000;
+                    font-size: 14px;
+                }
+
+                button:hover {
+                    color: #ff00008c;
+                }
+            }
+        }
+
+        .bt {
+            padding: 30px 0px 0px 0px;
+
+        button {
+            font-weight: bold;
+            padding: 0px 0px 0px 0px;
+            height: 30px;
+            border-radius: 4px;
+            width: 400px;
+            color: #fff;
+            background-color: #0083CA;
+        }
+        }
+
+        .ende {
+            display: flex;
+            line-height: 30px;
+            padding: 10px 0px 10px 0px;
+            flex-direction: column;
+
+            input {
+                height: 30px;
+                width: 300px;
+                border-radius: 3px;
+                border: 2px solid #d1d1d1ff; 
+            }
+        }
+
+        .ender {
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+
+            .endere {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                color: #FF0000;
+
+                input {
+                    height: 30px;
+                    width: 200px;
+                    border-radius: 3px;
+                    border: 2px solid #d1d1d1ff; 
+                }
+
+                button {
+                    background: none;
+                    border: none;
+                    color: #FF0000;
+                    font-size: 14px;
+                }
+
+                button:hover {
+                    color: #ff00008c;
+                }
+            }
+        }
+
+        .bairro {
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+
+            input {
+                height: 30px;
+                width: 300px;
+                border-radius: 3px;
+                border: 2px solid #d1d1d1ff; 
+            }
+            
+        }
+    }
+
+}
