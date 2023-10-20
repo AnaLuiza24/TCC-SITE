@@ -37,6 +37,11 @@ export default function AdicionarProduto() {
         setPrecoPromocao('');
     }
 
+    async function adicionarDetalhe(){
+
+        let r = await axios.post('http://localhost:5037/detalhe');
+
+    }
 
     async function listarMarcas() {
         let r = await axios.get('http://localhost:5037/marcas/listar');
