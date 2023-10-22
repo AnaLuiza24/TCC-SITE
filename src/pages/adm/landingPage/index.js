@@ -13,7 +13,7 @@ export default function LandingPageADM() {
                         <h4>Vendas</h4>
                     </Link>
 
-                    <Link to={'/adicionarProduto'}>
+                    <Link to={'/adicionar-produto'}>
                         <img alt='produtos' src='./assets/images/etiqueta.png' style={{width: '30px'}}/>
                         <h4>Cadastro de Produtos</h4>
                     </Link>

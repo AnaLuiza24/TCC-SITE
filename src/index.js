@@ -13,14 +13,13 @@ import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
 import {register} from 'swiper/element/bundle'
-import Nendereco from './pages/client/Endereço';
 
-register();
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar';
-
+import NewEndereco from './pages/client/endereco';
+register();
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,15 +28,16 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LandingPage />} />
-        <Route path='/sobreNos' element={<SobreNos />} />
-        <Route path='/politicaPrivacidade' element={<PrivacyPolicy />} />
+        <Route path='/sobre-nos' element={<SobreNos />} />
+        <Route path='/politica-privacidade' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/loginAdm' element={<LoginAdm />} />
-        <Route path='/inicialAdm' element={<LandingPageADM />} />
+        <Route path='/login-Adm' element={<LoginAdm />} />
+        <Route path='/inicial-Adm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
-        <Route path='/listaCliente' element={<ListaCliente />} />
-        <Route path='/listaProduto' element={<ListaProduto />} />
-        <Route path='/adicionarProduto' element={<AdicionarProduto />} />
+        <Route path='/lista-cliente' element={<ListaCliente />} />
+        <Route path='/lista-produto' element={<ListaProduto />} />
+        <Route path='/adicionar-produto' element={<AdicionarProduto />} />
+        <Route path='/endereco' element={<NewEndereco />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

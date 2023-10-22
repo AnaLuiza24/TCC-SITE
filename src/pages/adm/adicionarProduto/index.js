@@ -14,6 +14,9 @@ export default function AdicionarProduto() {
     const [qtd, setQtd] = useState('');
     const [desc, setDesc] = useState('');
     const [precoPromocao, setPrecoPromocao] = useState('');
+    const [idProduto, setIdProduto] = useState('');
+    const [tpDetalhe, setTpDetalhe] = useState('');
+    const [detalhe, setDetalhe] = useState('');
 
     async function adicionarProduto() {
         let produto = {
@@ -35,12 +38,25 @@ export default function AdicionarProduto() {
         setQtd('');
         setDesc('');
         setPrecoPromocao('');
+
+        adicionarDetalhe();
+
+        return r;
     }
 
     async function adicionarDetalhe(){
 
-        let r = await axios.post('http://localhost:5037/detalhe');
+        let novoDetalhe = {
+            idProduto: idProduto,
+            tipo: tpDetalhe,
+            desc: detalhe
+        }
+        let r = await axios.post('http://localhost:5037/detalhe', novoDetalhe);
+        setIdProduto('');
+        setTpDetalhe('');
+        setDetalhe('');
 
+        return r;
     }
 
     async function listarMarcas() {
@@ -152,12 +168,12 @@ export default function AdicionarProduto() {
                 <div className='adicionar-produto-detalhe'>
                     <div>
                         <h1>Tipo de detalhe: </h1>
-                        <input type='text' />
+                        <input type='text' value={tpDetalhe} onChange={e => setTpDetalhe(e.target.value)}/>
                     </div>
 
                     <div className='descricao'>
                         <h1>Descrição do detalhe: </h1>
-                        <input type='text' />
+                        <input type='text' value={detalhe} onChange={e => setDetalhe(e.target.value)}/>
                     </div>
 
                     <div className='adicionar-produto-confirmar'>
