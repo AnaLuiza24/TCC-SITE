@@ -15,6 +15,7 @@ import LandingPage from './pages/client/ladingPage';
 import Pagamento from './pages/client/pagamento';
 import {register} from 'swiper/element/bundle'
 import Nendereco from './pages/client/Endereço';
+import AlterarDados from './pages/client/AlterarDados';
 
 register();
 
@@ -38,6 +39,8 @@ root.render(
         <Route path='/adicionarProduto' element={<AdicionarProduto />} />
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/editendereco' element={<Nendereco />} />
+        <Route path='/alterardados' element={<AlterarDados />} />
+
 
       </Routes>
     </BrowserRouter>
