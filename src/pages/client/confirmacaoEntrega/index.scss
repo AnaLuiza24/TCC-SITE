@@ -1,0 +1,55 @@
+.confirmacao-principal{
+    height: 56.4vh ;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin: 50px 80px 0px;
+    
+   .entrega{
+        h1{
+            position: relative;
+            left: 10px;
+            margin-bottom: 40px;
+        }
+
+        .endereco{
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 180px;
+            width: 400px;
+
+            #INFO{
+                
+                display: flex;
+                flex-direction: column;
+                
+                p{
+                    width: 330px;
+                    line-height: 25px;
+                    gap: 40px;
+                }
+            }
+            img{
+                width: 30px;
+                height: 30px;
+                
+            }
+        }   
+        
+        .troca{
+            display: flex;
+            flex-direction: row;
+
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+   }
+
+  
+}

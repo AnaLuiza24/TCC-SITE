@@ -13,6 +13,7 @@ import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
 import {register} from 'swiper/element/bundle'
+import Confirmacao from './pages/client/confirmacaoEntrega';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -38,6 +39,8 @@ root.render(
         <Route path='/lista-produto' element={<ListaProduto />} />
         <Route path='/adicionar-produto' element={<AdicionarProduto />} />
         <Route path='/endereco' element={<NewEndereco />} />
+        <Route path='/confirmacaoentrega' element={<Confirmacao />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
