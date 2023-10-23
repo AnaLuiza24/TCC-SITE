@@ -1,0 +1,24 @@
+.pagina-conta{
+    .principal-conta{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Inter', sans-serif;
+        background-color: #F5F5F5;
+
+        padding: 60px 70px;
+
+        h1{
+           color: #0083ca;
+        }
+
+        .conta-itens{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            background-color: #ffff;
+            gap: 15px;
+
+        }
+    }    
+}
