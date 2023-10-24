@@ -36,11 +36,11 @@ root.render(
         <Route path='/login-Adm' element={<LoginAdm />} />
         <Route path='/inicial-Adm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
-        <Route path='/alterardados' element={<AlterarDados />} />
-        <Route path='/alterarsenha' element={<AlterarSenha />} />
-
-
-
+        <Route path='/alterar-dados' element={<AlterarDados />} />
+        <Route path='/alterar-senha' element={<AlterarSenha />} />
+        <Route path='/lista-cliente' element={<ListaCliente />} />
+        <Route path='/lista-produto' element={<ListaProduto />} />
+        <Route path='/adicionar-produto' element={<AdicionarProduto />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
