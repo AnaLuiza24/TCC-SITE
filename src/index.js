@@ -13,7 +13,9 @@ import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
 import {register} from 'swiper/element/bundle'
-import Nendereco from './pages/client/Endereço';
+import AlterarDados from './pages/client/AlterarDados';
+import AlterarSenha from './pages/client/AlterarSenha';
+
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -35,6 +37,10 @@ root.render(
         <Route path='/login-Adm' element={<LoginAdm />} />
         <Route path='/inicial-Adm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
+        <Route path='/alterardados' element={<AlterarDados />} />
+        <Route path='/alterarsenha' element={<AlterarSenha />} />
+
+
 
       </Routes>
     </BrowserRouter>
