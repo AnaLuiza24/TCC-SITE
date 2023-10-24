@@ -13,13 +13,13 @@ import ListaProduto from './pages/adm/listaProduto';
 import AdicionarProduto from './pages/adm/adicionarProduto';
 import LandingPage from './pages/client/ladingPage';
 import {register} from 'swiper/element/bundle'
-import Nendereco from './pages/client/Endereço';
+
+import Confirmacao from './pages/client/confirmacaoEntrega';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar';
-import NewEndereco from './pages/client/endereco';
 register();
 
 
@@ -35,6 +35,7 @@ root.render(
         <Route path='/login-Adm' element={<LoginAdm />} />
         <Route path='/inicial-Adm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
+        <Route path='/confirmacaoEntrega' element={<Confirmacao />} />
 
       </Routes>
     </BrowserRouter>

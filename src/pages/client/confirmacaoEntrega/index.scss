@@ -1,13 +1,26 @@
 .confirmacao-principal{
-    height: 56.4vh ;
+    height: 120.4vh ;
+    width: 100%;
+    background-color: #EFEFEF;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     
-    margin: 50px 80px 0px;
+    
     
    .entrega{
+        width: 50vw;
+        height: 40vw;
+        margin: 70px 0px 0px;
+        padding: 50px 30px;       
+        
+        background-color: #ffff;
+        border-radius: 40px;
+
+        display: flex;
+        flex-direction: column;
+
         h1{
             position: relative;
             left: 10px;
@@ -41,15 +54,111 @@
         }   
         
         .troca{
+            width: 200px ;
+            height: 30px;
+
             display: flex;
             flex-direction: row;
+
 
             img{
                 width: 30px;
                 height: 30px;
+                margin: 0px 20px 0px 8px ;
+            }
+             
+            p{
+                width: 330px;
+                line-height: 25px;
+
             }
         }
    }
 
-  
+    #entre{
+        margin: 50px 0px 0px;
+    }
+    
+    .receba{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        gap: 20px;
+        margin-left: 5px;
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .smartphone{
+        width: 28vw;
+        height: 40vw;
+        margin: 70px 0px 0px;
+        padding: 50px 30px;       
+        
+        background-color: #ffff;
+        border-radius: 40px;
+
+
+        .iphone{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            img{
+                margin: 20px 10px 5px 0px;
+                width: 70px;
+                height: 80px;
+            }
+            text-align: center;
+        }
+        hr{
+            margin: 20px 0px;
+        }
+
+        .pr{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .frete{
+            width: 103%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            
+            div{
+                p{
+                    margin-bottom: 15px;
+                }
+            }
+            #gr{
+                color: #0389d1;
+            }
+        }
+        
+       .link{
+           display: flex;
+           justify-content: center;
+           text-decoration: none;
+        a{
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+                align-items: center;
+
+            width: 200px;
+            height: 30px;
+            
+            background-color: #0083CA;
+            color: #ffff;
+            border-radius: 3px;
+        }
+       }
+
+    }
 }

@@ -27,34 +27,37 @@ export default function Confirmacao(){
                         <img src='/assets/images/troca.png'/>
                         <p>Trocar endereço</p>
                     </div>
+                    
+                    <div id='entre'>
+                        <h1 >Estimativa de entrega</h1>   
+                        
+                    </div>
 
-                    <h1>Estimativa de entrega</h1>
-
-                    <div>
-                        <img></img>
+                    <div className='receba'>
+                        <img src='/assets/images/caminhao.png' />
                         <p>Receba <b>até 7 dias uteis</b> </p>
                     </div>
                 </aside>
                 
-                <aside>
+                <aside className='smartphone'>
                     <h1>Resumo do pedido</h1>
 
-                    <div>
-                        <img></img>
+                    <div className='iphone'>
+                        <img src='assets/images/iphone.png' />
 
                         <p>Apple iPhone 13 Meia-Noite <br></br> 5G 128GB 6GB RAM</p>
 
                     </div>
 
-                    <div>
-                        <img></img>
+                    <div className='iphone'>
+                        <img src='/assets/images/iphone2.png'/>
 
                         <p>Apple iPhone 14 Pro Roxo-Profundo 128GB 6GB RAM </p>
                     </div>
 
                     <hr></hr>
 
-                    <div>
+                    <div className='pr'>
                         <p>Produto</p>
                         
                         <div>
@@ -64,17 +67,21 @@ export default function Confirmacao(){
                         </div>
                     </div>
 
-                    <div>
-                        <p>Frete</p>
-                        <p>Total</p>
+                    <div className='frete'>
+                        <div className='frets'>   
+                            <p>Frete</p>
+                            <p>Total</p>
+                        </div>
                         
                         <div>
-                            <p>grátis</p>
+                            <p id='gr' ><strong>grátis</strong></p>
                             <p>R$ 12.128,00</p>   
                         </div>
                     </div>
 
-                    <Link>Continuar o pagamento</Link>
+                   <div className='link'>
+                        <Link>Continuar o pagamento</Link>
+                   </div>
                 </aside>
             </header>
             
