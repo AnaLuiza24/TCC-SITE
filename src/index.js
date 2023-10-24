@@ -15,6 +15,7 @@ import LandingPage from './pages/client/ladingPage';
 import {register} from 'swiper/element/bundle'
 import AlterarDados from './pages/client/AlterarDados';
 import AlterarSenha from './pages/client/AlterarSenha';
+import Rastrear from './pages/client/RastrearPedido';
 
 
 import 'swiper/css';
@@ -38,6 +39,7 @@ root.render(
         <Route path='/cadastro' element={<Cadastro />} />
         <Route path='/alterardados' element={<AlterarDados />} />
         <Route path='/alterarsenha' element={<AlterarSenha />} />
+        <Route path='/rastrear' element={<Rastrear />} />
 
 
 
