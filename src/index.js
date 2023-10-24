@@ -42,6 +42,7 @@ root.render(
         <Route path='/lista-cliente' element={<ListaCliente />} />
         <Route path='/lista-produto' element={<ListaProduto />} />
         <Route path='/adicionar-produto' element={<AdicionarProduto />} />
+        <Route path='/rastrear' element={<Rastrear />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
