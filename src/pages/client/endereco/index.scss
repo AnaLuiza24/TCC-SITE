@@ -1,0 +1,90 @@
+.pagina-endereco {
+    display: flex;
+    flex-direction: column;
+
+    .pagina-endereco-container {
+        display: flex;
+        padding: 50px;
+        justify-content: center;
+        background-color: #efefef;
+
+
+        .pagina-endereco-principal {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 50px;
+            width: 95%;
+            border-radius: 30px;
+
+            button{
+                width: 500px;
+                color: #fff;
+                background-color: #0083ca;
+                font-size: 16px;
+                border: none;
+                padding: 8px 0px;
+                font-weight: bold;
+                border-radius: 2px;
+            }
+
+            input {
+                border: 1px solid #00000042;
+                outline: none;
+                height: 30px;
+            }
+
+            div, .endereco-complemento{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                input{
+                    width: 500px;
+                }
+
+                &> div{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+
+                    a, span{
+                        text-decoration: none;
+                        color: #ff0000;
+                        font-size: 14px;
+                        cursor: pointer;
+                        &:hover{
+                            color: #ff000085;
+                        }
+                    }
+                }
+            }
+
+            .endereco-um, .endereco-dois {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .endereco-um-titulo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0px;
+
+                    h1 {
+                        font-size: 30px;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .endereco-dois{
+                margin-top: 30px;
+            }
+
+        }
+
+    }
+}

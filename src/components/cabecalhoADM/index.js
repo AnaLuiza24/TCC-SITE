@@ -6,7 +6,7 @@ export default function CabecalhoAdm(){
         <main className='pagina-cabecalho-adm'>
             <header>
                 <section className='cabecalho-adm-um'>
-                    <Link to={'/inicialAdm'}>
+                    <Link to={'/inicial-Adm'}>
                     <img src='./assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 
@@ -22,9 +22,9 @@ export default function CabecalhoAdm(){
                 </section>
 
                 <section className='cabecalho-adm-dois'>
-                    <Link id='home' to={'/inicialAdm'}>Home</Link>
-                    <Link id='produto' to={'/listaProduto'}>Produto</Link>
-                    <Link id='cliente' to={'/listaCliente'}>Clientes</Link>
+                    <Link id='home' to={'/inicial-Adm'}>Home</Link>
+                    <Link id='produto' to={'/lista-produto'}>Produto</Link>
+                    <Link id='cliente' to={'/lista-cliente'}>Clientes</Link>
                     <Link id='pedidos'>Listas de Pedidos</Link>
                 </section>
             </header>

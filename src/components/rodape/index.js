@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 export default function Rodape() {
@@ -7,15 +8,15 @@ export default function Rodape() {
                 <section className='rodape-um'>
                     <div>
                         <h4>AJUDA</h4>
-                        <p>Atendimento ao cliente</p>
-                        <p>Dúvidas Frequentes</p>
-                        <p>Política de Privacidade</p>
+                        <Link>Atendimento ao cliente</Link>
+                        <Link>Dúvidas Frequentes</Link>
+                        <Link to={'/politica-privacidade'}>Política de Privacidade</Link>
                     </div>
 
                     <div>
                         <h4>INFORMAÇÃO CORPORATIVA</h4>
-                        <p>O que nós somos</p>
-                        <p>Contato</p>
+                        <Link to={'/sobre-nos'}>O que nós somos</Link>
+                        <Link>Contato</Link>
                     </div>
 
                     <div>

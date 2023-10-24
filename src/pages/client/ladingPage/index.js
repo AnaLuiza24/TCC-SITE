@@ -1,9 +1,6 @@
 import Cabecalho from '../../../components/cabecalho';
-import CaixaProduto from '../../../components/caixaProduto';
 import Rodape from '../../../components/rodape';
 import './index.scss';
-import Quadrado from '../../../components/celular';
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function LandingPage() {
@@ -24,7 +21,9 @@ export default function LandingPage() {
                         slidesPerView={1}
                         pagination={{ clickable: true}}
                         navigation
+                        autoplay={{delay: 2000}}
                     >
+
                         {data.map( (item) => (
                             <SwiperSlide key={item.id}>
                                 <img
@@ -108,7 +107,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <section className='inicial-fale-conosco'>
+                <section id='fale-conosco' className='inicial-fale-conosco'>
                     <h1>FALE CONOSCO</h1>
 
                     <input type='text' placeholder='Nome*' id='fale-conosco-completo'/>

@@ -34,7 +34,7 @@ export default function ListaProduto() {
 
                     <div className='busca'>
                         <input type='text' placeholder='Buscar por nome' value={busca} onChange={e => setBusca(e.target.value)}/>
-                        <img src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
+                        <img style={{cursor: "pointer"}} src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
                     </div>
                 </section>
 

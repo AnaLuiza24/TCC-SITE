@@ -15,6 +15,12 @@
             flex-direction: row;
             padding: 40px 90px;
 
+            div{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
             .rodape-images{
                 display: flex;
                 gap: 10px;
@@ -23,8 +29,10 @@
                 justify-content: center;
             }
 
-            p{
+            a{
                 font-size: 14px;
+                text-decoration: none;
+                color: #fff;
             }
             
         }
