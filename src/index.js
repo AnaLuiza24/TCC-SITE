@@ -16,6 +16,7 @@ import {register} from 'swiper/element/bundle'
 import AlterarDados from './pages/client/AlterarDados';
 import AlterarSenha from './pages/client/AlterarSenha';
 import Rastrear from './pages/client/RastrearPedido';
+import Conta from './pages/client/minhaConta';
 
 
 import 'swiper/css';
@@ -43,6 +44,7 @@ root.render(
         <Route path='/lista-produto' element={<ListaProduto />} />
         <Route path='/adicionar-produto' element={<AdicionarProduto />} />
         <Route path='/rastrear' element={<Rastrear />} />
+        <Route path='/minha-conta' element={<Conta />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
