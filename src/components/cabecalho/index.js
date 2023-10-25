@@ -28,7 +28,7 @@ export default function Cabecalho() {
                 <section className='cabecalho-dois'>
                     <Link id='home' to={'/'}>Home</Link>
                     <Link>Smartphones</Link>
-                    <Link>Acessórios</Link>
+                    <Link id='acessorios' to={'/acessorios'}>Acessórios</Link>
                     <AnchorLink href='#fale-conosco'>Fale conosco</AnchorLink>
                 </section>
             </header>      

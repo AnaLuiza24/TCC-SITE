@@ -14,22 +14,22 @@ export default function Conta() {
 
                 <section className='conta-itens'>
 
-                    <Link>
-                    <div className='conta-card'>
+                    <Link className='conta-card' to={'/rastrear'}>
+                    
                         <div className='conta-imagem'>
                             <img src='/assets/images/pedidos.png' alt='pedidos' />
                         </div>
                         <div className='conta-info'>
-                            <h2>Meus Pedidos</h2>
+                            <h2>Meu Pedido</h2>
 
-                            <p>Rastrear pedidos ou comprar produtos novamente</p>
+                            <p>Rastrear meu pedido</p>
                         </div>
-                    </div>
+                    
                     </Link>
 
 
-                    <Link to={'/alterar-dados'}>
-                    <div className='conta-card'>
+                    <Link className='conta-card' to={'/alterar-dados'}>
+
                         <div className='conta-imagem'>
                             <img src='/assets/images/info.png' alt='info'/>
                         </div>
@@ -38,12 +38,12 @@ export default function Conta() {
 
                             <p>Altere suas informações como e-mail, telefone</p>
                         </div>
-                    </div>
+                    
                     </Link>
 
 
-                    <Link to={'/alterar-senha'}>
-                    <div className='conta-card'>
+                    <Link className='conta-card' to={'/alterar-senha'}>
+                
                         <div className='conta-imagem'>
                             <img src='/assets/images/senha.png' alt='senha' />
                         </div>
@@ -52,7 +52,7 @@ export default function Conta() {
 
                             <p>Altere sua senha com segurança</p>
                         </div>
-                    </div>
+                    
                     </Link>
                 </section>
             </header>

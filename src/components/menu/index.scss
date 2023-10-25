@@ -1,0 +1,133 @@
+.pagina-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .menu {
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 600px;
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            
+            .seila{
+                width: 150px;
+                border: 2px solid black;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .dropdown-contente{
+                display: flex;
+                flex-direction: column;
+
+                .seila2{
+                    width: 150px;
+                    border: 2px solid black;
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+            
+            
+
+            #checkboxx:checked~label img {
+
+                transform: rotate(90deg);
+                transition: 0.5s;
+
+            }
+
+            #checkboxx~label {
+                display: flex;
+                flex-direction: row;
+
+                width: 40px;
+                justify-content: space-around;
+            }
+
+            #checkbox2:checked~label img {
+
+                transform: rotate(90deg);
+                transition: 0.5s;
+
+            }
+
+            #checkbox2~label {
+                display: flex;
+                flex-direction: row;
+
+                width: 40px;
+                justify-content: space-around;
+            }
+
+            #checkbox3:checked~label img {
+
+                transform: rotate(90deg);
+                transition: 0.5s;
+
+            }
+
+            #checkbox3~label {
+                display: flex;
+                flex-direction: row;
+
+                width: 40px;
+                justify-content: space-around;
+            }
+
+            #checkbox4:checked~label img {
+
+                transform: rotate(90deg);
+                transition: 0.5s;
+
+            }
+
+            #checkbox4~label {
+                display: flex;
+                flex-direction: row;
+
+                width: 40px;
+                justify-content: space-around;
+            }
+
+            #checkbox5:checked~label img {
+
+                transform: rotate(90deg);
+                transition: 0.5s;
+
+            }
+
+            #checkbox5~label {
+                display: flex;
+                flex-direction: row;
+
+                width: 40px;
+                justify-content: space-around;
+            }
+        }
+
+
+
+
+
+        p {
+            height: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 17px;
+
+        }
+
+        img {
+            height: 20px;
+        }
+    }
+}

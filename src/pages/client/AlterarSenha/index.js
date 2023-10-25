@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
-import axios from 'axios';
 import Rodape from '../../../components/rodape';
 
 export default function AlterarSenha(){

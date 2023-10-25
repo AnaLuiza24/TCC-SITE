@@ -1,0 +1,84 @@
+.pagina-principal-acessorios{
+    
+    font-family: 'Inter', sans-serif;
+
+    .pagina-cabecalho {
+
+        .cabecalho-dois {
+
+            #acessorios {
+                color: #0083ca;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .pagina-acessorios{
+        display: flex;
+        flex-direction: column;
+        background-color: #EFEFEF;
+        height: 100vh;
+        width: 100%;
+
+        .divisoria{
+            height: 40px;
+            width: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 12px;
+            padding: 20px;
+        }
+
+        .principal-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 16px 50px;
+            height: 100vh;
+            width: 100%;
+
+            .menu{
+                display: flex;
+                flex-direction: column;
+                height: 300px;
+                width: 30vh;
+                background-color: #fff;
+                border-radius: 17px;
+                
+
+                .acessorios-menu{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+
+            .acessorios-vitrine{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #fff;
+                width: 65vw;
+                border-radius: 17px;
+
+                .titulo-vitrine{
+                    display: flex;
+                    width: 100%;
+                    padding: 30px 35px;
+                    font-size: 22px;
+               }
+
+               .produto-vitrine{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 30px;
+               }
+            }
+        }
+
+
+
+
+    }
+}

@@ -13,7 +13,7 @@ export default function Confirmacao(){
                     <h1>Endereço de entrega</h1>
 
                     <div className='endereco'>
-                        <img src='/assets/images/local.png'/>
+                        <img src='/assets/images/local.png' alt='local'/>
                         
                         <div id='INFO'>
                             <p>AV. CEL. OCTAVIANO DE FREITAS COSTA, 463  JD VELEIROS SÃO PAULO-SP</p>
@@ -24,7 +24,7 @@ export default function Confirmacao(){
                     </div>
 
                     <div className='troca'>
-                        <img src='/assets/images/troca.png'/>
+                        <img src='/assets/images/troca.png' alt='troca'/>
                         <p>Trocar endereço</p>
                     </div>
                     
@@ -34,7 +34,7 @@ export default function Confirmacao(){
                     </div>
 
                     <div className='receba'>
-                        <img src='/assets/images/caminhao.png' />
+                        <img src='/assets/images/caminhao.png' alt='camminhao'/>
                         <p>Receba <b>até 7 dias uteis</b> </p>
                     </div>
                 </aside>
@@ -43,14 +43,14 @@ export default function Confirmacao(){
                     <h1>Resumo do pedido</h1>
 
                     <div className='iphone'>
-                        <img src='assets/images/iphone.png' />
+                        <img src='assets/images/iphone.png' alt='item'/>
 
                         <p>Apple iPhone 13 Meia-Noite <br></br> 5G 128GB 6GB RAM</p>
 
                     </div>
 
                     <div className='iphone'>
-                        <img src='/assets/images/iphone2.png'/>
+                        <img src='/assets/images/iphone2.png' alt='item'/>
 
                         <p>Apple iPhone 14 Pro Roxo-Profundo 128GB 6GB RAM </p>
                     </div>

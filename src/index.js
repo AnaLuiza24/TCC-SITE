@@ -17,12 +17,14 @@ import AlterarDados from './pages/client/AlterarDados';
 import AlterarSenha from './pages/client/AlterarSenha';
 import Rastrear from './pages/client/RastrearPedido';
 import Conta from './pages/client/minhaConta';
+import Confirmacao from './pages/client/confirmacaoEntrega';
 
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar';
+import Acessorios from './pages/client/acessorios';
 register();
 
 
@@ -45,6 +47,8 @@ root.render(
         <Route path='/adicionar-produto' element={<AdicionarProduto />} />
         <Route path='/rastrear' element={<Rastrear />} />
         <Route path='/minha-conta' element={<Conta />} />
+        <Route path='/confirmacao-entrega' element={<Confirmacao />} />
+        <Route path='/acessorios' element={<Acessorios />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
