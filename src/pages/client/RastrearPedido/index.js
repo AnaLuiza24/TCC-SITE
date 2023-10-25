@@ -21,7 +21,7 @@ export default function Rastrear(){
                                     <p> 04773-000</p>
                                     <p id='mudar'> Thikao Matias Pires</p>
 
-                                    <button>Rastrear Pedido</button>
+                                    <Link to={'https://rastreamento.correios.com.br/app/index.php'}>Rastrear Pedido</Link>
                                 </div>
 
                         </div>
