@@ -3,7 +3,7 @@ import Cabecalho from '../../../components/cabecalho';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
 
-export default function Acessorios() {
+export default function Smartphones() {
 
 
     return (

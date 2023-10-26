@@ -39,10 +39,11 @@ export default function Menu() {
     return (
         <main className='pagina-menu'>
             <div className="menu">
+                <h1>Menu Principal</h1>
                 <div className="sidebar">
                     <div className='seila'>
                     <input type='checkbox' name='checkboxx' id='checkboxx' style={{ display: 'none' }} />
-                    <p> Smartphones </p>
+                    <p id='titulo-smartphone'> Smartphones </p>
                     <label htmlFor='checkboxx'>
                          <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                             setExibirlista(!exibirlista)
@@ -53,12 +54,12 @@ export default function Menu() {
                     </div>
                     
                     {dropdownOpen && (
-                        <ul className="dropdown-content">
-                            <li> Iphone </li>
-                            <li>Samsung</li>
-                            <li> Motorola</li>
-                            <li> Xiaomi</li>
-                        </ul>
+                        <div className="dropdown-content">
+                            <p id='medio'> Iphone </p>
+                            <p id='medio'>Samsung</p>
+                            <p id='medio'> Motorola</p>
+                            <p id='medio'> Xiaomi</p>
+                        </div>
                     )}
                 </div>
 
@@ -66,7 +67,7 @@ export default function Menu() {
                 <div className="sidebar">
                     <div className='seila'>
                         <input type='checkbox' name='checkbox2' id='checkbox2' style={{ display: 'none' }} />
-                         <p> Acessorios </p>
+                         <p id='titulo-acessorios'> Acessorios </p>
                     <label htmlFor='checkbox2'>
                         <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                             setExibirlista2(!exibirlista2)
@@ -77,7 +78,7 @@ export default function Menu() {
                     </div>
                     
                     {dropdownOpen2 && (
-                        <ul className="dropdown-contente">
+                        <div className="dropdown-contente">
                             <div className='seila2'>
                             <input type='checkbox' name='checkbox3' id='checkbox3' style={{ display: 'none' }} />
                             <p> Capinhas </p>
@@ -89,12 +90,12 @@ export default function Menu() {
                             </label>
                             </div>
                             {dropcapinha && (
-                                <ul>
-                                    <li> Iphone </li>
-                                    <li> Samsung </li>
-                                    <li> Motorola </li>
-                                    <li> Xiaomi </li>
-                                </ul>
+                                <div>
+                                    <p id='menor'> Iphone </p>
+                                    <p id='menor'> Samsung </p>
+                                    <p id='menor'> Motorola </p>
+                                    <p id='menor'> Xiaomi </p>
+                                </div>
 
                             )}
 
@@ -111,11 +112,11 @@ export default function Menu() {
                                 </label>
                                 </div>
                                 {dropcarregadores && (
-                                    <ul>
-                                        <li> Cabo light </li>
-                                        <li> Tipo C </li>
-                                        <li> Tipo USB </li>
-                                    </ul>
+                                    <div>
+                                        <p id='menor'> Cabo light </p>
+                                        <p id='menor'> Tipo C </p>
+                                        <p id='menor'> Tipo USB </p>
+                                    </div>
                                 )}
                             </div>
 
@@ -132,13 +133,13 @@ export default function Menu() {
                                 </label>
                                 </div>
                                 {dropfones && (
-                                    <ul>
-                                        <li> bluetooth </li>
-                                        <li> Com fio </li>
-                                    </ul>
+                                    <div>
+                                        <p id='menor'> bluetooth </p>
+                                        <p id='menor'> Com fio </p>
+                                    </div>
                                 )}
                             </div>
-                        </ul>
+                        </div>
                     )}
                 </div>
             </div>

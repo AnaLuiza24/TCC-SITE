@@ -18,13 +18,14 @@ import AlterarSenha from './pages/client/AlterarSenha';
 import Rastrear from './pages/client/RastrearPedido';
 import Conta from './pages/client/minhaConta';
 import Confirmacao from './pages/client/confirmacaoEntrega';
+import Acessorios from './pages/client/acessorios';
+import Smartphones from './pages/client/smartphones';
 
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar';
-import Acessorios from './pages/client/acessorios';
 register();
 
 
@@ -48,7 +49,8 @@ root.render(
         <Route path='/rastrear' element={<Rastrear />} />
         <Route path='/minha-conta' element={<Conta />} />
         <Route path='/confirmacao-entrega' element={<Confirmacao />} />
-        <Route path='/smartphones' element={<Acessorios />} />
+        <Route path='/smartphones' element={<Smartphones />} />
+        <Route path='/acessorios' element={<Acessorios />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
