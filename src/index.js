@@ -48,7 +48,7 @@ root.render(
         <Route path='/rastrear' element={<Rastrear />} />
         <Route path='/minha-conta' element={<Conta />} />
         <Route path='/confirmacao-entrega' element={<Confirmacao />} />
-        <Route path='/acessorios' element={<Acessorios />} />
+        <Route path='/smartphones' element={<Acessorios />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

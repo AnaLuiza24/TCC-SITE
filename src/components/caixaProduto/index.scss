@@ -7,5 +7,39 @@
         border: 2px solid #F5F5F5;
         box-shadow: 0px 4px 4px 0px #00000040;
         padding: 20px;
+        width: 230px;
+
+        img {
+            display: flex;
+            align-self: center;
+            width: 130px;
+        }
+
+        h5 {
+            padding: 20px 0px 0px 0px;
+        }
+
+        p {
+            padding: 5px 0px 0px 0px;
+            font-weight: bold;
+        }
+
+        #preco-original {
+            padding-left: 20px;
+            font-size: 13px;
+            color: #7B7B7B;
+            text-decoration: line-through;
+        }
+
+        #preco-promocao {
+            text-align: center;
+            font-size: 21px;
+            color: #404040;
+        }
+
+        #desc-parcelas {
+            font-weight: normal;
+            font-size: 13px;
+        }
     }
 }

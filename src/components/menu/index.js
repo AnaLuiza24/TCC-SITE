@@ -66,8 +66,9 @@ export default function Menu() {
                 <div className="sidebar">
                     <div className='seila'>
                         <input type='checkbox' name='checkbox2' id='checkbox2' style={{ display: 'none' }} />
+                         <p> Acessorios </p>
                     <label htmlFor='checkbox2'>
-                        <p> Acessorios </p> <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
+                        <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                             setExibirlista2(!exibirlista2)
                             toggleDropdown2()
                         }} />
