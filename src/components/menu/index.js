@@ -67,7 +67,7 @@ export default function Menu() {
                 <div className="sidebar">
                     <div className='seila'>
                         <input type='checkbox' name='checkbox2' id='checkbox2' style={{ display: 'none' }} />
-                         <p id='titulo-acessorios'> Acessorios </p>
+                         <p id='titulo-acessorios'> Acessórios </p>
                     <label htmlFor='checkbox2'>
                         <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                             setExibirlista2(!exibirlista2)

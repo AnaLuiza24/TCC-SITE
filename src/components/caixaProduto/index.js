@@ -13,9 +13,7 @@ export default function CaixaProduto() {
 
                 <p id='preco-promocao'>R$ 1.000,00</p>
 
-                <div>
-                    <p id='desc-parcelas'>ou até em R$1.140,00 em 10x de R$114,00 sem juros</p>
-                </div>
+
             </header>
         </main>
     )

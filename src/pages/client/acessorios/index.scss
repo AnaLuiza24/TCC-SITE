@@ -6,17 +6,23 @@
 
         .cabecalho-dois {
 
-            #smartphone {
+            #acessorios {
                 color: #0083ca;
                 text-decoration: underline;
             }
         }
     }
 
-    .pagina-menu{
-        #titulo-smartphone{
-            color: #0083ca;
-            font-weight: 400;
+    .acessorios-menu{
+        .pagina-menu{
+            #titulo-acessorios{
+                color: #0083ca;
+                font-weight: 400;
+            }
+    
+            #titulo-smartphone{
+                color: #000;
+            }
         }
     }
 
@@ -37,7 +43,7 @@
             padding: 20px;
         }
 
-        .principal-menu{
+        .acessorios-menu{
             display: flex;
             flex-direction: row;
             justify-content: space-between;

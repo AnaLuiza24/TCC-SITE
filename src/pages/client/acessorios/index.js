@@ -11,15 +11,15 @@ export default function Acessorios() {
             <Cabecalho />
             <header className='pagina-acessorios'>
                 <section className='divisoria'>
-                    <p> Home ¬ Smartphones </p>
+                    <p> Home > Acessórios </p>
                 </section>
 
-                <section className='principal-menu'>
+                <section className='acessorios-menu'>
                     <Menu />
 
                     <article className='acessorios-vitrine'>
                         <div className='titulo-vitrine'>
-                            <h1> Smartphones </h1>
+                            <h1> Acessórios </h1>
                         </div>
 
                         <div className='produto-vitrine'>

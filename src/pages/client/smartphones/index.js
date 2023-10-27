@@ -7,17 +7,17 @@ export default function Smartphones() {
 
 
     return (
-        <main className='pagina-principal-acessorios'>
+        <main className='pagina-principal-smartphone'>
             <Cabecalho />
-            <header className='pagina-acessorios'>
+            <header className='pagina-smartphone'>
                 <section className='divisoria'>
                     <p> Home ¬ Smartphones </p>
                 </section>
 
-                <section className='principal-menu'>
+                <section className='smartphone-menu'>
                     <Menu />
 
-                    <article className='acessorios-vitrine'>
+                    <article className='smartphone-vitrine'>
                         <div className='titulo-vitrine'>
                             <h1> Smartphones </h1>
                         </div>
