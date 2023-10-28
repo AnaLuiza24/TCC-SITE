@@ -23,7 +23,6 @@
 
         .busca{
             display: flex;
-            gap: 200px;
             flex-direction: row;
             align-items: center;
             box-shadow: 0px 2px 8px #00000018;
@@ -39,6 +38,8 @@
                 border: none;
                 outline: none;
                 background: none;
+                width: 400px;
+                
             }
         }
 

@@ -1,8 +1,23 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { useState } from 'react';
 
 export default function Cabecalho() {
+    const [termoDeBusca, setTermoDeBusca] = useState('');
+
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        realizarBusca(); // Chame sua função de busca aqui
+      }
+    };
+    const realizarBusca = () => {
+        // Sua lógica de busca aqui
+        console.log('Termo de busca:', termoDeBusca);
+      };
+    
+
+
     return (
         <main className='pagina-cabecalho'>
             <header>
@@ -12,7 +27,13 @@ export default function Cabecalho() {
                     </Link>
 
                     <div className='busca'>
-                        <input type='text' placeholder='Busca' />
+                    <input
+                    type="text"
+                    value={termoDeBusca}
+                    onChange={(e) => setTermoDeBusca(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder='Buscar'
+                />
                         <img src='./assets/images/lupa.png' alt='lupa' />
                     </div>
 

@@ -16,7 +16,9 @@ export default function CabecalhoAdm(){
                     </div>
 
                     <div>
-                        <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'/>
+                    <Link id='login-adm' to={'/login-Adm'}>
+                    <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'/>
+                    </Link>
                         <img src='./assets/images/seta.png' alt='seta' />
                     </div>
                 </section>
@@ -25,7 +27,7 @@ export default function CabecalhoAdm(){
                     <Link id='home' to={'/inicial-Adm'}>Home</Link>
                     <Link id='produto' to={'/lista-produto'}>Produto</Link>
                     <Link id='cliente' to={'/lista-cliente'}>Clientes</Link>
-                    <Link id='pedidos'>Listas de Pedidos</Link>
+                    <Link id='pedido' to={'/lista-pedido'}>Listas de Pedidos</Link>
                 </section>
             </header>
         </main>
