@@ -22,6 +22,8 @@ import Acessorios from './pages/client/acessorios';
 import Smartphones from './pages/client/smartphones';
 import Detalhe from './pages/client/DetalheProduto';
 import ListaPedido from './pages/adm/listaPedidos';
+import Carrinho from './pages/client/Carrinho';
+import CarrinhoProduto from './pages/client/CarrinhoProduto';
 
 
 import 'swiper/css';
@@ -55,7 +57,8 @@ root.render(
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/detalhe-produto' element={<Detalhe />} />
         <Route path='/lista-pedido' element={<ListaPedido />} />
-
+        <Route path='/Carrinho' element={<Carrinho />} />
+        <Route path='/CarrinhoProduto' element={<CarrinhoProduto />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
