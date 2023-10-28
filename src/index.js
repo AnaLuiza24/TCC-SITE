@@ -20,6 +20,7 @@ import Conta from './pages/client/minhaConta';
 import Confirmacao from './pages/client/confirmacaoEntrega';
 import Acessorios from './pages/client/acessorios';
 import Smartphones from './pages/client/smartphones';
+import Detalhe from './pages/client/DetalheProduto';
 
 
 import 'swiper/css';
@@ -51,6 +52,7 @@ root.render(
         <Route path='/confirmacao-entrega' element={<Confirmacao />} />
         <Route path='/smartphones' element={<Smartphones />} />
         <Route path='/acessorios' element={<Acessorios />} />
+        <Route path='/detalhe-produto' element={<Detalhe />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
