@@ -17,9 +17,9 @@ export default function Cabecalho() {
                     </div>
 
                     <div className='cabecalho-itens'>
-                        <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' />
+                     <Link id='carrinho' to={'/'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link> 
                         <div className='cabecalho-login'>
-                            <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
+                        <Link id='login' to={'/login'}>   <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' /> </Link> 
                             <img src='./assets/images/seta.png' alt='seta' />
                         </div>
                     </div>

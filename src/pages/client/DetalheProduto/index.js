@@ -21,7 +21,7 @@ export default function Detalhe() {
 	}, []);
 	return (
 		<main className="Main">
-				 <Cabecalho/> 
+				<div className="Header" > <Cabecalho/></div>
 			<div className="Content">
 				<div className="Pages-menu">
 					<div className="Pages-menu-content">

@@ -1,9 +1,15 @@
 import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
+import localStorage from 'local-storage';
+import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
+
 
 export default function Login() {
 
-    
+
+
 
     return (
         <main className='pagina-principal-login'>
@@ -30,7 +36,7 @@ export default function Login() {
                 <div className='login-confirmar'>
                     <div>
                         <button >CONTINUAR</button>
-                        <p>Não tem uma conta? Cadastre-se agora</p>
+                        <Link id='cadastro' to={'/cadastro'}> <p>Não tem uma conta? Cadastre-se agora</p></Link>
                     </div>
 
                     <div id='login-botao-google'>

@@ -8,6 +8,19 @@
 	background-color: #e6e6e6;
 	height: 100%;
 
+	.Header {
+		display: flex;
+		border: 2px solid black;
+		width: 100%;
+		justify-content: space-between;
+
+	}
+	.Baseboard {
+		display: flex;
+		width: 100%;
+		background-color: black;
+		height: 10%;
+	}
 
 
 	.Content {
@@ -38,6 +51,7 @@
 		}
 
 		.Main-card {
+
 			display: flex;
 			flex-direction: column;
 			max-width: 100%;

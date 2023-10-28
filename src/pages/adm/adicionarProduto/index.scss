@@ -148,6 +148,11 @@
                 display: flex;
                 flex-direction: row;
 
+                .imagemCapa{
+                    width: 280px;
+                    height: 190px;
+                }
+
 
                 button {
                     border: none;
@@ -235,7 +240,7 @@
             align-items: flex-end;
             width: 80vw;
 
-            button {
+            input {
                 background-color: #0083CA;
                 height: 40px;
                 width: 150px;

@@ -17,6 +17,7 @@ export default function AdicionarProduto() {
     const [idProduto, setIdProduto] = useState('');
     const [tpDetalhe, setTpDetalhe] = useState('');
     const [detalhe, setDetalhe] = useState('');
+    const [imagem, setImagem] = useState('');
 
     async function adicionarProduto() {
         let produto = {
@@ -74,6 +75,16 @@ export default function AdicionarProduto() {
     function salvarCategoria(e) {
         const categoriaId = parseInt(e.target.value);
             setCategoria(categoriaId);
+    }
+
+    function mostrarImagem(){
+        return URL.createObjectURL(imagem);
+    }
+    function mostrarImagem2(){
+        return URL.createObjectURL(imagem);
+    }
+    function mostrarImagem3(){
+        return URL.createObjectURL(imagem);
     }
 
     useEffect(() => {
@@ -136,10 +147,28 @@ export default function AdicionarProduto() {
                     <h1>Adicionar fotos:</h1>
 
                     <div className='produto-imagem-adicionar'>
-                        <button> <img src='/assets/images/adicionar.png' alt='adicionar' /> </button>
-                        <button> <img src='/assets/images/adicionar.png' alt='adicionar' /> </button>
-                        <button> <img src='/assets/images/adicionar.png' alt='adicionar' /> </button>
-                    </div>
+                            <label for="fileInput">
+                                {!imagem &&
+                                <img src="/assets/images/adicionar.png" alt="adicionar" />
+                            }
+                            {imagem &&
+                                <img className='imagemCapa' src={mostrarImagem()} alt=''/>
+                            }
+                            </label>
+                            <input type="file" id="fileInput" style={{ display: 'none' }} onChange={e => setImagem(e.target.files[0])} />
+
+                            <label for="fileInput">
+                                {!imagem &&
+                                <img src="/assets/images/adicionar.png" alt="adicionar" />
+                            }
+                            {imagem &&
+                                <img className='imagemCapa' src={mostrarImagem()} alt=''/>
+                            }
+                            </label>
+                            <input type="file" id="fileInput" style={{ display: 'none' }} onChange={e => setImagem(e.target.files[0])} />
+
+                        
+                            </div>
 
                     <div className='produto-imagem-qtd'>
 
