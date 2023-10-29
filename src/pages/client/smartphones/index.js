@@ -11,7 +11,7 @@ export default function Smartphones() {
             <Cabecalho />
             <header className='pagina-smartphone'>
                 <section className='divisoria'>
-                    <p> Home ¬ Smartphones </p>
+                    <p> Home - Smartphones </p>
                 </section>
 
                 <section className='smartphone-menu'>

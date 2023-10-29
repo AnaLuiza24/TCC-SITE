@@ -38,7 +38,7 @@ export default function Cabecalho() {
                     </div>
 
                     <div className='cabecalho-itens'>
-                     <Link id='carrinho' to={'/'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link> 
+                     <Link id='carrinho' to={'/carrinho'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link> 
                         <div className='cabecalho-login'>
                         <Link id='login' to={'/login'}>   <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' /> </Link> 
                             <img src='./assets/images/seta.png' alt='seta' />

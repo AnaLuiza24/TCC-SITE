@@ -16,12 +16,16 @@ import {register} from 'swiper/element/bundle'
 import AlterarDados from './pages/client/AlterarDados';
 import AlterarSenha from './pages/client/AlterarSenha';
 import Rastrear from './pages/client/RastrearPedido';
+import NewEndereco from './pages/client/endereco';
 import Conta from './pages/client/minhaConta';
 import Confirmacao from './pages/client/confirmacaoEntrega';
 import Acessorios from './pages/client/acessorios';
 import Smartphones from './pages/client/smartphones';
 import Detalhe from './pages/client/DetalheProduto';
 import ListaPedido from './pages/adm/listaPedidos';
+import Carrinho from './pages/client/Carrinho';
+import CarrinhoProduto from './pages/client/CarrinhoProduto';
+import CarrinhoFrete from './pages/client/CarrinhoFrete';
 
 
 import 'swiper/css';
@@ -51,11 +55,14 @@ root.render(
         <Route path='/rastrear' element={<Rastrear />} />
         <Route path='/minha-conta' element={<Conta />} />
         <Route path='/confirmacao-entrega' element={<Confirmacao />} />
+        <Route path='/endereco' element={<NewEndereco />} />
         <Route path='/smartphones' element={<Smartphones />} />
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/detalhe-produto' element={<Detalhe />} />
         <Route path='/lista-pedido' element={<ListaPedido />} />
-
+        <Route path='/Carrinho' element={<Carrinho />} />
+        <Route path='/CarrinhoProduto' element={<CarrinhoProduto />} />
+        <Route path='/Carrinhofrete' element={<CarrinhoFrete />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

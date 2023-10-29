@@ -13,7 +13,7 @@
 
         padding: 25px;
 
-        h1{
+        h1 {
             padding: 15px 0px;
         }
 
@@ -23,32 +23,32 @@
 
             width: 100%;
 
-            
-            
-            .seila{
+
+
+            .seila {
                 width: 150px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
             }
 
-            .dropdown-contente{
+            .dropdown-contente {
                 display: flex;
                 flex-direction: column;
 
-                #medio{
+                #medio {
                     font-size: 12px;
                 }
 
-                .seila2{
+                .seila2 {
                     width: 150px;
                     display: flex;
                     flex-direction: row;
                 }
 
             }
-            
-            
+
+
 
             #checkboxx:checked~label img {
 
@@ -125,14 +125,27 @@
                 justify-content: space-around;
             }
 
-            #titulo-smartphone{
-                font-size: 18px;
-                font-weight: 500;          
-            }
-
-            #titulo-acessorios{
+            #titulo-smartphone {
                 font-size: 18px;
                 font-weight: 500;
+                text-decoration: none;
+                line-height: 1.8;
+            }
+
+            #titulo-smartphone:hover {
+                color: #0083ca;
+                transition: 0.5;
+            }
+
+            #titulo-acessorios {
+                font-size: 18px;
+                font-weight: 500;
+                text-decoration: none;
+                line-height: 1.8;
+            }
+            #titulo-acessorios:hover {
+                color: #0083ca;
+                transition: 0.5;
             }
         }
 
@@ -140,20 +153,36 @@
 
 
 
-        p {
-            height: 30px;
+        #categoria-medio {
             display: flex;
             flex-direction: row;
+            line-height: 1.6;
             font-size: 16px;
+            text-decoration: none;
+            color: #000;
+        }
 
+        #categoria-medio:hover {
+            color: #0083ca;
+            transition: 0.5s;
         }
 
         img {
             height: 20px;
         }
 
-        #menor{
+        #categoria-menor {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
             font-size: 14px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        #categoria-menor:hover {
+            color: #0083ca;
+            transition: 0.5s;
         }
     }
 }

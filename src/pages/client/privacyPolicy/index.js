@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
                         <hr></hr>
                     </div>
 
-                    <p>A Smart Seven é uma empresa dedicada a fornecer dispositivos móveis inovadores e serviços relacionados . A privacidade dos nossos clientes  é de extrema importância para nós. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos suas informações pessoais ao utilizar nossos produtos e serviços.</p>
+                    <p>A Smart Seven é uma empresa dedicada a fornecer dispositivos móveis inovadores e serviços relacionados . A privacidade dos nossos clientes é de extrema importância para nós. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos suas informações pessoais ao utilizar nossos produtos e serviços.</p>
                 </div>
 
                 <div>
@@ -25,15 +25,15 @@ export default function PrivacyPolicy() {
                     <h4>1. Informações Que Coletamos</h4>
 
                     <div>
-                        <p><span>1.1 Informações Pessoais:</span> Coletamos informações pessoais, como nome, endereço de e-mail, número de telefone, endereço residencial e informações de pagamento, quando você compra nossos produtos, registra uma conta ou utiliza nossos Serviços.</p>
+                        <p><span>1.1 Informações Pessoais:</span> Coletamos informações pessoais, como nome, endereço de e-mail, número de telefone, endereço residencial e informações de pagamento, quando você compra nossos produtos, registra uma conta ou utiliza nossos serviços.</p>
                     </div>
 
                     <div>
-                        <p><span>1.2 Informações do Dispositivo:</span> Coletamos informações técnicas sobre o dispositivo que você utiliza para acessar nossos Serviços, incluindo o modelo, sistema operacional, identificadores únicos e informações de rede.</p>
+                        <p><span>1.2 Informações do Dispositivo:</span> Coletamos informações técnicas sobre o dispositivo que você utiliza para acessar nossos serviços, incluindo o modelo, sistema operacional, identificadores únicos e informações de rede.</p>
                     </div>
 
                     <div>
-                        <p><span>1.3 Uso dos Serviços:</span> Coletamos informações sobre como você utiliza nossos produtos e Serviços, incluindo registros de atividades, interações com o dispositivo e preferências de uso.</p>
+                        <p><span>1.3 Uso dos Serviços:</span> Coletamos informações sobre como você utiliza nossos produtos e serviços, incluindo registros de atividades, interações com o dispositivo e preferências de uso.</p>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
                     <h4>2. Uso das Informações</h4>
 
                     <div>
-                        <p><span>2.1 Fornecimento de Produtos e Serviços:</span> Utilizamos suas informações para processar pedidos, entregar produtos, oferecer suporte ao cliente e melhorar nossos Serviços.</p>
+                        <p><span>2.1 Fornecimento de Produtos e Serviços:</span> Utilizamos suas informações para processar pedidos, entregar produtos, oferecer suporte ao cliente e melhorar nossos serviços.</p>
                     </div>
                 </div>
             </section>
