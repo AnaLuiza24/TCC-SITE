@@ -62,7 +62,7 @@ export default function NewEndereco() {
                             <p>CEP</p>
                             <div>
                                 <input style={{ width: "200px" }} type='text' value={CEP} onChange={e => setCEP(e.target.value)}/>
-                                <a href='https://www.figma.com/file/NcyD7ZN33GCsD5AoDlBMyD/Untitled?node-id=320%3A35&mode=dev'>Não sei meu cep</a>
+                                <a href='https://buscacepinter.correios.com.br/app/endereco/index.php'>Não sei meu cep</a>
                             </div>
                         </div>
                     </section>

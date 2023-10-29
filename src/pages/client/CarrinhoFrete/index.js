@@ -4,9 +4,8 @@ import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 import { useState } from 'react';
 
-export default function CarrinhoProduto() {
+export default function CarrinhoFrete() {
 
-    const [CEP, setCEP] = useState('');
 
 
     return (
@@ -85,18 +84,23 @@ export default function CarrinhoProduto() {
 
                         </div>
 
-                        <div className='frete'>
-                            <div id='carrin'>
-                                <img src='assets/images/carrin.png' />
-                                <p> Calcular o frete </p>
+                        <div className='localidade'>
+                            <div id='local'>
+                                <img src='assets/images/localidade.png' />
+                                <p> Av. Coronel Octaviano de ... </p>
                             </div>
 
-                            <div className='digite-cep'>
-                                <div id='coluna'>
-                                    <input className='input-number' type="number" value={CEP} onChange={e => setCEP(e.target.value)} />
-                                    <button> OK </button>
+                           <hr></hr>
+
+                            <div className='data-preco'>
+                                <div id='dias'>
+                                    <img src='assets/images/carrin.png' />
+                                    <p> Receba até 17 dias úteis </p>
                                 </div>
-                                <a href='https://buscacepinter.correios.com.br/app/endereco/index.php'>*Não sei meu cep</a>
+                                
+                                <h6> GRÁTIS </h6>
+
+
                             </div>
 
                         </div>

@@ -19,7 +19,7 @@
 
             p{
                 padding: 30px 0px 0px 20px;
-                font-size: 19px;
+                font-size: 12px;
                 font-family: 'Inter', sans-serif;
             }
         }
@@ -62,7 +62,11 @@
             
 
         }
-        button{
+        #adicionaritem{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
             margin-bottom: 40px;
             border: none;
             background-color: #0083ca;

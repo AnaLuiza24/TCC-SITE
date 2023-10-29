@@ -1,14 +1,13 @@
 import './index.scss';
 
-import Cabecalho from '../../component/cabecalho';
-import Rodape from '../../component/rodape';
+import Cabecalho from '../../../components/cabecalho';
+import Rodape from '../../../components/rodape';
+import { Link } from 'react-router-dom';
 
 
 export default function Carrinho (){
 
-
-
-
+    
 
 
 
@@ -18,7 +17,7 @@ export default function Carrinho (){
             <Cabecalho/>
             <div className='container'>
                 <div className='bt-carrinho'>
-                    <p> Meu Carrinho </p>
+                    <p> Home ¬ Meu Carrinho </p>
                 </div>
 
             <div className='carrinho'>
@@ -29,7 +28,7 @@ export default function Carrinho (){
                     </div>
                 
             </div>
-            <button> Adicione Item </button>
+            <Link id='adicionaritem' to={'/smartphones'}> Adicione Item </Link>  
             </div>
         
             <Rodape />
