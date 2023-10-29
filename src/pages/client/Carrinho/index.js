@@ -17,7 +17,7 @@ export default function Carrinho (){
             <Cabecalho/>
             <div className='container'>
                 <div className='bt-carrinho'>
-                    <p> Home ¬ Meu Carrinho </p>
+                    <p> Home - Meu Carrinho </p>
                 </div>
 
             <div className='carrinho'>

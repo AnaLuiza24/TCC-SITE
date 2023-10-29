@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 export default function Menu() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function Menu() {
                 <div className="sidebar">
                     <div className='seila'>
                     <input type='checkbox' name='checkboxx' id='checkboxx' style={{ display: 'none' }} />
-                    <p id='titulo-smartphone'> Smartphones </p>
+                    <Link to={'/smartphones'} id='titulo-smartphone'> Smartphones </Link>
                     <label htmlFor='checkboxx'>
                          <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                             setExibirlista(!exibirlista)
@@ -55,10 +56,10 @@ export default function Menu() {
                     
                     {dropdownOpen && (
                         <div className="dropdown-content">
-                            <p id='medio'> Iphone </p>
-                            <p id='medio'>Samsung</p>
-                            <p id='medio'> Motorola</p>
-                            <p id='medio'> Xiaomi</p>
+                            <Link id='categoria-medio'> Iphone </Link>
+                            <Link id='categoria-medio'> Samsung </Link>
+                            <Link id='categoria-medio'> Motorola </Link>
+                            <Link id='categoria-medio'> Xiaomi </Link>
                         </div>
                     )}
                 </div>
@@ -67,7 +68,7 @@ export default function Menu() {
                 <div className="sidebar">
                     <div className='seila'>
                         <input type='checkbox' name='checkbox2' id='checkbox2' style={{ display: 'none' }} />
-                         <p id='titulo-acessorios'> Acessórios </p>
+                         <Link to={'/acessorios'} id='titulo-acessorios'> Acessórios </Link>
                     <label htmlFor='checkbox2'>
                         <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                             setExibirlista2(!exibirlista2)
@@ -81,7 +82,7 @@ export default function Menu() {
                         <div className="dropdown-contente">
                             <div className='seila2'>
                             <input type='checkbox' name='checkbox3' id='checkbox3' style={{ display: 'none' }} />
-                            <p> Capinhas </p>
+                            <Link id='categoria-medio'> Capinhas </Link>
                             <label htmlFor='checkbox3'>
                                  <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                                     setExibirlista3(!exibirlista3)
@@ -91,10 +92,10 @@ export default function Menu() {
                             </div>
                             {dropcapinha && (
                                 <div>
-                                    <p id='menor'> Iphone </p>
-                                    <p id='menor'> Samsung </p>
-                                    <p id='menor'> Motorola </p>
-                                    <p id='menor'> Xiaomi </p>
+                                    <Link id='categoria-menor'> Iphone </Link>
+                                    <Link id='categoria-menor'> Samsung </Link>
+                                    <Link id='categoria-menor'> Motorola </Link>
+                                    <Link id='categoria-menor'> Xiaomi </Link>
                                 </div>
 
                             )}
@@ -102,7 +103,7 @@ export default function Menu() {
                             <div>
                                 <div className='seila2'>
                                 <input type='checkbox' name='checkbox4' id='checkbox4' style={{ display: 'none' }} />
-                                <p> Carregadores </p>
+                                <Link id='categoria-medio'> Carregadores </Link>
                                 <label htmlFor='checkbox4'>
                                      <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                                         setExibirlista4(!exibirlista4)
@@ -113,9 +114,9 @@ export default function Menu() {
                                 </div>
                                 {dropcarregadores && (
                                     <div>
-                                        <p id='menor'> Cabo light </p>
-                                        <p id='menor'> Tipo C </p>
-                                        <p id='menor'> Tipo USB </p>
+                                        <Link id='categoria-menor'> Cabo light </Link>
+                                        <Link id='categoria-menor'> Tipo C </Link>
+                                        <Link id='categoria-menor'> Tipo USB </Link>
                                     </div>
                                 )}
                             </div>
@@ -123,7 +124,7 @@ export default function Menu() {
                             <div>
                                 <div className='seila2'>
                                 <input type='checkbox' name='checkbox5' id='checkbox5' style={{ display: 'none' }} />
-                                <p> Fones </p>
+                                <Link id='categoria-medio'> Fones </Link>
                                 <label htmlFor='checkbox5'>
                                      <img alt='seta' src='/assets/images/seta-menu.png' onClick={() => {
                                         setExibirlista5(!exibirlista5)
@@ -134,8 +135,8 @@ export default function Menu() {
                                 </div>
                                 {dropfones && (
                                     <div>
-                                        <p id='menor'> bluetooth </p>
-                                        <p id='menor'> Com fio </p>
+                                        <Link id='categoria-menor'> bluetooth </Link>
+                                        <Link id='categoria-menor'> Com fio </Link>
                                     </div>
                                 )}
                             </div>

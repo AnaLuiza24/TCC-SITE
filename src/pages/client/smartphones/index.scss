@@ -17,7 +17,7 @@
         .pagina-menu{
             #titulo-smartphone{
                 color: #0083ca;
-                font-weight: 400;
+                font-weight: 500;
             }
     
             #titulo-acessorios{
@@ -54,7 +54,7 @@
             .menu{
                 display: flex;
                 flex-direction: column;
-                height: 300px;
+                max-height: 100%;
                 width: 30vh;
                 background-color: #fff;
                 border-radius: 17px;
