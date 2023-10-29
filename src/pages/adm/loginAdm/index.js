@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import {loginAdm} from '../../../api/admApi.js';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
+import storage from 'local-storage';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import './index.scss';
 
@@ -20,6 +21,7 @@ export default function LoginAdm() {
 
         try {
             const r = await loginAdm(email, senha);
+            storage('usuario-logado', r);
 
             setTimeout(() => {
                 navigate('/adm');
