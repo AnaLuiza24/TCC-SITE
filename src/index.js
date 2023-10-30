@@ -26,6 +26,8 @@ import ListaPedido from './pages/adm/listaPedidos';
 import Carrinho from './pages/client/Carrinho';
 import CarrinhoProduto from './pages/client/CarrinhoProduto';
 import CarrinhoFrete from './pages/client/CarrinhoFrete';
+import DuvidasFrequentes from './pages/client/duvidasFrequentes';
+import AtendimentoCliente from './pages/client/atendimentoCliente';
 
 
 import 'swiper/css';
@@ -63,6 +65,8 @@ root.render(
         <Route path='/Carrinho' element={<Carrinho />} />
         <Route path='/CarrinhoProduto' element={<CarrinhoProduto />} />
         <Route path='/Carrinhofrete' element={<CarrinhoFrete />} />
+        <Route path='/duvidas-frequentes' element={<DuvidasFrequentes />} />
+        <Route path='/atendimento-cliente' element={<AtendimentoCliente />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

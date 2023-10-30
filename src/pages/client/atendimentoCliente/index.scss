@@ -1,13 +1,13 @@
-.pagina-duvidasFrequentes {
+.pagina-atendimentoCliente {
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
 
     section {
         display: flex;
+        flex-direction: column;
         padding: 70px;
         gap: 30px;
-        flex-direction: column;
 
         & > div {
             display: flex;
@@ -15,24 +15,31 @@
             gap: 20px;
 
             #sub-titulo {
-                font-size: 18px;
-                line-height: 2.0;
                 color: #000;
+                line-height: 2.0;
                 font-weight: 700;
+                font-size: 20px;
+            }
+
+            #topicos {
+                color: #0083ca;
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 1.8;
             }
         }
 
-        .principal-duvidas{
+        .principal-atendimento {
             display: flex;
-            gap: 20px;
             flex-direction: column;
+            gap: 20px;
 
-            hr{
+            hr {
                 background-color: #0083ca;
-                border: none;
                 border-radius: 25px;
+                border: none;
                 height: 6px;
-                width: 250px;
+                width: 305px;
             }
         }
     }

@@ -8,8 +8,8 @@ export default function Rodape() {
                 <section className='rodape-um'>
                     <div>
                         <h4>AJUDA</h4>
-                        <Link>Atendimento ao cliente</Link>
-                        <Link>Dúvidas Frequentes</Link>
+                        <Link to={'/atendimento-cliente'}>Atendimento ao cliente</Link>
+                        <Link to={'/duvidas-frequentes'}>Dúvidas Frequentes</Link>
                         <Link to={'/politica-privacidade'}>Política de Privacidade</Link>
                     </div>
 

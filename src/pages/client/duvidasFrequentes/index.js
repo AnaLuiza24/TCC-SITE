@@ -40,11 +40,14 @@ export default function DuvidasFrequentes() {
                     <div>
                     <p id="sub-titulo"> Condições de Pagamento</p>
 
-                    <p> Na SmartSeven você pode efetuar o pagamento das suas compras em apenas 2 maneiras:</p>
+                    <p> Na SmartSeven você pode efetuar o pagamento das suas compras em apenas 2 maneiras:
+                        Cartão de Dédito ou Crédito. Você pode parcelar suas compras em até 12 vezes com juros,dependendo do valor da compra, e em 3 vezes sem juros, dependendo de valor mínimo da compra. Aceitamos as bandeiras Visa, Mastercard e Elo.
+                    </p>
                     </div>
                     
                 </div>
             </section>
+            <Rodape />
         </main>
     )
 
