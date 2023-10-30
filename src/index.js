@@ -47,7 +47,7 @@ root.render(
         <Route path='/politica-privacidade' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />
         <Route path='/login-Adm' element={<LoginAdm />} />
-        <Route path='/inicial-Adm' element={<LandingPageADM />} />
+        <Route path='/adm' element={<LandingPageADM />} />
         <Route path='/cadastro' element={<Cadastro />} />
         <Route path='/alterar-dados' element={<AlterarDados />} />
         <Route path='/alterar-senha' element={<AlterarSenha />} />

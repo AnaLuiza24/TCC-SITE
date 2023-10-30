@@ -1,7 +1,5 @@
 import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
-import localStorage from 'local-storage';
-import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 
