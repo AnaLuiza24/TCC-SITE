@@ -2,6 +2,8 @@ import './index.scss';
 import axios from 'axios';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import { useEffect, useState } from 'react';
+import { cadastrarProduto } from '../../../api/produtoApi';
+import Storage from 'local-storage';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -42,6 +44,14 @@ export default function AdicionarProduto() {
         setPrecoPromocao('');
 
         adicionarDetalhe();
+        try {
+            const Produto = Storage('produto cadastrado').id;   
+            const r = await cadastrarProduto( marca , categoria ,nome, preco , cor , qtd , desc , precoPromocao,Produto);
+
+            alert('produto ta subindo')
+        } catch (error) {
+            
+        }
 
         return r;
     }
@@ -84,6 +94,8 @@ export default function AdicionarProduto() {
     function mostrarImagem2(){
         return URL.createObjectURL(imagem2);
     }
+
+ 
   
 
     useEffect(() => {
