@@ -1,17 +1,19 @@
 import './index.scss';
 
-export default function CaixaProduto() {
+export default function CaixaProduto(props) {
+
+    let info = props.info;
     return (
         <main className='pagina-caixa-produto'>
             <header className='caixa-produto-principal'>
-                <img alt='imagem' src='/assets/images/phone.png' />
+                <img alt='imagem' src={info.imagem} />
 
-                <h5>Samsung Galaxy A23 Preto 128GB 4GB RAM </h5>
+                <h5>{info.nome}</h5>
                 <div>
-                    <p id='preco-original'>R$ 1.140,00</p>
+                    <p id='preco-original'>{info.preco}</p>
                 </div>
 
-                <p id='preco-promocao'>R$ 1.000,00</p>
+                <p id='preco-promocao'>{info.promocao}</p>
 
 
             </header>
