@@ -1,10 +1,13 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Cabecalho() {
     const [termoDeBusca, setTermoDeBusca] = useState('');
+    const [contactHome, setContactHome] = useState(true);
+
+    const location = useLocation();
 
     const handleKeyPress = (event) => {
       if (event.key === 'Enter') {
@@ -15,7 +18,18 @@ export default function Cabecalho() {
         // Sua lógica de busca aqui
         console.log('Termo de busca:', termoDeBusca);
       };
-    
+
+
+    const handleFaleConcosoClick = () => {
+        const urlAtual = location.pathname;
+        if(urlAtual !== '/home'){
+            setContactHome(false)
+        }
+    }
+
+    useEffect(() => {
+        handleFaleConcosoClick()
+    },[])
 
 
     return (
@@ -47,10 +61,15 @@ export default function Cabecalho() {
                 </section>
 
                 <section className='cabecalho-dois'>
-                    <Link id='home' to={'/'}>Home</Link>
+                    <Link id='home' to={'/home'}>Home</Link>
                     <Link id='smartphone' to={'/smartphones'}>Smartphones</Link>
                     <Link id='acessorios' to={'/acessorios'}>Acessórios</Link>
-                    <AnchorLink href='#fale-conosco'>Fale conosco</AnchorLink>
+                    {
+                        contactHome ?
+                            <AnchorLink href='#fale-conosco'>Fale conosco</AnchorLink>
+                            :
+                            <Link to={'/sobre-nos'} >Fale conosco</Link>
+                    }
                 </section>
             </header>      
         </main>

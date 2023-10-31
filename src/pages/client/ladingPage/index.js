@@ -1,4 +1,5 @@
 import Cabecalho from '../../../components/cabecalho';
+import FaleConosco from '../../../components/faleConosco';
 import Rodape from '../../../components/rodape';
 import './index.scss';
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -6,36 +7,36 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 export default function LandingPage() {
 
     const data = [
-       { id: '1' , image: '/assets/images/banner_figma.png'},
-       { id: '2' , image: '/assets/images/Banner.png'},
-       { id: '3' , image: '/assets/images/banner_tcc.png'},
+        { id: '1', image: '/assets/images/banner_figma.png' },
+        { id: '2', image: '/assets/images/Banner.png' },
+        { id: '3', image: '/assets/images/banner_tcc.png' },
 
     ]
 
-    return(
+    return (
         <main className='pagina-inicial'>
             <Cabecalho />
             <header className='inicial-principal'>
                 <section className='inicial-carrossel'>
                     <Swiper
                         slidesPerView={1}
-                        pagination={{ clickable: true}}
+                        pagination={{ clickable: true }}
                         navigation
-                        autoplay={{delay: 2000}}
+                        autoplay={{ delay: 2000 }}
                     >
 
-                        {data.map( (item) => (
+                        {data.map((item) => (
                             <SwiperSlide key={item.id}>
                                 <img
                                     src={item.image}
                                     alt="Slider"
                                     className="slide-item"
                                 />
-                                
+
                             </SwiperSlide>
 
                         ))}
-                        
+
                     </Swiper>
                 </section>
 
@@ -57,7 +58,7 @@ export default function LandingPage() {
                     </div>
 
                     <div>
-                        
+
                     </div>
                 </section>
 
@@ -107,22 +108,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <section id='fale-conosco' className='inicial-fale-conosco'>
-                    <h1>FALE CONOSCO</h1>
-
-                    <input type='text' placeholder='Nome*' id='fale-conosco-completo'/>
-
-                    <div>
-                        <input type='text' placeholder='Telefone*' id='fale-conosco-pequeno'/>
-                        <input type='text' placeholder='E-mail*' id='fale-conosco-pequeno'/>
-                    </div>
-
-                    <input type='text' placeholder='Escreva seu problema ou suas sugestões' id='fale-conosco-completo'/>
-
-                    <div className='inicial-fale-conosco-button'>
-                        <button>ENVIAR</button>
-                    </div>
-                </section>
+                <FaleConosco />
             </header>
             <Rodape />
         </main>

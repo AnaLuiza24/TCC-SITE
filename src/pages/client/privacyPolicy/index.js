@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
         <main className='pagina-politicaPrivacidade'>
             <Cabecalho />
             <section>
-                <p></p>
+                
                 <div className='principal-politica'>
                     <div>
                         <h1>POLÍTICA DE PRIVACIDADE</h1>
@@ -44,6 +44,7 @@ export default function PrivacyPolicy() {
                         <p><span>2.1 Fornecimento de Produtos e Serviços:</span> Utilizamos suas informações para processar pedidos, entregar produtos, oferecer suporte ao cliente e melhorar nossos serviços.</p>
                     </div>
                 </div>
+                
             </section>
             <Rodape />
         </main>

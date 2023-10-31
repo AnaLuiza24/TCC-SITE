@@ -1,4 +1,5 @@
 import Cabecalho from '../../../components/cabecalho';
+import FaleConosco from '../../../components/faleConosco';
 import Rodape from '../../../components/rodape';
 import './index.scss';
 
@@ -6,7 +7,11 @@ export default function SobreNos() {
   return (
     <main className='pagina-sobreNos'>
       <Cabecalho />
-      <section>
+      <div className='fale-conosco'>
+      <FaleConosco/>
+      </div>
+        <hr></hr>
+      <section className='sobreNos-main'>
         <div className='sobreNos-principal'>
           <div>
             <h1>SMART SEVEN</h1>

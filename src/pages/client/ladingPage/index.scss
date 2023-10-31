@@ -106,60 +106,8 @@
 
         }
 
-        .inicial-fale-conosco{
-            display: flex;
-            background-color: #fff;
-            padding: 40px;
-            gap: 40px;
-            align-items: center;
-            flex-direction: column;
+        
 
-            h1{
-                color: #0083ca;
-                letter-spacing: .5s;
-            }
-
-            input{
-                border: 1px solid #d9d9d9;
-                border-radius: 5px;
-                padding: 10px;
-                outline: none;
-            }
-
-            #fale-conosco-completo{
-                width: 828px;
-            }
-
-            & > div{
-                display: flex;
-                flex-direction: row;
-                gap: 40px;
-                
-            }
-
-            #fale-conosco-pequeno{
-                width: 395px;
-            }
-
-            .inicial-fale-conosco-button{
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-end;
-                width: 70%;
-
-                button{
-                    border: none;
-                    background-color: #0083ca;
-                    color: #fff;
-                    padding: 10px;
-                    border-radius: 25px;
-                    width: 130px;
-                    font-weight: 800;
-                    letter-spacing: .5px;
-                }
-            }
-
-
-        }
+        
     }
 }
