@@ -36,7 +36,7 @@ export default function Cabecalho() {
         <main className='pagina-cabecalho'>
             <header>
                 <section className='cabecalho-um'>
-                    <Link to={'/'}>
+                    <Link to={'/home'}>
                         <img src='./assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 

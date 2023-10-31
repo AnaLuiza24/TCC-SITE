@@ -2,9 +2,30 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
+import { listarSmartphones } from '../../../api/produtoApi';
+import { useState, useEffect } from 'react';
 
 export default function Smartphones() {
 
+    const [produtos, setProdutos] = useState([]);
+    const [erro, setErro] = useState('');
+
+
+    async function listarTodos(){
+        try{
+            const r = await listarSmartphones();
+            setProdutos([...r]);
+
+        }catch(err){
+            if (err.response.status === 500) {
+                setErro(err.response.data.erro);
+            }
+        }
+    }
+
+    useEffect(() => {
+        listarTodos();
+    }, [])
 
     return (
         <main className='pagina-principal-smartphone'>
@@ -23,8 +44,6 @@ export default function Smartphones() {
                         </div>
 
                         <div className='produto-vitrine'>
-                            <CaixaProduto />
-                            <CaixaProduto />
                             <CaixaProduto />
                         </div>
                     </article>
