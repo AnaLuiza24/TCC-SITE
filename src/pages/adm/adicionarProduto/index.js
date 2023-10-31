@@ -18,6 +18,7 @@ export default function AdicionarProduto() {
     const [tpDetalhe, setTpDetalhe] = useState('');
     const [detalhe, setDetalhe] = useState('');
     const [imagem, setImagem] = useState('');
+    const [imagem2, setImagem2] = useState('');
 
     async function adicionarProduto() {
         let produto = {
@@ -81,11 +82,9 @@ export default function AdicionarProduto() {
         return URL.createObjectURL(imagem);
     }
     function mostrarImagem2(){
-        return URL.createObjectURL(imagem);
+        return URL.createObjectURL(imagem2);
     }
-    function mostrarImagem3(){
-        return URL.createObjectURL(imagem);
-    }
+  
 
     useEffect(() => {
         listarMarcas();
@@ -147,7 +146,9 @@ export default function AdicionarProduto() {
                     <h1>Adicionar fotos:</h1>
 
                     <div className='produto-imagem-adicionar'>
-                            <label for="fileInput">
+
+                       
+                            <label for="fileInput1">
                                 {!imagem &&
                                 <img src="/assets/images/adicionar.png" alt="adicionar" />
                             }
@@ -155,19 +156,20 @@ export default function AdicionarProduto() {
                                 <img className='imagemCapa' src={mostrarImagem()} alt=''/>
                             }
                             </label>
-                            <input type="file" id="fileInput" style={{ display: 'none' }} onChange={e => setImagem(e.target.files[0])} />
+                            <input type="file" id="fileInput1" style={{ display: 'none' }} onChange={e => setImagem(e.target.files[0])} />
 
-                            <label for="fileInput">
-                                {!imagem &&
+
+                          
+                            <label for="fileInput2">
+                                {!imagem2 &&
                                 <img src="/assets/images/adicionar.png" alt="adicionar" />
                             }
-                            {imagem &&
-                                <img className='imagemCapa' src={mostrarImagem()} alt=''/>
+                            {imagem2 &&
+                                <img className='imagemCapa' src={mostrarImagem2()} alt=''/>
                             }
                             </label>
-                            <input type="file" id="fileInput" style={{ display: 'none' }} onChange={e => setImagem(e.target.files[0])} />
+                            <input type="file" id="fileInput2" style={{ display: 'none' }} onChange={e => setImagem2(e.target.files[0])} />
 
-                        
                             </div>
 
                     <div className='produto-imagem-qtd'>
