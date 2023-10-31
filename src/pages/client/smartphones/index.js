@@ -15,6 +15,7 @@ export default function Smartphones() {
         try{
             const r = await listarSmartphones();
             setProdutos([...r]);
+            console.log(r);
 
         }catch(err){
             if (err.response.status === 500) {
@@ -44,7 +45,9 @@ export default function Smartphones() {
                         </div>
 
                         <div className='produto-vitrine'>
-                            <CaixaProduto />
+                            {produtos.map(produto => 
+                                <CaixaProduto info={produto}/>   
+                            )}
                         </div>
                     </article>
                 </section>
