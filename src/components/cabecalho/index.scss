@@ -2,7 +2,6 @@
     display: flex;   
     font-family: 'Inter', sans-serif;
     flex-direction: column;
-
     .cabecalho-um{
         display: flex;
         align-items: center;
@@ -49,28 +48,37 @@
             flex-direction: row;
             align-items: center;
 
-            div{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
-
-            #user{
-                width: 25px;
-            }
             #carrinho{
                 width: 25px;
             }
 
-            img{
-                width: 12px;
-            }
-        }
-    }
+            .divisor{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
 
+                #user{
+                    width: 25px;
+                }
+                
+                .sep{
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+
+
+                    #seta{
+                        width: 15px;
+                    }
     
-
-    .cabecalho-dois{
+                }
+                
+                img{
+                    width: 12px;
+                }
+            }     
+        }
+    }    .cabecalho-dois{
         display: flex;
         justify-content: center;
         padding: 18px;

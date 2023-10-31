@@ -2,14 +2,22 @@ import axios from 'axios';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import './index.scss';
 import { useState } from 'react';
+import { buscarClientes } from '../../../api/admApi';
 
 export default function ListaCliente() {
     const [clientes, setClientes] = useState([]);
     const [busca, setBusca] = useState('')
+    const [erro, setErro] = useState('');
 
     async function buscar(){
-        let resp = await axios.get('http://localhost:5037/listar/cliente?nome=' + busca);
-        setClientes([...resp.data]);
+        try{
+            let r = await buscarClientes(busca)
+            setClientes([...r.data]);
+        }catch(err){
+            if (err.response.status === 500) {
+                setErro(err.response.data.erro);
+            }
+        }
     }
 
     return (

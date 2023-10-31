@@ -42,7 +42,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LandingPage />} />
+        <Route path='/home' element={<LandingPage />} />
         <Route path='/sobre-nos' element={<SobreNos />} />
         <Route path='/politica-privacidade' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />
