@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import './index.scss';
 
 
-export default function Modal({ isOpen, setOpen }) {
+
+export default function ModalAdm({ isOpen, setOpen }) {
 
     if (isOpen) {
         return (
@@ -10,7 +11,7 @@ export default function Modal({ isOpen, setOpen }) {
                 <header className="modal">
                     <div className='qua'>
                         <div className="usuario">
-                            <img src=""/>
+                            <img src="./assets/images/FotoUser.png"/>
 
                             <div className="minha-conta">
                                 <p> AdmLindo123 </p>
@@ -19,8 +20,7 @@ export default function Modal({ isOpen, setOpen }) {
                         </div>
 
                         <button>
-                            <img src=""/>
-                            <p> ADICIONAR ADM </p>
+                             MEUS PEDIDOS
                         </button>
 
                     </div>
@@ -29,12 +29,12 @@ export default function Modal({ isOpen, setOpen }) {
 
                     <div className="qua-invi">
                         <div className="logar">
-                            <img src="" />
+                            <img src="./assets/images/desligar.png" />
                             <p> LOG OUT </p>
                         </div>
 
 
-                        <img src="" />
+                        <img src="./assets/images/configuracoes.png" />
 
                     </div>
 
