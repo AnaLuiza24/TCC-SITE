@@ -1,9 +1,18 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './index.scss';
+import storage from 'local-storage';
+import { useState } from "react";
 
 
 
-export default function ModalAdm({ isOpen, setOpen }) {
+export default function ModalAdm({ isOpen, setOpen, usuario }) {
+
+    const navigate = useNavigate();
+
+    function sair() {
+        storage.remove('usuario-logado');
+        navigate('/login-Adm');
+    }
 
     if (isOpen) {
         return (
@@ -11,30 +20,28 @@ export default function ModalAdm({ isOpen, setOpen }) {
                 <header className="modal">
                     <div className='qua'>
                         <div className="usuario">
-                            <img src="./assets/images/FotoUser.png"/>
+                            <span> {usuario[0]} </span>
 
                             <div className="minha-conta">
-                                <p> AdmLindo123 </p>
+                                <p> {usuario} </p>
                                 <button> MINHA CONTA </button>
                             </div>
                         </div>
 
-                        <button>
-                             MEUS PEDIDOS
-                        </button>
+                        <button> ADICIONAR ADM </button>
 
                     </div>
 
                     <hr></hr>
 
                     <div className="qua-invi">
-                        <div className="logar">
-                            <img src="./assets/images/desligar.png" />
+                        <div className="logar" onClick={sair} style={{cursor: "pointer"}}>
+                            <img src="./assets/images/desligar.png" alt="sair" />
                             <p> LOG OUT </p>
                         </div>
 
 
-                        <img src="./assets/images/configuracoes.png" />
+                        <img src="./assets/images/configuracoes.png" alt="configuracoes" />
 
                     </div>
 

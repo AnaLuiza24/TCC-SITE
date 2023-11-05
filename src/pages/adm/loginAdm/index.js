@@ -3,8 +3,8 @@ import {loginAdm} from '../../../api/admApi.js';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
 import storage from 'local-storage';
-import CabecalhoAdm from '../../../components/cabecalhoADM';
 import './index.scss';
+import { useEffect } from 'react';
 
 export default function LoginAdm() {
     const [email, setEmail] = useState('');
@@ -14,6 +14,13 @@ export default function LoginAdm() {
 
     const navigate = useNavigate();
     const ref = useRef();
+
+
+    useEffect(() => {
+        if(storage('usuario-logado')) {
+            navigate('/adm')
+        }
+    }, [])
 
     async function entrar() {
         ref.current.continuousStart();
@@ -40,9 +47,6 @@ export default function LoginAdm() {
     return (
         <main className='pagina-loginAdm-principal'>
             <LoadingBar color="#0083ca" ref={ref} />
-            <nav>
-                <CabecalhoAdm />
-            </nav>
             <section className='pagina-loginAdm'>
                 <section>
                     <div className='login-titulo'>

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+import { cadastrarUsuario } from '../../../api/usuarioApi';
 
 export default function Cadastro() {
 
@@ -13,23 +13,15 @@ export default function Cadastro() {
     const [telefone, setTelefone] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
     const [erro, setErro] = useState('');
+    const navigate = useNavigate();
 
     async function inserir() {
         try {
             if (senha === confirmarSenha || senha.length > 6) {
-                let url = 'http://localhost:5037/adicionar/cliente';
 
-                let pessoa = {
-                    nome: nome,
-                    email: email,
-                    senha: senha,
-                    nasc: nasc,
-                    telefone: telefone
-                }
-                let r = await axios.put(url, pessoa)
-
-                window.location.reload()
-                return r;
+                const r = await cadastrarUsuario(nome, email, senha, nasc, telefone);
+                navigate('/login');
+                
             }
 
         } catch (err) {
