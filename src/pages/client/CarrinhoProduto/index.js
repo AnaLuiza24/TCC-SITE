@@ -93,7 +93,10 @@ export default function CarrinhoProduto() {
 
                             <div className='digite-cep'>
                                 <div id='coluna'>
-                                    <input className='input-number' type="number" value={CEP} onChange={e => setCEP(e.target.value)} />
+                                    <div className='inputi'>
+                                        <input placeholder='Digite seu CEP' className='input-number' type="number" value={CEP} onChange={e => setCEP(e.target.value)} />
+                                    </div>
+
                                     <button> OK </button>
                                 </div>
                                 <a href='https://buscacepinter.correios.com.br/app/endereco/index.php'>*Não sei meu cep</a>

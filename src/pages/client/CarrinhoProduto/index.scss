@@ -229,11 +229,19 @@
                         flex-direction: row;
                         justify-content: space-around;
 
-                        input{
+                        .inputi{
                             color: #404040;
                             width: 65%;
                             border: 1px solid #0083ca;
+
+                            input{
+                                height: 100%;
+                                width: 100%;
+                                outline: none;
+                            }
                         }
+
+                       
 
                         .input-number::-webkit-inner-spin-button{
                             -webkit-appearance: none;

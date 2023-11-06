@@ -27,7 +27,7 @@ export default function CabecalhoAdm(){
         <main className='pagina-cabecalho-adm'>
             <header>
                 <section className='cabecalho-adm-um'>
-                    <Link to={'/inicial-Adm'}>
+                    <Link to={'/adm'}>
                     <img src='./assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 
@@ -37,7 +37,7 @@ export default function CabecalhoAdm(){
                     </div>
 
                     <div>
-                    <Link id='login-adm' to={'/login-Adm'}>
+                    <Link id='login-adm' to={'/adm'}>
                     <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'/>
                     </Link>
                         <img onClick={() => setOpen(!Open)} src='./assets/images/seta.png' alt='seta' />

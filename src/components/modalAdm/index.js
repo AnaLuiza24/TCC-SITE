@@ -20,7 +20,7 @@ export default function ModalAdm({ isOpen, setOpen, usuario }) {
                 <header className="modal">
                     <div className='qua'>
                         <div className="usuario">
-                            <span> {usuario[0]} </span>
+                            <span> {usuario.charAt(0)} </span>
 
                             <div className="minha-conta">
                                 <p> {usuario} </p>
