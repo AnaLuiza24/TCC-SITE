@@ -18,7 +18,6 @@ export default function AdicionarProduto() {
     const [precoPromocao, setPrecoPromocao] = useState('');
     const [idProduto, setIdProduto] = useState('');
     const [tpDetalhe, setTpDetalhe] = useState('');
-    const [detalhe, setDetalhe] = useState('');
     const [imagem, setImagem] = useState('');
     const [imagem2, setImagem2] = useState('');
 
@@ -61,12 +60,12 @@ export default function AdicionarProduto() {
         let novoDetalhe = {
             idProduto: idProduto,
             tipo: tpDetalhe,
-            desc: detalhe
+  
         }
         let r = await axios.post('http://localhost:5037/detalhe', novoDetalhe);
         setIdProduto('');
         setTpDetalhe('');
-        setDetalhe('');
+
 
         return r;
     }
@@ -207,22 +206,10 @@ export default function AdicionarProduto() {
 
                     </div>
                 </div>
-
-                <div className='adicionar-produto-detalhe'>
-                    <div>
-                        <h1>Tipo de detalhe: </h1>
-                        <input type='text' value={tpDetalhe} onChange={e => setTpDetalhe(e.target.value)}/>
-                    </div>
-
-                    <div className='descricao'>
-                        <h1>Descrição do detalhe: </h1>
-                        <input type='text' value={detalhe} onChange={e => setDetalhe(e.target.value)}/>
-                    </div>
-
-                    <div className='adicionar-produto-confirmar'>
+""
+                <div className='adicionar-produto-confirmar'>
                         <button style={{cursor: "pointer"}} onClick={adicionarProduto}>Adicionar</button>
                     </div>
-                </div>
 
             </header>
         </main>
