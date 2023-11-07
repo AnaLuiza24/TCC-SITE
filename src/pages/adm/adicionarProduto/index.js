@@ -1,9 +1,7 @@
 import './index.scss';
-import axios from 'axios';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import { useEffect, useState } from 'react';
-import { cadastrarProduto } from '../../../api/produtoApi';
-import Storage from 'local-storage';
+import { Categorias, Marcas, Adicionar } from '../../../api/produtoApi';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -16,85 +14,35 @@ export default function AdicionarProduto() {
     const [qtd, setQtd] = useState('');
     const [desc, setDesc] = useState('');
     const [precoPromocao, setPrecoPromocao] = useState('');
-    const [idProduto, setIdProduto] = useState('');
-    const [tpDetalhe, setTpDetalhe] = useState('');
     const [imagem, setImagem] = useState('');
     const [imagem2, setImagem2] = useState('');
 
-    async function adicionarProduto() {
-        let produto = {
-            marca: marca,
-            categoria: categoria,
-            nome: nome,
-            preco: preco,
-            cor: cor,
-            qtd: qtd,
-            desc: desc,
-            precopromo: precoPromocao
-        }
-        let r = await axios.post('http://localhost:5037/produto', produto);
-        setMarca(0);
-        setCategoria(0);
-        setNome('');
-        setPreco('');
-        setCor('');
-        setQtd('');
-        setDesc('');
-        setPrecoPromocao('');
-
-        adicionarDetalhe();
-        try {
-            const Produto = Storage('produto cadastrado').id;   
-            const r = await cadastrarProduto( marca , categoria ,nome, preco , cor , qtd , desc , precoPromocao,Produto);
-
-            alert('produto ta subindo')
-        } catch (error) {
-            
-        }
-
-        return r;
-    }
-
-    async function adicionarDetalhe(){
-
-        let novoDetalhe = {
-            idProduto: idProduto,
-            tipo: tpDetalhe,
-  
-        }
-        let r = await axios.post('http://localhost:5037/detalhe', novoDetalhe);
-        setIdProduto('');
-        setTpDetalhe('');
-
-
-        return r;
-    }
-
-    async function listarMarcas() {
-        let r = await axios.get('http://localhost:5037/marcas/listar');
-        setMarcas(r.data);
-    }
-
-    async function listarCategorias() {
-        let r = await axios.get('http://localhost:5037/categoria/listar');
-        setCategorias(r.data);
-
-        console.log(categoria);
-    }
 
     function salvarCategoria(e) {
         const categoriaId = parseInt(e.target.value);
             setCategoria(categoriaId);
     }
 
-    function mostrarImagem(){
-        return URL.createObjectURL(imagem);
-    }
-    function mostrarImagem2(){
-        return URL.createObjectURL(imagem2);
+    async function listarMarcas() {
+        let r = await Marcas();
+        setMarcas(r);
     }
 
- 
+    async function listarCategorias() {
+        let r = await Categorias();
+        setCategorias(r);
+    }
+
+    async function adicionar() {
+        try{
+            let r = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
+            window.location.reload()
+
+        }catch(err){
+            alert(err.response.data.erro)
+        }
+        
+    }
   
 
     useEffect(() => {
@@ -127,7 +75,7 @@ export default function AdicionarProduto() {
 
                     </div>
 
-                    <input placeholder='Descrição' type='text' value={desc} onChange={e => setDesc(e.target.value)}/>
+                    <input placeholder='Descrição' type='text' value={desc} onChange={e => setDesc(e.target.value)} />
 
                     <div className='adicionar-produto-cod'>
                         <h1> Cor: </h1>
@@ -158,36 +106,15 @@ export default function AdicionarProduto() {
 
                     <div className='produto-imagem-adicionar'>
 
-                       
-                            <label for="fileInput1">
-                                {!imagem &&
                                 <img src="/assets/images/adicionar.png" alt="adicionar" />
-                            }
-                            {imagem &&
-                                <img className='imagemCapa' src={mostrarImagem()} alt=''/>
-                            }
-                            </label>
-                            <input type="file" id="fileInput1" style={{ display: 'none' }} onChange={e => setImagem(e.target.files[0])} />
-
-
-                          
-                            <label for="fileInput2">
-                                {!imagem2 &&
+                            
                                 <img src="/assets/images/adicionar.png" alt="adicionar" />
-                            }
-                            {imagem2 &&
-                                <img className='imagemCapa' src={mostrarImagem2()} alt=''/>
-                            }
-                            </label>
-                            <input type="file" id="fileInput2" style={{ display: 'none' }} onChange={e => setImagem2(e.target.files[0])} />
-
+                            
                             </div>
 
                     <div className='produto-imagem-qtd'>
-
                         <h1>Quantidade em estoque: </h1>
                         <input type='number' placeholder='00' value={qtd} onChange={e => setQtd(e.target.value)}/>
-
                     </div>
                 </section>
 
@@ -206,9 +133,8 @@ export default function AdicionarProduto() {
 
                     </div>
                 </div>
-""
                 <div className='adicionar-produto-confirmar'>
-                        <button style={{cursor: "pointer"}} onClick={adicionarProduto}>Adicionar</button>
+                        <button style={{cursor: "pointer"}} onClick={adicionar} >Adicionar</button>
                     </div>
 
             </header>
