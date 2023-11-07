@@ -11,6 +11,4 @@ export async function cadastrarUsuario(nome, email, senha, nasc, telefone) {
         nasc: nasc,
         telefone: telefone
     })
-
-    return r.data;
 }

@@ -6,32 +6,27 @@ const api = axios.create({
 export async function listarSmartphones(){
     const r = await api.get('/smartphones');
     return r.data;
-} 
-
-export async function cadastrarProduto( marca , categoria ,nome, preco , cor , qtd , desc , precoPromocao){
-    const resposta = await api.post('/adicionar-produto', {
-         marca: marca,
-            categoria: categoria,
-            nome: nome,
-            preco: preco,
-            cor: cor,
-            qtd: qtd,
-            desc: desc,
-            precopromo: precoPromocao
-        
-    })
-    
-    return resposta.data;
 }
 
-export async function enviarImagem(imagem,id){
-    const formData = new FormData();
-    formData.append('capa', imagem);
+export async function Marcas() {
+    const r = await api.get('/marcas/listar');
+    return r.data;
+}
 
-    const resposta = api.await.post(`/produto${id}/imagem`, formData,{
-        headers:{
-            "Content-Type": "multipart/form-data"
-        }
+export async function Categorias() {
+    const r = await api.get('/categoria/listar');
+    return r.data
+}
+
+export async function Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao) {
+    const r = await api.post('/produto', {
+        marca: marca,
+        categoria: categoria,
+        nome: nome,
+        preco: preco,
+        cor: cor,
+        qtd: qtd,
+        desc: desc,
+        precopromo: precoPromocao
     })
-    return resposta.status;
 }

@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import './index.scss';
 import storage from 'local-storage';
-import { useState } from "react";
-
 
 
 export default function ModalAdm({ isOpen, setOpen, usuario }) {
@@ -39,9 +37,6 @@ export default function ModalAdm({ isOpen, setOpen, usuario }) {
                             <img src="./assets/images/desligar.png" alt="sair" />
                             <p> LOG OUT </p>
                         </div>
-
-
-                        <img src="./assets/images/configuracoes.png" alt="configuracoes" />
 
                     </div>
 
