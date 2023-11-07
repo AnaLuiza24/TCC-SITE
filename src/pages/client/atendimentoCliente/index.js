@@ -1,11 +1,13 @@
-import Cabecalho from "../../../components/cabecalho";
+import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from "../../../components/rodape";
 import './index.scss';
+import storage from 'local-storage'
 
 export default function AtendimentoCliente() {
     return(
         <main className='pagina-atendimentoCliente'>
-            <Cabecalho />
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <section>
                 <p></p>
                 <div className="principal-atendimento">

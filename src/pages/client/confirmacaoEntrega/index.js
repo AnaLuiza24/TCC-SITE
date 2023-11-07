@@ -1,12 +1,14 @@
 import './index.scss'
-import Cabecalho from '../../../components/cabecalho'
+import CabecalhoLogado from '../../../components/cabecalho-logado';
+import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape'
 import { Link } from 'react-router-dom'
+import storage from 'local-storage';
 
 export default function Confirmacao(){
     return(
         <main className='pagina-confirmacao'>
-            <Cabecalho/>
+             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
 
             <header className='confirmacao-principal'>
                 <aside className='entrega'>

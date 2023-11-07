@@ -1,13 +1,15 @@
 import './index.scss';
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
 import { Link } from 'react-router-dom';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
 
 
 export default function Conta() {
     return (
         <main className='pagina-conta'>
-            <Cabecalho />
+             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
 
             <header className='principal-conta'>
                 <h1>MINHA CONTA</h1>

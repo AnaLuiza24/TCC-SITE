@@ -1,12 +1,16 @@
 import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
 import Rodape from '../../../components/rodape';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
+import storage from 'local-storage'
 
 export default function AlterarSenha(){
 
     return(
         <div className='pagina-Alterar'>
-               <div className='cabecalho'><Cabecalho/></div>
+               <div className='cabecalho'>
+               {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
+                </div>
                
                     <div className='corpo'>
                             <div className='textos'>

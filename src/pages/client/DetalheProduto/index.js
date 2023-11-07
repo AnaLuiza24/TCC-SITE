@@ -5,8 +5,10 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Iphone from "../../../assets/images/iphone13.png";
 import Iphone2 from "../../../assets/images/iphone13.webp";
 import { useState, useEffect } from "react";
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
+import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
+import storage from "local-storage";
 
 
 export default function Detalhe() {
@@ -21,7 +23,7 @@ export default function Detalhe() {
 	}, []);
 	return (
 		<main className="Main">
-				<div className="Header" > <Cabecalho/></div>
+				<div className="Header" >  {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }</div>
 			<div className="Content">
 				<div className="Pages-menu">
 					<div className="Pages-menu-content">

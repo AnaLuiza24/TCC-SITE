@@ -1,8 +1,9 @@
 import './index.scss';
-
-import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
 import { useState } from 'react';
+import Cabecalho from '../../../components/cabecalho';
 
 export default function CarrinhoProduto() {
 
@@ -12,7 +13,7 @@ export default function CarrinhoProduto() {
     return (
         <div className='pagina-compras'>
 
-            <Cabecalho />
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <div className='container'>
                 <div className='titu'>
                     <img src='/assets/images/carrinho2.png' />

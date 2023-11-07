@@ -3,6 +3,8 @@ import FaleConosco from '../../../components/faleConosco';
 import Rodape from '../../../components/rodape';
 import './index.scss';
 import { Swiper, SwiperSlide } from 'swiper/react'
+import storage from 'local-storage';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 
 export default function LandingPage() {
 
@@ -15,7 +17,7 @@ export default function LandingPage() {
 
     return (
         <main className='pagina-inicial'>
-            <Cabecalho />
+            {storage('usuario-logado') ? <Cabecalho /> : <CabecalhoLogado /> }
             <header className='inicial-principal'>
                 <section className='inicial-carrossel'>
                     <Swiper

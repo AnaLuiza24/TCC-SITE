@@ -1,9 +1,11 @@
 import './index.scss';
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
 import { listarSmartphones } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
 
 export default function Smartphones() {
 
@@ -30,7 +32,7 @@ export default function Smartphones() {
 
     return (
         <main className='pagina-principal-smartphone'>
-            <Cabecalho />
+             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <header className='pagina-smartphone'>
                 <section className='divisoria'>
                     <p> Home - Smartphones </p>

@@ -1,11 +1,13 @@
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import './index.scss';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
 
 export default function Pagamento() {
   return (
     <main className='pagina-pagamento'>
       <div className='Cabecalho'>
-      <Cabecalho/>
+      {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
       </div>
 
         <div className='tudo'>

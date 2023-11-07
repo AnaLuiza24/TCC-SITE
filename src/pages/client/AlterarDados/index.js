@@ -1,12 +1,14 @@
 import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
 import Rodape from '../../../components/rodape';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
+import storage from 'local-storage'
 
 export default function AlterarDados() {
 
     return (
         <main className='pagina-dados'>
-            <Cabecalho />
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
 
             <header className='corpo'>
 

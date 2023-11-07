@@ -3,6 +3,7 @@ import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { cadastrarUsuario } from '../../../api/usuarioApi';
+import axios from 'axios';
 
 export default function Cadastro() {
 
@@ -17,15 +18,24 @@ export default function Cadastro() {
 
     async function inserir() {
         try {
+            const pessoa = {
+                nome: nome,
+                email: email,
+                senha: senha,
+                nasc: nasc,
+                telefone: telefone
+            }
+            console.log(pessoa)
+
             if (senha === confirmarSenha || senha.length > 6) {
 
-                const r = await cadastrarUsuario(nome, email, senha, nasc, telefone);
+                const r = await axios.post('http://localhost:5037/adicionar/cliente', pessoa);
                 navigate('/login');
-                
+                alert('cadstrousadu')
             }
-
         } catch (err) {
             setErro(err.response.data.er)
+            alert(err.response.data.er)
         }
 
     }

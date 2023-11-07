@@ -1,11 +1,13 @@
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
 import './index.scss';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
 
 export default function PrivacyPolicy() {
     return (
         <main className='pagina-politicaPrivacidade'>
-            <Cabecalho />
+             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <section>
                 
                 <div className='principal-politica'>

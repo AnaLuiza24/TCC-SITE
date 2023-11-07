@@ -1,8 +1,10 @@
 import './index.scss';
 
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
 import { Link } from 'react-router-dom';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage'
 
 
 export default function Carrinho (){
@@ -14,7 +16,7 @@ export default function Carrinho (){
 
     return(
         <div className='pagina-carrinho'>
-            <Cabecalho/>
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <div className='container'>
                 <div className='bt-carrinho'>
                     <p> Home - Meu Carrinho </p>

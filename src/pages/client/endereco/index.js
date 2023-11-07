@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import './index.scss';
 import axios from 'axios';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
+
 
 export default function NewEndereco() {
 
@@ -40,7 +43,7 @@ export default function NewEndereco() {
 
     return (
         <main className='pagina-endereco'>
-            <Cabecalho />
+             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
 
             <article className='pagina-endereco-container'>
                 <section className='pagina-endereco-principal'>

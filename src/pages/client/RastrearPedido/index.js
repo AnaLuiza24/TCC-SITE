@@ -1,14 +1,16 @@
 import './index.scss'
-import Cabecalho from '../../../components/cabecalho'
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape'
 import { Link } from 'react-router-dom'
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
 
 export default function Rastrear(){
 
     return(
 
         <main className='pagina-rastrear'>
-            <div className='cabecalho'> <Cabecalho/> </div>
+            <div className='cabecalho'>  {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> } </div>
 
             <div className='container'>
                 <div className='caixa'>

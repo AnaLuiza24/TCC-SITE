@@ -1,8 +1,9 @@
 import './index.scss';
-
 import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
 import { useState } from 'react';
+import storage from 'local-storage';
 
 export default function CarrinhoFrete() {
 
@@ -11,7 +12,7 @@ export default function CarrinhoFrete() {
     return (
         <div className='pagina-compras'>
 
-            <Cabecalho />
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <div className='container'>
                 <div className='titu'>
                     <img src='/assets/images/carrinho2.png' />

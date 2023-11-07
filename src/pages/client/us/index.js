@@ -1,12 +1,14 @@
-import Cabecalho from '../../../components/cabecalho';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 import FaleConosco from '../../../components/faleConosco';
 import Rodape from '../../../components/rodape';
 import './index.scss';
+import Cabecalho from '../../../components/cabecalho';
+import storage from 'local-storage';
 
 export default function SobreNos() {
   return (
     <main className='pagina-sobreNos'>
-      <Cabecalho />
+       {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
       <div className='fale-conosco'>
       <FaleConosco/>
       </div>
