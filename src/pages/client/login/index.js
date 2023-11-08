@@ -86,7 +86,7 @@ export default function Login() {
                             onChange={e => setSenha(e.target.value)} 
                             onKeyUp={teclaEnter}/>
                     </div>
-                    <p>Esqueci minha senha</p>
+                    <Link id='alterar senha' to={'/alterar-senha'}> <p>Esqueci minha senha</p></Link> 
                 </div>
 
                 <div className='login-confirmar'>

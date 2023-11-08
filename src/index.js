@@ -28,6 +28,7 @@ import CarrinhoProduto from './pages/client/CarrinhoProduto';
 import CarrinhoFrete from './pages/client/CarrinhoFrete';
 import DuvidasFrequentes from './pages/client/duvidasFrequentes';
 import AtendimentoCliente from './pages/client/atendimentoCliente';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 

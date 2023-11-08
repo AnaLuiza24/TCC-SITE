@@ -53,6 +53,7 @@ export default function Acessorios() {
                             <CaixaProduto info={produto}/>
                         </div>
                     </article>
+                  
                 </section>
             </header>
         </main>

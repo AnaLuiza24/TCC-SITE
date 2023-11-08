@@ -1,12 +1,48 @@
 import './index.scss';
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
-import { Link } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
 
 
 export default function Conta() {
+let navigate= useNavigate();
+
+
+    function SairDaConta() {
+ 
+        confirmAlert(
+            {
+                title: 'Sair da conta ?',
+                message: `Deseja sair da conta  ? `,
+                buttons: [
+                    {
+                        label:'Sim',
+                        onClick: async () => {
+                           
+                                storage.remove('usuario-logado')
+                                setTimeout(() => {
+                                    navigate('/login')
+                                }, 1800)
+                        
+                            
+    
+                
+                        }
+                    },
+    
+                    {
+                        label: 'Não'
+                    }
+                ]
+            }
+        )
+    }
+
+
     return (
         <main className='pagina-conta'>
              {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
@@ -57,6 +93,9 @@ export default function Conta() {
                     
                     </Link>
                 </section>
+                <div className='sair'>
+                 <button  onClick={SairDaConta} > Sair da Conta </button>  
+                </div>
             </header>
 
             <Rodape />

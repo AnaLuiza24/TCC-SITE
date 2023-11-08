@@ -83,7 +83,7 @@ export default function Cadastro() {
                                 <label htmlFor="campo-de-entrada" className="input-title">
                                     Telefone
                                 </label>
-                                <input type="text" id="campo-de-entrada" onChange={e => setTelefone(e.target.value)} />
+                                <input type="number" id="campo-de-entrada" onChange={e => setTelefone(e.target.value)} />
                             </div>
 
                         </div>

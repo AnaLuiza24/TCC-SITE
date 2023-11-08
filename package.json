@@ -10,6 +10,7 @@
     "local-storage": "^2.0.0",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-confirm-alert": "^3.0.6",
     "react-dom": "^18.2.0",
     "react-progressbar": "^15.4.1",
     "react-router-dom": "^6.16.0",

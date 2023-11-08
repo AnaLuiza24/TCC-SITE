@@ -61,7 +61,34 @@
                     }
                 }
             }
+            
 
         }
+
+        .sair{
+            display: flex;
+            justify-content: end;
+
+            button {
+                padding: 0.7em 2em;
+                font-size: 0.975em;
+                font-weight: 600;
+                margin: 2em 0 1em 0;
+                background-color: #0381c8;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                width: max-content;
+                border-radius: 999em;
+                transition: background-color 0.4s;
+                justify-content: end;
+
+                
+        }
+        
+
+        
+        }
+
     }    
 }
