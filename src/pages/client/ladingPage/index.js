@@ -17,7 +17,7 @@ export default function LandingPage() {
 
     return (
         <main className='pagina-inicial'>
-            {storage('usuario-logado') ? <Cabecalho /> : <CabecalhoLogado /> }
+            {storage('usuario-logado') ? <CabecalhoLogado />:  <Cabecalho />  }
             <header className='inicial-principal'>
                 <section className='inicial-carrossel'>
                     <Swiper

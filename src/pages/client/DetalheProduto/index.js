@@ -22,8 +22,8 @@ export default function Detalhe() {
 		setDiscount(oldPrice - newPrice);
 	}, []);
 	return (
-		<main className="Main">
-				<div className="Header" >  {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }</div>
+		<div className="Main">
+				 {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
 			<div className="Content">
 				<div className="Pages-menu">
 					<div className="Pages-menu-content">
@@ -129,8 +129,8 @@ export default function Detalhe() {
 					</div>
 				</div>
 			</div>
-			<div className="Baseboard">   </div> {/*rodapé*/}
-		</main>
+			<Rodape />
+		</div>
 	);
 }
 

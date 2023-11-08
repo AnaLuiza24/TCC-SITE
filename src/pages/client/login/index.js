@@ -40,7 +40,7 @@ export default function Login() {
             console.log(response);
           setTimeout(() => {
             storage('usuario-logado', response.data);
-            navigate('/homelogada');
+            navigate('/home');
           }, 1700)
         } catch (err) {
           if (ref.current && ref.current.complete) {

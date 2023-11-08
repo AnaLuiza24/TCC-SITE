@@ -7,6 +7,10 @@ export async function listarSmartphones(){
     const r = await api.get('/smartphones');
     return r.data;
 }
+export async function listarAcessorios(){
+    const r = await api.get('/acessorios');
+    return r.data;
+}
 
 export async function Marcas() {
     const r = await api.get('/marcas/listar');
@@ -30,3 +34,4 @@ export async function Adicionar(marca, categoria, nome, preco, cor, qtd, desc, p
         precopromo: precoPromocao
     })
 }
+
