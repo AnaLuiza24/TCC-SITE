@@ -2,7 +2,7 @@ import './index.scss';
 import { Link, useLocation } from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useState, useEffect } from 'react';
-import Modal from '../modal';
+import ModalLogado from '../modal-logado';
 
 export default function CabecalhoLogado() {
     const [termoDeBusca, setTermoDeBusca] = useState('');
@@ -59,8 +59,8 @@ export default function CabecalhoLogado() {
                         <div className='cabecalho-login'>
                             
                         <div className='divisor'>
-                        <Link id='carrinho' to={'/minha-conta'}>     <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'  /></Link>
-                                
+                        <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'  />
+                        <ModalLogado isOpen={Open} setOpen={setOpen} />  
                             </div>
                         
                         </div>
