@@ -55,7 +55,7 @@ export default function Cabecalho() {
                     </div>
 
                     <div className='cabecalho-itens'>
-                        <Link id='carrinho' to={'/carrinho'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link>
+                        <Link id='carrinho' to={'/login'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link>
                         <div className='cabecalho-login'>
                             
                         <div className='divisor'>

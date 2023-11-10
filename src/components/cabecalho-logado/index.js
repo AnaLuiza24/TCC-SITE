@@ -60,7 +60,10 @@ export default function CabecalhoLogado() {
                             
                         <div className='divisor'>
                         <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'  />
-                        <ModalLogado isOpen={Open} setOpen={setOpen} />  
+                        <div className='sep'>
+                                    <img onClick={() => setOpen(!Open)} src='./assets/images/seta.png' alt='seta' id='seta' />
+                                    <ModalLogado isOpen={Open} setOpen={setOpen} />  
+                                </div>
                             </div>
                         
                         </div>
@@ -82,3 +85,4 @@ export default function CabecalhoLogado() {
         </main>
     )
 }
+

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import './index.scss';
 import storage from 'local-storage';
 import { confirmAlert } from 'react-confirm-alert';
+import { Link, useLocation } from 'react-router-dom';
 
 
 export default function ModalLogado({ isOpen, setOpen, usuario }) {
@@ -46,15 +47,15 @@ export default function ModalLogado({ isOpen, setOpen, usuario }) {
                 <header className="modal">
                     <div className='qua'>
                         <div className="usuario">
-                            <span> {usuario.charAt(0)} </span>
+                         
 
                             <div className="minha-conta">
                                 <p> {usuario} </p>
-                                <button> MINHA CONTA </button>
+                                <Link to={'/minha-conta'}>   <button> MINHA CONTA </button></Link>
                             </div>
                         </div>
 
-                        <button> MEUS PEDIDOS </button>
+                        <Link to={'/rastrear'}>      <button> MEUS PEDIDOS </button> </Link>
 
                     </div>
 
