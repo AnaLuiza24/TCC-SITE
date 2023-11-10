@@ -51,7 +51,7 @@ export default function AlterarDados() {
                                     <label htmlFor="campo-de-entrada" className="input-title">
                                         Telefone
                                     </label>
-                                    <input type="text" />
+                                    <input type="Number" />
                                 </div>
 
 
