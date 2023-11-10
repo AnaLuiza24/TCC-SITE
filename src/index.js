@@ -61,7 +61,10 @@ root.render(
         <Route path='/confirmacao-entrega' element={<Confirmacao />} />
         <Route path='/endereco' element={<NewEndereco />} />
         <Route path='/smartphones' element={<Smartphones />} />
+        
         <Route path='/acessorios' element={<Acessorios />} />
+        <Route path='/acessorios/:id' element={<Acessorios />} />
+
         <Route path='/detalhe-produto' element={<Detalhe />} />
         <Route path='/lista-pedido' element={<ListaPedido />} />
         <Route path='/Carrinho' element={<Carrinho />} />

@@ -28,17 +28,17 @@ export default function CabecalhoAdm() {
             <header>
                 <section className='cabecalho-adm-um'>
                     <Link to={'/adm'}>
-                        <img src='./assets/images/logo.png' alt='logo' id='logo' />
+                        <img src='/assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 
                     <div className='busca'>
                         <input type='text' placeholder='Busca' />
-                        <img src='./assets/images/lupa.png' alt='lupa' />
+                        <img src='/assets/images/lupa.png' alt='lupa' />
                     </div>
 
                     <div onClick={() => setOpen(!Open)}>
-                        <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
-                        <img src='./assets/images/seta.png' alt='seta' />
+                        <img src='/assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
+                        <img src='/assets/images/seta.png' alt='seta' />
                         <ModalAdm isOpen={Open} setOpen={setOpen} usuario={usuario} />
                     </div>
                 </section>

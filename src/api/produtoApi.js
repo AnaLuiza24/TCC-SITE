@@ -7,6 +7,11 @@ export async function listarSmartphones(){
     const r = await api.get('/smartphones');
     return r.data;
 }
+export async function buscarAcessoriosPorMarca(marca){
+    const r = await api.get('/consultar/acessorios?marca=' + marca);
+    return r.data;
+}
+
 export async function listarAcessorios(){
     const r = await api.get('/acessorios');
     return r.data;

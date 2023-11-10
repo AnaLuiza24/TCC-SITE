@@ -4,12 +4,25 @@ import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
-import { listarAcessorios } from '../../../api/produtoApi';
+import { buscarAcessoriosPorMarca, listarAcessorios } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function Acessorios() {
     const [produto, setProdutos] = useState([]);
     const [erro, setErro] = useState('');
+
+
+    let { id } = useParams();
+
+    useEffect(() => {
+        if (id) {
+            buscarPorId();
+        }
+        else {
+            listarTodos();
+        }
+    }, [id])
 
 
     async function listarTodos(){
@@ -25,10 +38,19 @@ export default function Acessorios() {
         }
     }
 
-    useEffect(() => {
-        listarTodos();
-    }, [])
 
+    async function buscarPorId(){
+        try{
+            const r = await buscarAcessoriosPorMarca(id);
+            setProdutos([...r]);
+            console.log(r);
+
+        }catch(err){
+            if (err.response.status === 500) {
+                setErro(err.response.data.erro);
+            }
+        }
+    }
 
 
     return (
@@ -48,8 +70,6 @@ export default function Acessorios() {
                         </div>
 
                         <div className='produto-vitrine'>
-                            <CaixaProduto info={produto}/>
-                            <CaixaProduto info={produto}/>
                             <CaixaProduto info={produto}/>
                         </div>
                     </article>

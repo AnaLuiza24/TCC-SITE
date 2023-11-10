@@ -40,7 +40,7 @@ export default function Cabecalho() {
             <header>
                 <section className='cabecalho-um'>
                     <Link to={'/home'}>
-                        <img src='./assets/images/logo.png' alt='logo' id='logo' />
+                        <img src='/assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 
                     <div className='busca'>
@@ -51,17 +51,17 @@ export default function Cabecalho() {
                             onKeyPress={handleKeyPress}
                             placeholder='Buscar'
                         />
-                        <img src='./assets/images/lupa.png' alt='lupa' />
+                        <img src='/assets/images/lupa.png' alt='lupa' />
                     </div>
 
                     <div className='cabecalho-itens'>
-                        <Link id='carrinho' to={'/carrinho'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link>
+                        <Link id='carrinho' to={'/carrinho'}>  <img src='/assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link>
                         <div className='cabecalho-login'>
                             
                         <div className='divisor'>
-                                <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
+                                <img src='/assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
                                 <div className='sep'>
-                                    <img onClick={() => setOpen(!Open)} src='./assets/images/seta.png' alt='seta' id='seta' />
+                                    <img onClick={() => setOpen(!Open)} src='/assets/images/seta.png' alt='seta' id='seta' />
                                     <Modal isOpen={Open} setOpen={setOpen} />
                                 </div>
                                 

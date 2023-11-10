@@ -63,8 +63,8 @@ export default function Menu() {
                         <div className="dropdown-content">
                             <Link id='categoria-medio' to='/acessorios/1'> Iphone </Link>
                             <Link id='categoria-medio' to='/acessorios/2'> Samsung </Link>
-                            <Link id='categoria-medio'> Motorola </Link>
-                            <Link id='categoria-medio'> Xiaomi </Link>
+                            <Link id='categoria-medio' to='/acessorios/3' > Motorola </Link>
+                            <Link id='categoria-medio' to='/acessorios/4' > Xiaomi </Link>
                         </div>
                     )}
                 </div>
@@ -97,10 +97,10 @@ export default function Menu() {
                             </div>
                             {dropcapinha && (
                                 <div>
-                                    <Link id='categoria-menor'> Iphone </Link>
-                                    <Link id='categoria-menor'> Samsung </Link>
-                                    <Link id='categoria-menor'> Motorola </Link>
-                                    <Link id='categoria-menor'> Xiaomi </Link>
+                                    <Link id='categoria-menor' to='/acessorios/5' > Iphone </Link>
+                                    <Link id='categoria-menor' to='/acessorios/6' > Samsung </Link>
+                                    <Link id='categoria-menor' to='/acessorios/7' > Motorola </Link>
+                                    <Link id='categoria-menor' to='/acessorios/8' > Xiaomi </Link>
                                 </div>
 
                             )}
@@ -119,9 +119,9 @@ export default function Menu() {
                                 </div>
                                 {dropcarregadores && (
                                     <div>
-                                        <Link id='categoria-menor'> Cabo light </Link>
-                                        <Link id='categoria-menor'> Tipo C </Link>
-                                        <Link id='categoria-menor'> Tipo USB </Link>
+                                        <Link id='categoria-menor' to='/acessorios/9' > Cabo light </Link>
+                                        <Link id='categoria-menor'  to='/acessorios/10' > Tipo C </Link>
+                                        <Link id='categoria-menor'  to='/acessorios/11' > Tipo USB </Link>
                                     </div>
                                 )}
                             </div>
@@ -140,8 +140,8 @@ export default function Menu() {
                                 </div>
                                 {dropfones && (
                                     <div>
-                                        <Link id='categoria-menor'> bluetooth </Link>
-                                        <Link id='categoria-menor'> Com fio </Link>
+                                        <Link id='categoria-menor'  to='/acessorios/12' > bluetooth </Link>
+                                        <Link id='categoria-menor'  to='/acessorios/13' > Com fio </Link>
                                     </div>
                                 )}
                             </div>

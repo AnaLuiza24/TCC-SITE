@@ -40,7 +40,7 @@ export default function CabecalhoLogado() {
             <header>
                 <section className='cabecalho-um'>
                     <Link to={'/home'}>
-                        <img src='./assets/images/logo.png' alt='logo' id='logo' />
+                        <img src='/assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 
                     <div className='busca'>
