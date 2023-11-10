@@ -11,6 +11,9 @@ export default function Menu() {
     const [exibirlista4, setExibirlista4] = useState(false);
     const [exibirlista5, setExibirlista5] = useState(false);
 
+
+
+    
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
@@ -37,6 +40,8 @@ export default function Menu() {
         setDropfones(!dropfones);
     };
 
+
+
     return (
         <main className='pagina-menu'>
             <div className="menu">
@@ -56,8 +61,8 @@ export default function Menu() {
                     
                     {dropdownOpen && (
                         <div className="dropdown-content">
-                            <Link id='categoria-medio'> Iphone </Link>
-                            <Link id='categoria-medio'> Samsung </Link>
+                            <Link id='categoria-medio' to='/acessorios/1'> Iphone </Link>
+                            <Link id='categoria-medio' to='/acessorios/2'> Samsung </Link>
                             <Link id='categoria-medio'> Motorola </Link>
                             <Link id='categoria-medio'> Xiaomi </Link>
                         </div>
