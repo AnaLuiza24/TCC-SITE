@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import './index.scss';
 import storage from 'local-storage';
+import { Link, useLocation } from 'react-router-dom';
 
 
 export default function ModalAdm({ isOpen, setOpen, usuario }) {
@@ -22,7 +23,7 @@ export default function ModalAdm({ isOpen, setOpen, usuario }) {
 
                             <div className="minha-conta">
                                 <p> {usuario} </p>
-                                <button> MINHA CONTA </button>
+                                <Link to={'/minha-conta'}>   <button> MINHA CONTA </button></Link>
                             </div>
                         </div>
 

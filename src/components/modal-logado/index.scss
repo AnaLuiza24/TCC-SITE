@@ -1,0 +1,134 @@
+.pagina-modal{
+    font-family: 'Inter', sans-serif;
+    
+    .modal{
+        position: absolute;
+        top: 72px;
+        right: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        height: 190px;
+        width: 220px;
+        border: 1px solid #0083CA;
+        border-radius: 15px;
+        z-index: 2;
+
+
+        .qua{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 10px;
+            width: 220px;
+            
+            
+            
+            .usuario{
+                display: flex;
+                flex-direction: row;
+                width: 90%;
+                justify-content: space-around;
+
+
+                span{
+                    display: flex;
+                    font-size: 20px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #0083CA;
+                    color: #fff;
+                }
+
+
+                .minha-conta{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: space-around;
+                    width: 60%;
+                    height: 80%;
+
+                    p{
+                        font-size: 15px;
+                    }
+
+
+                    button{
+                        border-radius: 15px;
+                        width: 75px;
+                        height: 23px;
+                        font-weight: 500;
+                        font-size: 8px;
+                        background-color: #0083CA;
+                        color: #fff;
+                        border: none;
+
+                    }
+                }
+
+            }
+
+            a{
+                height: 35px;
+                width: 150px;
+            }
+
+            button{
+                height: 35px;
+                width: 95%;
+                border: 2px solid #0083CA; 
+                border-radius: 20px;
+                background-color: #ffffff;
+                color: #0083CA;
+                font-size: 13px;
+                font-weight: 700;
+
+            }
+
+        }
+
+        .qua-invi{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 50px;
+            padding: 0px 5px;
+
+            img{
+                width: 18px;
+            }
+
+
+            .logar{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                height: 30px;
+                width: 130px;
+
+                p{
+                    font-size: 12px;
+                    margin-left: 2px;
+                }
+
+                img{
+                    
+                    width: 18px;
+                }
+            }
+        }
+    
+    }
+
+
+
+
+}
