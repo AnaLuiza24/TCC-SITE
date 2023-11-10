@@ -59,7 +59,7 @@ export default function Cabecalho() {
                         <div className='cabecalho-login'>
                             
                         <div className='divisor'>
-                                <img src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
+                                <img  onClick={() => setOpen(!Open)} src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user' />
                                 <div className='sep'>
                                     <img onClick={() => setOpen(!Open)} src='./assets/images/seta.png' alt='seta' id='seta' />
                                     <Modal isOpen={Open} setOpen={setOpen} />

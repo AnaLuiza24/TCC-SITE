@@ -82,7 +82,7 @@ export default function Login() {
                     </div>
                     <div>
                         <img src='./assets/images/password.png' alt='password'/>
-                        <input type='text' placeholder='Senha'  value={senha}
+                        <input type='password' placeholder='Senha'  value={senha}
                             onChange={e => setSenha(e.target.value)} 
                             onKeyUp={teclaEnter}/>
                     </div>

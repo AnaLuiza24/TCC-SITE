@@ -25,10 +25,7 @@ export default function ModalLogado({ isOpen, setOpen, usuario }) {
                                 setTimeout(() => {
                                     navigate('/login')
                                 }, 1800)
-                        
-                            
-    
-                
+
                         }
                     },
     
@@ -36,9 +33,9 @@ export default function ModalLogado({ isOpen, setOpen, usuario }) {
                         label: 'Não'
                     }
                 ]
-            }
-        )
-    }
+             } 
+          )
+         }
 
 
     if (isOpen) {
@@ -47,7 +44,7 @@ export default function ModalLogado({ isOpen, setOpen, usuario }) {
                 <header className="modal">
                     <div className='qua'>
                         <div className="usuario">
-                         
+                        <span> {usuario} </span>
 
                             <div className="minha-conta">
                                 <p> {usuario} </p>
