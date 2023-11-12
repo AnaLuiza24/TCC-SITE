@@ -26,13 +26,13 @@ export default function ListaCliente() {
             <header className='lista-cliente-principal'>
                 <section className='lista-cliente-titulo'>
                     <div>
-                        <img src='./assets/images/editar.png' alt='lista' />
+                        <img src='/assets/images/editar.png' alt='lista' />
                         <h2>Lista de Clientes</h2>
                     </div>
 
                     <div className='busca'>
                         <input type='text' placeholder='Buscar por nome' value={busca} onChange={e => setBusca(e.target.value)}/>
-                        <img src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
+                        <img src='/assets/images/lupa.png' alt='lupa' onClick={buscar}/>
                     </div>
                 </section>
 

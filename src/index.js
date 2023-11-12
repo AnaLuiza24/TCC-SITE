@@ -36,6 +36,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar';
+import { ToastContainer } from 'react-toastify';
 register();
 
 
@@ -43,24 +44,28 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ToastContainer />
       <Routes>
         <Route path='/home' element={<LandingPage />} />
         <Route path='/sobre-nos' element={<SobreNos />} />
         <Route path='/politica-privacidade' element={<PrivacyPolicy />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/login-Adm' element={<LoginAdm />} />
+
         <Route path='/adm' element={<LandingPageADM />} />
+        <Route path='/adm/login' element={<LoginAdm />} />
         <Route path='/cadastro' element={<Cadastro />} />
-        <Route path='/alterar-dados' element={<AlterarDados />} />
-        <Route path='/alterar-senha' element={<AlterarSenha />} />
-        <Route path='/lista-cliente' element={<ListaCliente />} />
-        <Route path='/lista-produto' element={<ListaProduto />} />
-        <Route path='/adicionar-produto' element={<AdicionarProduto />} />
+        <Route path='/adm/lista-cliente' element={<ListaCliente />} />
+        <Route path='/adm/produto/lista' element={<ListaProduto />} />
+        <Route path='/adm/produto/cadastrar' element={<AdicionarProduto />} />
+
         <Route path='/rastrear' element={<Rastrear />} />
         <Route path='/minha-conta' element={<Conta />} />
         <Route path='/confirmacao-entrega' element={<Confirmacao />} />
         <Route path='/endereco' element={<NewEndereco />} />
         <Route path='/smartphones' element={<Smartphones />} />
+
+        <Route path='/alterar-dados' element={<AlterarDados />} />
+        <Route path='/alterar-senha' element={<AlterarSenha />} />
         
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/acessorios/:id' element={<Acessorios />} />

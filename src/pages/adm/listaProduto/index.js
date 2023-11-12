@@ -28,13 +28,13 @@ export default function ListaProduto() {
             <header className='lista-produto-principal'>
                 <section className='lista-produto-titulo'>
                     <div>
-                        <img src='./assets/images/editar.png' alt='lista' />
+                        <img src='/assets/images/editar.png' alt='lista' />
                         <h2>Lista de Produtos</h2>
                     </div>
 
                     <div className='busca'>
                         <input type='text' placeholder='Buscar por nome' value={busca} onChange={e => setBusca(e.target.value)}/>
-                        <img style={{cursor: "pointer"}} src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
+                        <img style={{cursor: "pointer"}} src='/assets/images/lupa.png' alt='lupa' onClick={buscar}/>
                     </div>
                 </section>
 
@@ -59,8 +59,8 @@ export default function ListaProduto() {
                                 <td>{item.disponibilidade = true ? 'Sim' : 'Não'}</td>
                                 <td>
                                     <div>
-                                        <img src='./assets/images/excluir.png' alt='lixo' style={{width: '40px', height: '40px', cursor: 'pointer'}} onClick={() => deletar(item.id)}/>
-                                        <img src='./assets/images/alterar.png' alt='alterar' style={{width: '45px', height: '45px'}}/>
+                                        <img src='/assets/images/excluir.png' alt='lixo' style={{width: '40px', height: '40px', cursor: 'pointer'}} onClick={() => deletar(item.id)}/>
+                                        <img src='/assets/images/alterar.png' alt='alterar' style={{width: '45px', height: '45px'}}/>
                                     </div>
                                 </td>
                             </tr>

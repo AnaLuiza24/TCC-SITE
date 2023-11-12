@@ -45,18 +45,18 @@ export default function Cadastro() {
         <main className='pagina-cadastro'>
             <Cabecalho />
             <header className='cadastro-principal'>
-                <img src='./assets/images/bola-azul2.png' alt="Imagem Flutuante" id="floating-image" />
+                <img src='/assets/images/bola-azul2.png' alt="Imagem Flutuante" id="floating-image" />
 
-                <img src='./assets/images/bola-azul.png' alt="Imagem Flutuante" id="floating-image2" />
+                <img src='/assets/images/bola-azul.png' alt="Imagem Flutuante" id="floating-image2" />
 
 
                 <div className='imagem'>
-                    <img src='./assets/images/cadastro.png' alt='cadastro' />
+                    <img src='/assets/images/cadastro.png' alt='cadastro' />
 
                 </div>
                 <div className='tabela-cadastro'>
                     <div className='titulo'>
-                        <img src='./assets/images/loginsair.png' alt='login' />
+                        <img src='/assets/images/loginsair.png' alt='login' />
                         <h1>CRIE SUA CONTA</h1>
 
                     </div>

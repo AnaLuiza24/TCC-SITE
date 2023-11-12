@@ -1,7 +1,11 @@
 import './index.scss';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import { useEffect, useState } from 'react';
-import { Categorias, Marcas, Adicionar } from '../../../api/produtoApi';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { Categorias, Marcas, Adicionar, enviarImagemUm } from '../../../api/produtoApi';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -15,12 +19,11 @@ export default function AdicionarProduto() {
     const [desc, setDesc] = useState('');
     const [precoPromocao, setPrecoPromocao] = useState('');
     const [imagem, setImagem] = useState('');
-    const [imagem2, setImagem2] = useState('');
 
 
     function salvarCategoria(e) {
         const categoriaId = parseInt(e.target.value);
-            setCategoria(categoriaId);
+        setCategoria(categoriaId);
     }
 
     async function listarMarcas() {
@@ -34,16 +37,26 @@ export default function AdicionarProduto() {
     }
 
     async function adicionar() {
-        try{
-            let r = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
-            window.location.reload()
+        try {
+            let novoProduto = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
+            let r = await enviarImagemUm(novoProduto.id, imagem)
+            console.log(novoProduto.id);
 
-        }catch(err){
-            alert(err.response.data.erro)
+            toast('Produto cadastrado com sucesso!')
+
+        } catch (err) {
+            toast.error(err.response.data.erro)
         }
-        
+
     }
-  
+
+    function escolherImagem() {
+        document.getElementById('produtoImagem').click();
+    }
+
+    function mostrarImagem() {
+        return URL.createObjectURL(imagem);
+    }
 
     useEffect(() => {
         listarMarcas();
@@ -64,9 +77,9 @@ export default function AdicionarProduto() {
                     <h1>Nome e Descrição</h1>
 
                     <div>
-                        <input id='nm-produto' type='text' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)}/>
+                        <input id='nm-produto' type='text' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)} />
                         <select value={marca} onChange={e => setMarca(e.target.value)}>
-                            <option value={0}>Marca</option>
+                            <option value={0}>Selecione</option>
 
                             {marcas.map(item => (
                                 <option value={item.id}>{item.marca}</option>
@@ -79,7 +92,7 @@ export default function AdicionarProduto() {
 
                     <div className='adicionar-produto-cod'>
                         <h1> Cor: </h1>
-                        <input type='text' value={cor} onChange={e => setCor(e.target.value)}/>
+                        <input type='text' value={cor} onChange={e => setCor(e.target.value)} />
                     </div>
                 </section>
 
@@ -89,12 +102,12 @@ export default function AdicionarProduto() {
                     <div>
                         <div>
                             <h4>Preço de venda</h4>
-                            <input type='text' placeholder='R$ 0,00' value={preco} onChange={e => setPreco(e.target.value)}/>
+                            <input type='text' placeholder='R$ 0,00' value={preco} onChange={e => setPreco(e.target.value)} />
                         </div>
 
                         <div>
                             <h4>Preço promocional</h4>
-                            <input type='text' placeholder='R$ 0,00' value={precoPromocao} onChange={e => setPrecoPromocao(e.target.value)}/>
+                            <input type='text' placeholder='R$ 0,00' value={precoPromocao} onChange={e => setPrecoPromocao(e.target.value)} />
                         </div>
 
                     </div>
@@ -106,22 +119,29 @@ export default function AdicionarProduto() {
 
                     <div className='produto-imagem-adicionar'>
 
+                        <div onClick={escolherImagem}>
+
+                            {!imagem &&
                                 <img src="/assets/images/adicionar.png" alt="adicionar" />
-                            
-                                <img src="/assets/images/adicionar.png" alt="adicionar" />
-                            
-                            </div>
+                            }
+
+                            {imagem &&
+                                <img src={mostrarImagem()} alt='imagem' />
+                            }
+
+                            <input type='file' id='produtoImagem' onChange={e => setImagem(e.target.files[0])} />
+                        </div>
+
+                    </div>
 
                     <div className='produto-imagem-qtd'>
                         <h1>Quantidade em estoque: </h1>
-                        <input type='number' placeholder='00' value={qtd} onChange={e => setQtd(e.target.value)}/>
+                        <input type='number' placeholder='00' value={qtd} onChange={e => setQtd(e.target.value)} />
                     </div>
                 </section>
 
                 <div className='adicionar-produto-tipo'>
                     <h1>Tipo de Produto: </h1>
-
-
 
                     <div>
                         {categorias.map(item => (
@@ -134,8 +154,8 @@ export default function AdicionarProduto() {
                     </div>
                 </div>
                 <div className='adicionar-produto-confirmar'>
-                        <button style={{cursor: "pointer"}} onClick={adicionar} >Adicionar</button>
-                    </div>
+                    <button style={{ cursor: "pointer" }} onClick={adicionar} >Adicionar</button>
+                </div>
 
             </header>
         </main>

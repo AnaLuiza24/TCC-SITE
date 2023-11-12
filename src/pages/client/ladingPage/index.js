@@ -44,12 +44,12 @@ export default function LandingPage() {
 
                 <section className='inicial-opcoes'>
                     <div>
-                        <img alt='celular' src='./assets/images/opcoes-celular.png' />
-                        <img alt='carregador' src='./assets/images/opcoes-carreg.png' />
+                        <img alt='celular' src='/assets/images/opcoes-celular.png' />
+                        <img alt='carregador' src='/assets/images/opcoes-carreg.png' />
                     </div>
                     <div>
-                        <img alt='fones' src='./assets/images/opcoes-fone.png' />
-                        <img alt='capinha' src='./assets/images/opcoes-capinha.png' />
+                        <img alt='fones' src='/assets/images/opcoes-fone.png' />
+                        <img alt='capinha' src='/assets/images/opcoes-capinha.png' />
                     </div>
                 </section>
 
@@ -67,7 +67,7 @@ export default function LandingPage() {
                 <section className='inicial-itens'>
                     <div className='itens-box'>
                         <div>
-                            <img alt='itens' src='./assets/images/caixa.png' />
+                            <img alt='itens' src='/assets/images/caixa.png' />
                         </div>
 
                         <div className='itens-box-text'>
@@ -78,7 +78,7 @@ export default function LandingPage() {
 
                     <div className='itens-box'>
                         <div>
-                            <img alt='itens' src='./assets/images/reembolso.png' />
+                            <img alt='itens' src='/assets/images/reembolso.png' />
                         </div>
 
                         <div className='itens-box-text'>
@@ -89,7 +89,7 @@ export default function LandingPage() {
 
                     <div className='itens-box'>
                         <div>
-                            <img alt='itens' src='./assets/images/suporte.png' />
+                            <img alt='itens' src='/assets/images/suporte.png' />
                         </div>
 
                         <div className='itens-box-text'>
@@ -100,7 +100,7 @@ export default function LandingPage() {
 
                     <div className='itens-box'>
                         <div>
-                            <img alt='itens' src='./assets/images/compra-segura.png' />
+                            <img alt='itens' src='/assets/images/compra-segura.png' />
                         </div>
 
                         <div className='itens-box-text'>

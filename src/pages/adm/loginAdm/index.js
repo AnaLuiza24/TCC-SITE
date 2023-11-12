@@ -50,17 +50,17 @@ export default function LoginAdm() {
             <section className='pagina-loginAdm'>
                 <section>
                     <div className='login-titulo'>
-                        <img src='./assets/images/loginsair.png' alt='loginSair' />
+                        <img src='/assets/images/loginsair.png' alt='loginSair' />
                         <h1>LOGIN DE ADMINISTRADOR</h1>
                     </div>
 
                     <div className='login-informacoes'>
                         <div>
-                            <img src='./assets/images/email.png' alt='email' />
+                            <img src='/assets/images/email.png' alt='email' />
                             <input type='text' placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div>
-                            <img src='./assets/images/password.png' alt='password' />
+                            <img src='/assets/images/password.png' alt='password' />
                             <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                         </div>
                         <p>Esqueci minha senha</p>
@@ -76,7 +76,7 @@ export default function LoginAdm() {
                 </section>
 
                 <section>
-                    <img id='lateral' src='./assets/images/tcc-admin 1.png' alt='lateral' />
+                    <img id='lateral' src='/assets/images/tcc-admin 1.png' alt='lateral' />
                 </section>
 
             </section>

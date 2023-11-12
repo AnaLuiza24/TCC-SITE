@@ -9,17 +9,17 @@ export default function LandingPageADM() {
             <header>
                 <section className='inicial-adm-um'>
                     <Link>
-                        <img alt='vendas' src='./assets/images/crescimento.png' style={{width: '35px'}}/>
+                        <img alt='vendas' src='/assets/images/crescimento.png' style={{width: '35px'}}/>
                         <h4>Vendas</h4>
                     </Link>
 
-                    <Link to={'/adicionar-produto'}>
-                        <img alt='produtos' src='./assets/images/etiqueta.png' style={{width: '30px'}}/>
+                    <Link to={'/adm/produto/cadastrar'}>
+                        <img alt='produtos' src='/assets/images/etiqueta.png' style={{width: '30px'}}/>
                         <h4>Cadastro de Produtos</h4>
                     </Link>
 
                     <Link>
-                        <img alt='entregas' src='./assets/images/entrega.png' style={{width: '40px'}}/>
+                        <img alt='entregas' src='/assets/images/entrega.png' style={{width: '40px'}}/>
                         <h4>Lista de Pedidos</h4>
                     </Link>
                 </section>

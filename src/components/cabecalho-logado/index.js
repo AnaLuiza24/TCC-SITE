@@ -51,18 +51,18 @@ export default function CabecalhoLogado() {
                             onKeyPress={handleKeyPress}
                             placeholder='Buscar'
                         />
-                        <img src='./assets/images/lupa.png' alt='lupa' />
+                        <img src='/assets/images/lupa.png' alt='lupa' />
                     </div>
 
                     <div className='cabecalho-itens'>
-                        <Link id='carrinho' to={'/carrinho'}>  <img src='./assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link>
+                        <Link id='carrinho' to={'/carrinho'}>  <img src='/assets/images/carrinho.png' alt='carrinho' id='carrinho' /></Link>
                         <div className='cabecalho-login'>
                             
                         <div className='divisor'>
-                      <img  onClick={() => setOpen(!Open)}  src='./assets/images/userCabecalho.png' alt='userCabecalho' id='user'  />
+                      <img  onClick={() => setOpen(!Open)}  src='/assets/images/userCabecalho.png' alt='userCabecalho' id='user'  />
                         <ModalLogado isOpen={Open} setOpen={setOpen} /> 
                         <div className='sep'>
-                                    <img onClick={() => setOpen(!Open)} src='./assets/images/seta.png' alt='seta' id='seta' />
+                                    <img onClick={() => setOpen(!Open)} src='/assets/images/seta.png' alt='seta' id='seta' />
                                    
                                 </div>
                             </div>

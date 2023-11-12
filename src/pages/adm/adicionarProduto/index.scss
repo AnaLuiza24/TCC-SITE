@@ -148,9 +148,9 @@
                 display: flex;
                 flex-direction: row;
 
-                .imagemCapa{
-                    width: 280px;
-                    height: 190px;
+                #produtoImagem, #produtoImagemDois{
+                    visibility: hidden;
+                    position: absolute;
                 }
 
 

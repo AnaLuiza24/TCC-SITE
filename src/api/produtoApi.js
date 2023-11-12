@@ -40,3 +40,16 @@ export async function Adicionar(marca, categoria, nome, preco, cor, qtd, desc, p
     })
 }
 
+export async function enviarImagemUm(id, imagem) {
+    const formData = new FormData();
+    formData.append('fotoProduto', imagem);
+
+    const r = await api.put(`/alterar/${id}/imagemum`, formData, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    });
+
+    return r.status
+}
+

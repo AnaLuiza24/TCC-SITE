@@ -60,7 +60,7 @@ export default function ModalLogado({ isOpen, setOpen, usuario }) {
 
                     <div className="qua-invi">
                         <div className="logar" onClick={SairDaConta} style={{cursor: "pointer"}}>
-                            <img src="./assets/images/desligar.png" alt="sair" />
+                            <img src="/assets/images/desligar.png" alt="sair" />
                             <p> LOG OUT </p>
                         </div>
 

@@ -21,13 +21,13 @@ export default function ListaPedido() {
             <header className='lista-pedidos-principal'>
                 <section className='lista-pedidos-titulo'>
                     <div>
-                        <img src='./assets/images/editar.png' alt='lista' />
+                        <img src='/assets/images/editar.png' alt='lista' />
                         <h2>Lista de Pedidos</h2>
                     </div>
 
                     <div className='busca'>
                         <input type='text' placeholder='Buscar por nome' value={busca} onChange={e => setBusca(e.target.value)}/>
-                        <img style={{cursor: "pointer"}} src='./assets/images/lupa.png' alt='lupa' onClick={buscar}/>
+                        <img style={{cursor: "pointer"}} src='/assets/images/lupa.png' alt='lupa' onClick={buscar}/>
                     </div>
                 </section>
 
