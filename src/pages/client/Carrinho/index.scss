@@ -26,7 +26,8 @@
 
         .carrinho{
             margin-top: 20px;
-            height: 320px;
+            max-height: 320px;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,8 +41,7 @@
                 
 
                 img{
-                    height: 150px;
-                    width: 150px;
+                    max-width: 150px ;
                 }
             
                 #nor{
@@ -74,8 +74,86 @@
             color: #fff;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
-            height: 40px;
-            width: 150px;
+            font-size: 15px;
+            max-height: 40px;
+            max-width: 150px;
+            height: 100%;
+            width: 100%;
         }
     }
+}
+
+//Responsivo 
+
+@media (max-width: 1200px) {
+
+    .ps{
+        height: 220px;  
+        justify-content: space-around;
+    }
+
+    
+    img{
+        width: 120px;
+    }
+
+       
+
+}
+
+
+@media (max-width: 768px) {
+
+    
+
+    .carrinho{
+        height: 260px;
+        
+
+
+        img{
+            width: 90px;
+        }
+      
+    }
+
+    #nor{
+        font-size: 12px;
+        text-align: center;
+        font-weight: 300;
+        
+    }
+
+    #negrito{
+        font-size: 17px;
+        font-weight: 600;
+    }
+  
+    #adicionaritem{
+        font-size: 11px;
+        max-height: 120px;
+        max-width: 30px;
+    }
+
+}
+
+@media ( max-width: 320px ) {
+
+    img{
+        width: 20px;
+    }
+
+    #nor{
+        font-size: 11px;
+        text-align: center;
+        font-weight: 200;
+        
+    }
+
+    #negrito{
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+
 }
