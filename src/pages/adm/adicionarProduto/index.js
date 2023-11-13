@@ -39,12 +39,16 @@ export default function AdicionarProduto() {
     async function adicionar() {
         try {
             let novoProduto = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
+            
+            console.log(novoProduto);
+            
             let r = await enviarImagemUm(novoProduto.id, imagem)
             console.log(novoProduto.id);
 
             toast('Produto cadastrado com sucesso!')
 
         } catch (err) {
+            console.log(err);
             toast.error(err.response.data.erro)
         }
 

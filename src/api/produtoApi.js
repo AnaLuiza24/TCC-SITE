@@ -38,6 +38,8 @@ export async function Adicionar(marca, categoria, nome, preco, cor, qtd, desc, p
         desc: desc,
         precopromo: precoPromocao
     })
+
+    return r.data;
 }
 
 export async function enviarImagemUm(id, imagem) {
