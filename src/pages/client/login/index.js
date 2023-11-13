@@ -68,7 +68,7 @@ export default function Login() {
         <main className='pagina-principal-login'>
             <Cabecalho />
         <section className='pagina-login'>
-            <section>
+            <section className='conteudo'>
                 <div className='login-titulo'>
                     <img src='/assets/images/loginsair.png' alt='login'/>
                     <h1>LOGIN DE USUÁRIO</h1>
