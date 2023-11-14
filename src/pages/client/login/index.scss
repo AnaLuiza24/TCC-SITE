@@ -47,6 +47,7 @@
                 align-items: center;
                 border: 2px solid #00000010;
                 background: #d9d9d900;
+                max-width: 460px;
                 width: 460px;
                 padding: 2px 8px;
 
@@ -58,6 +59,7 @@
                 input {
                     border: none;
                     outline: none;
+                    max-width: 400px;
                     width: 400px;
                     font-family: 'Inter', sans-serif;
                 }
@@ -178,9 +180,15 @@
     }
 
     .login-informacoes{
-        input{
+
+        div{
+             width: 260px;
             
+            input{
+                width: 200px;
+            }
         }
+        
     }
 
 }
