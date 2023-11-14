@@ -12,6 +12,11 @@ export async function buscarAcessoriosPorMarca(marca){
     return r.data;
 }
 
+export async function buscarSmartphonesPorMarca(marca){
+    const r = await api.get('/smartphone/' + marca);
+    return r.data;
+}
+
 export async function listarAcessorios(){
     const r = await api.get('/acessorios');
     return r.data;

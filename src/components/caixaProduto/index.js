@@ -6,7 +6,7 @@ export default function CaixaProduto(props) {
     return (
         <main className='pagina-caixa-produto'>
             <header className='caixa-produto-principal'>
-                <img alt='imagem' src={info.img1} />
+                <img alt='imagem' src={"http://localhost:5037/"+info.img1} />
 
                 <h5>{info.produto}</h5>
                 <div>
