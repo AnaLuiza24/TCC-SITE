@@ -48,7 +48,6 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 16px 50px;
-            height: 100vh;
             width: 100%;
 
             .menu{
@@ -84,8 +83,12 @@
 
                .produto-vitrine{
                     display: flex;
+                    padding: 0px 20px 40px 20px;
                     flex-direction: row;
                     gap: 30px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: flex-start;
                }
             }
         }
