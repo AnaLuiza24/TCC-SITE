@@ -2,23 +2,41 @@ import axios from 'axios'
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import './index.scss';
 import { useState } from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import { buscarProdutos, deletarProduto } from '../../../api/admApi';
 
 export default function ListaProduto() {
     const [produtos, setProdutos] = useState([]);
     const [busca, setBusca] = useState('')
 
     async function buscar(){
-        let url = 'http://localhost:5037/listar/produtos?nome=' + busca;
-        let resp = await axios.get(url);
-        setProdutos([...resp.data]);
+        let r = await buscarProdutos(busca);
+        setProdutos([...r]);
     }
 
     async function deletar(id){
-        let url = 'http://localhost:5037/deletar/' + id;
-        let resp = await axios.delete(url);
-        buscar();
 
-        return resp;
+        confirmAlert(
+            {
+                title: 'Deletar produto',
+                message: `Deseja deletar esse produto ? `,
+                buttons: [
+                    {
+                        label:'Sim',
+                        onClick: async () => {
+                           
+                            let r = await deletarProduto(id);
+                            buscar();
+
+                        }
+                    },
+    
+                    {
+                        label: 'Não'
+                    }
+                ]
+             } 
+          )
     }
 
 

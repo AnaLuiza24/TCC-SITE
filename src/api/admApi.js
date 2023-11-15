@@ -17,3 +17,13 @@ export async function buscarClientes(busca){
     
     return r.data
 }
+
+export async function buscarProdutos(busca){
+    let r = await api.get('/listar/produtos?nome=' + busca);
+
+    return r.data
+}
+
+export async function deletarProduto(id){
+    let r = await api.delete('/deletar/' + id);
+}

@@ -10,7 +10,7 @@ export default function ModalAdm({ isOpen, setOpen, usuario }) {
 
     function sair() {
         storage.remove('usuario-logado');
-        navigate('/login-Adm');
+        navigate('/adm/login');
     }
 
     if (isOpen) {

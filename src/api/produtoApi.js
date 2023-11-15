@@ -60,3 +60,15 @@ export async function enviarImagemUm(id, imagem) {
     return r.status
 }
 
+export async function enviarImagemDois(id, imagemDois) {
+    const formData = new FormData();
+    formData.append('fotoProduto', imagemDois);
+    const r = await api.put(`/alterar/${id}/imagemdois`, formData, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    });
+
+    return r.status
+}
+

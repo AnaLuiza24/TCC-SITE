@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Categorias, Marcas, Adicionar, enviarImagemUm } from '../../../api/produtoApi';
+import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois } from '../../../api/produtoApi';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -19,6 +19,7 @@ export default function AdicionarProduto() {
     const [desc, setDesc] = useState('');
     const [precoPromocao, setPrecoPromocao] = useState('');
     const [imagem, setImagem] = useState('');
+    const [imagemDois, setImagemDois] = useState('');
 
 
     function salvarCategoria(e) {
@@ -39,10 +40,11 @@ export default function AdicionarProduto() {
     async function adicionar() {
         try {
             let novoProduto = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
-            
+
             console.log(novoProduto);
-            
-            let r = await enviarImagemUm(novoProduto.id, imagem)
+
+            let r1 = await enviarImagemUm(novoProduto.id, imagem)
+            let r2 = await enviarImagemDois(novoProduto.id, imagemDois)
             console.log(novoProduto.id);
 
             toast('Produto cadastrado com sucesso!')
@@ -57,9 +59,17 @@ export default function AdicionarProduto() {
     function escolherImagem() {
         document.getElementById('produtoImagem').click();
     }
-
     function mostrarImagem() {
         return URL.createObjectURL(imagem);
+    }
+
+    //imagem dois
+    function escolherImagemDois() {
+        document.getElementById('produtoImagemDois').click();
+    }
+
+    function mostrarImagemDois() {
+        return URL.createObjectURL(imagemDois);
     }
 
     useEffect(() => {
@@ -135,6 +145,19 @@ export default function AdicionarProduto() {
 
                             <input type='file' id='produtoImagem' onChange={e => setImagem(e.target.files[0])} />
                         </div>
+
+                        <div onClick={escolherImagemDois}>
+                            {!imagemDois &&
+                                <img src="/assets/images/adicionar.png" alt="adicionar" />
+                            }
+
+                            {imagem &&
+                                <img src={mostrarImagemDois()} alt='imagem-dois' />
+                            }
+
+                            <input type='file' id='produtoImagem' onChange={e => setImagemDois(e.target.files[0])} />
+                        </div>
+
 
                     </div>
 

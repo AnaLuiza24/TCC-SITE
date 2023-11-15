@@ -14,7 +14,7 @@ export default function CabecalhoAdm() {
 
     useEffect(() => {
         if (!storage('usuario-logado')) {
-            navigate('/login-Adm');
+            navigate('/adm/login');
         }
         else {
             const usuarioLogado = storage('usuario-logado');
