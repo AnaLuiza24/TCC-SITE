@@ -9,7 +9,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function Acessorios() {
-    const [produto, setProdutos] = useState([]);
+
+    const [produtos, setProdutos] = useState([]);
     const [erro, setErro] = useState('');
 
 
@@ -52,6 +53,10 @@ export default function Acessorios() {
         }
     }
 
+    useEffect(() => {
+        listarTodos();
+    }, [])
+
 
     return (
         <main className='pagina-principal-acessorios'>
@@ -70,7 +75,9 @@ export default function Acessorios() {
                         </div>
 
                         <div className='produto-vitrine'>
-                            <CaixaProduto info={produto}/>
+                            {produtos.map(produto => 
+                                    <CaixaProduto info={produto}/>   
+                                )}
                         </div>
                     </article>
                   
