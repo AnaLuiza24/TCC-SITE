@@ -151,11 +151,11 @@ export default function AdicionarProduto() {
                                 <img src="/assets/images/adicionar.png" alt="adicionar" />
                             }
 
-                            {imagem &&
+                            {imagemDois &&
                                 <img src={mostrarImagemDois()} alt='imagem-dois' />
                             }
 
-                            <input type='file' id='produtoImagem' onChange={e => setImagemDois(e.target.files[0])} />
+                            <input type='file' id='produtoImagemDois' onChange={e => setImagemDois(e.target.files[0])} />
                         </div>
 
 
