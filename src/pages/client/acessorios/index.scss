@@ -1,5 +1,5 @@
-.pagina-principal-acessorios{
-    
+.pagina-principal-acessorios {
+
     font-family: 'Inter', sans-serif;
 
     .pagina-cabecalho {
@@ -13,27 +13,27 @@
         }
     }
 
-    .acessorios-menu{
-        .pagina-menu{
-            #titulo-acessorios{
+    .acessorios-menu {
+        .pagina-menu {
+            #titulo-acessorios {
                 color: #0083ca;
                 font-weight: 400;
             }
-    
-            #titulo-smartphone{
+
+            #titulo-smartphone {
                 color: #000;
             }
         }
     }
 
-    .pagina-acessorios{
+    .pagina-acessorios {
         display: flex;
         flex-direction: column;
         background-color: #EFEFEF;
         height: 100%;
         width: 100%;
 
-        .divisoria{
+        .divisoria {
             height: 40px;
             width: 100vh;
             display: flex;
@@ -43,7 +43,7 @@
             padding: 20px;
         }
 
-        .acessorios-menu{
+        .acessorios-menu {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -51,23 +51,23 @@
             height: 100vh;
             width: 100%;
 
-            .menu{
+            .menu {
                 display: flex;
                 flex-direction: column;
                 max-height: 100%;
                 width: 30vh;
                 background-color: #fff;
                 border-radius: 17px;
-                
 
-                .acessorios-menu{
+
+                .acessorios-menu {
                     display: flex;
                     flex-direction: column;
                 }
             }
 
 
-            .acessorios-vitrine{
+            .acessorios-vitrine {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -75,18 +75,22 @@
                 width: 65vw;
                 border-radius: 17px;
 
-                .titulo-vitrine{
+                .titulo-vitrine {
                     display: flex;
                     width: 100%;
                     padding: 30px 35px;
                     font-size: 22px;
-               }
+                }
 
-               .produto-vitrine{
+                .produto-vitrine {
                     display: flex;
+                    padding: 0px 20px 40px 20px;
                     flex-direction: row;
                     gap: 30px;
-               }
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
             }
         }
 

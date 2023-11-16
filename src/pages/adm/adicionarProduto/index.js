@@ -140,7 +140,7 @@ export default function AdicionarProduto() {
                             }
 
                             {imagem &&
-                                <img src={mostrarImagem()} alt='imagem' />
+                                <img style={{width: "150px"}} src={mostrarImagem()} alt='imagem' />
                             }
 
                             <input type='file' id='produtoImagem' onChange={e => setImagem(e.target.files[0])} />
@@ -152,7 +152,7 @@ export default function AdicionarProduto() {
                             }
 
                             {imagemDois &&
-                                <img src={mostrarImagemDois()} alt='imagem-dois' />
+                                <img style={{width: "150px"}} src={mostrarImagemDois()} alt='imagem-dois' />
                             }
 
                             <input type='file' id='produtoImagemDois' onChange={e => setImagemDois(e.target.files[0])} />
