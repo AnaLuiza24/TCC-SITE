@@ -2,9 +2,45 @@ import Cabecalho from '../../../components/cabecalho';
 import './index.scss';
 import Rodape from '../../../components/rodape';
 import CabecalhoLogado from '../../../components/cabecalho-logado';
-import storage from 'local-storage'
+import storage from 'local-storage';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 export default function AlterarSenha(){
+  
+    const usuario = storage('usuario-logado')
+    const [senhaAtual, setsenhaAtual] = useState('');
+    const [senha, setSenha] = useState('');
+    const [confirmarSenha, setConfirmarSenha] = useState('');
+    const [erro, setErro] = useState('');
+    const navigate = useNavigate();
+
+    
+    async function alterar() {
+        try {
+            const pessoa = {
+                senhaAtual: senhaAtual,
+                senha: senha,
+                id:usuario.id
+            }
+            console.log(pessoa)
+
+            if (senha === confirmarSenha || senha.length > 6) {
+
+                const r = await axios.put('http://localhost:5037/cliente/senha', pessoa);
+                navigate('/login');
+                alert('alterado')
+            }
+        } catch (err) {
+            setErro(err.response.data.er)
+            alert(err.response.data.er)
+        }
+
+    }
+
+
 
     return(
         <div className='pagina-Alterar'>
@@ -28,9 +64,9 @@ export default function AlterarSenha(){
                                      <div className="input-container">
 
                                             <label htmlFor="campo-de-entrada" className="input-title">
-                                             Senha atual
+                                            Senha Atual
                                             </label>
-                                            <input type="password" id="campo-de-entrada" />
+                                            <input type="password" id="campo-de-entrada" onChange={e => setsenhaAtual(e.target.value)} />
 
                                     </div>
 
@@ -40,7 +76,7 @@ export default function AlterarSenha(){
                                         <label htmlFor="campo-de-entrada" className="input-title">
                                           Nova senha 
                                         </label>
-                                        <input type="password" id="campo-de-entrada"  />
+                                        <input type="password" id="campo-de-entrada" onChange={e => setSenha(e.target.value)} />
 
                                     </div>
 
@@ -49,11 +85,11 @@ export default function AlterarSenha(){
                                             <label htmlFor="campo-de-entrada" className="input-title">
                                                 Confirmar a senha
                                             </label>
-                                            <input type="password" id="campo-de-entrada" />
+                                            <input type="password" id="campo-de-entrada" onChange={e => setConfirmarSenha(e.target.value)}/>
 
                                     </div>
 
-                                    <button>Alterar</button>
+                                    <button onClick={alterar}>Alterar</button>
                                 </div>
 
 

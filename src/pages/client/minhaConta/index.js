@@ -3,7 +3,6 @@ import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
-import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 
