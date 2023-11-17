@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { api_url } from '../constant';
 const api = axios.create({
-    baseURL: "http://localhost:5037"
+    baseURL: api_url
 })
 
 export async function loginAdm(email, senha) {

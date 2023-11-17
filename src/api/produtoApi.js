@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { api_url } from '../constant';
 const api = axios.create({
-    baseURL: "http://localhost:5037"
+    baseURL: api_url
 })
 
 export async function listarSmartphones(){
@@ -8,7 +9,7 @@ export async function listarSmartphones(){
     return r.data;
 }
 export async function buscarAcessoriosPorMarca(marca){
-    const r = await api.get('/consultar/acessorios?marca=' + marca);
+    const r = await api.get('/acessorios/' + marca);
     return r.data;
 }
 

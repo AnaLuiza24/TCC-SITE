@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
+import Rodape from '../../../components/rodape';
 
 export default function Smartphones() {
 
@@ -59,7 +60,6 @@ export default function Smartphones() {
              {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <header className='pagina-smartphone'>
                 <section className='divisoria'>
-                    <p> Home - Smartphones </p>
                 </section>
 
                 <section className='smartphone-menu'>
@@ -78,6 +78,7 @@ export default function Smartphones() {
                     </article>
                 </section>
             </header>
+            < Rodape />
         </main>
     )
 }

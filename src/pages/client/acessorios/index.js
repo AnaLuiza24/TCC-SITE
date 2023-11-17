@@ -7,6 +7,7 @@ import storage from 'local-storage';
 import { buscarAcessoriosPorMarca, listarAcessorios } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Rodape from '../../../components/rodape';
 
 export default function Acessorios() {
 
@@ -62,7 +63,6 @@ export default function Acessorios() {
             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
             <header className='pagina-acessorios'>
                 <section className='divisoria'>
-                    <p> Home  Acessórios </p>
                 </section>
 
                 <section className='acessorios-menu'>
@@ -82,6 +82,7 @@ export default function Acessorios() {
                   
                 </section>
             </header>
+            <Rodape />
         </main>
     )
 }
