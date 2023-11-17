@@ -13,7 +13,6 @@ export default function Acessorios() {
     const [produtos, setProdutos] = useState([]);
     const [erro, setErro] = useState('');
 
-
     let { id } = useParams();
 
     useEffect(() => {
