@@ -9,14 +9,13 @@ export default function Rodape() {
                     <div>
                         <h4>AJUDA</h4>
                         <Link to={'/atendimento-cliente'}>Atendimento ao cliente</Link>
-                        <Link to={'/duvidas-frequentes'}>Dúvidas Frequentes</Link>
                         <Link to={'/politica-privacidade'}>Política de Privacidade</Link>
                     </div>
 
                     <div>
                         <h4>INFORMAÇÃO CORPORATIVA</h4>
                         <Link to={'/sobre-nos'}>O que nós somos</Link>
-                        <Link>Contato</Link>
+                        <Link to={'/duvidas-frequentes'}>Dúvidas Frequentes</Link>
                     </div>
 
                     <div>
