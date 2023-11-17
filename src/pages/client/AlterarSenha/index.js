@@ -5,7 +5,7 @@ import CabecalhoLogado from '../../../components/cabecalho-logado';
 import storage from 'local-storage';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { alterarSenha } from '../../../api/usuarioApi';
 
 
 export default function AlterarSenha(){
@@ -20,16 +20,11 @@ export default function AlterarSenha(){
     
     async function alterar() {
         try {
-            const pessoa = {
-                senhaAtual: senhaAtual,
-                senha: senha,
-                id:usuario.id
-            }
-            console.log(pessoa)
+            const id = usuario.id;
 
             if (senha === confirmarSenha || senha.length > 6) {
 
-                const r = await axios.put('http://localhost:5037/cliente/senha', pessoa);
+                const r = await alterarSenha(senha, id)
                 navigate('/login');
                 alert('alterado')
             }

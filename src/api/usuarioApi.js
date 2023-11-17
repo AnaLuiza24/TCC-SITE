@@ -13,12 +13,21 @@ export async function cadastrarUsuario(nome, email, senha, nasc, telefone) {
     })
 }
 
-export async function alterarCliente(nome, email, nasc, telefone) {
+export async function alterarCliente(nome, email, nasc, telefone, id) {
     const r = await api.put('/cliente', {
         nome: nome,
         email: email,
-        nasc: nasc,
-        telefone: telefone
+        nascimento: nasc,
+        telefone: telefone,
+        id: id
     })
 }
+
+export async function alterarSenha(senha, id) {
+    const r = await api.put('/cliente/senha', {
+        senha: senha,
+        id: id
+    })
+}
+
 

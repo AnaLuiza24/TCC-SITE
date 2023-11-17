@@ -6,7 +6,6 @@ import storage from 'local-storage';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { alterarCliente } from '../../../api/usuarioApi';
-import axios from 'axios';
 
 
 export default function AlterarDados() {
@@ -19,21 +18,15 @@ export default function AlterarDados() {
     const [erro, setErro] = useState('');
     const navigate = useNavigate();
 
+    const id = usuario.id;
+
     async function alterar() {
         try {
-            const cliente = {
-                nome: nome,
-                email: email,
-                nascimento: nascimento,
-                telefone: telefone,
-                id:usuario.id
-            }
-            console.log(cliente)    
-                const r = await axios.put('http://localhost:5037/cliente', cliente);
-                navigate('/login');
-                alert('alterado');
-            
-            
+            const r = await alterarCliente(nome, email, nascimento, telefone, id);
+            navigate('/login');
+            alert('alterado');
+
+
         } catch (err) {
             setErro(err.response.data.er)
             alert(err.response.data.er)
@@ -43,7 +36,7 @@ export default function AlterarDados() {
 
     return (
         <main className='pagina-dados'>
-            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho />}
 
             <header className='corpo'>
 
