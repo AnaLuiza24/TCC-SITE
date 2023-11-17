@@ -64,7 +64,7 @@ root.render(
         <Route path='/endereco' element={<NewEndereco />} />
 
         <Route path='/smartphones' element={<Smartphones />} />
-        <Route path='/smartphones/:id' element={<Acessorios />} />
+        <Route path='/smartphones/:id' element={<Smartphones />} />
 
         <Route path='/alterar-dados' element={<AlterarDados />} />
         <Route path='/alterar-senha' element={<AlterarSenha />} />
