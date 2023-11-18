@@ -73,3 +73,17 @@ export async function enviarImagemDois(id, imagemDois) {
     return r.status
 }
 
+export async function alterarProduto(id, marca, categoria, nome, preco, cor, qtd, desc, precoPromocao) {
+    const r = await api.post(`/produto/${id}`, {
+        marca: marca,
+        categoria: categoria,
+        nome: nome,
+        preco: preco,
+        cor: cor,
+        qtd: qtd,
+        desc: desc,
+        precopromo: precoPromocao
+    })
+
+    return r.data;
+}

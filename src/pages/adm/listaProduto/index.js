@@ -12,6 +12,7 @@ export default function ListaProduto() {
     async function buscar(){
         let r = await buscarProdutos(busca);
         setProdutos([...r]);
+        console.log(r);
     }
 
     async function deletar(id){

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois } from '../../../api/produtoApi';
+import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois, alterarProduto } from '../../../api/produtoApi';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -13,13 +13,14 @@ export default function AdicionarProduto() {
     const [categorias, setCategorias] = useState([]);
     const [categoria, setCategoria] = useState(0);
     const [nome, setNome] = useState('');
-    const [preco, setPreco] = useState('');
+    const [preco, setPreco] = useState();
     const [cor, setCor] = useState('');
-    const [qtd, setQtd] = useState('');
+    const [qtd, setQtd] = useState(0);
     const [desc, setDesc] = useState('');
-    const [precoPromocao, setPrecoPromocao] = useState('');
-    const [imagem, setImagem] = useState('');
-    const [imagemDois, setImagemDois] = useState('');
+    const [precoPromocao, setPrecoPromocao] = useState();
+    const [imagem, setImagem] = useState();
+    const [imagemDois, setImagemDois] = useState();
+    const [id, setId] = useState(0);
 
 
     function salvarCategoria(e) {
@@ -38,20 +39,28 @@ export default function AdicionarProduto() {
     }
 
     async function adicionar() {
+        console.log("entrou");
         try {
-            let novoProduto = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
+            
 
-            console.log(novoProduto);
+            if (id === 0) {
+                let novoProduto = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
+                await enviarImagemUm(novoProduto.id, imagem);
+                await enviarImagemDois(novoProduto.id, imagemDois);
 
-            let r1 = await enviarImagemUm(novoProduto.id, imagem)
-            let r2 = await enviarImagemDois(novoProduto.id, imagemDois)
-            console.log(novoProduto.id);
+                setId(novoProduto.id);
+            }else{
+                await alterarProduto(id, marca, categoria, nome, preco, cor, qtd, desc, precoPromocao); 
+                await enviarImagemUm(id, imagem);
+                await enviarImagemDois(id, imagemDois);
+            }
 
-            toast('Produto cadastrado com sucesso!')
+            toast('Produto cadastrado com sucesso!');
 
         } catch (err) {
             console.log(err);
             toast.error(err.response.data.erro)
+            console.log(err.response.data.erro);
         }
 
     }
@@ -70,6 +79,20 @@ export default function AdicionarProduto() {
 
     function mostrarImagemDois() {
         return URL.createObjectURL(imagemDois);
+    }
+
+    function novo() {
+        setId(0);
+        setMarca(0);
+        setCategoria(0);
+        setNome('');
+        setPreco('');
+        setCor('');
+        setQtd(0);
+        setDesc('');
+        setPrecoPromocao('');
+        setImagem();
+        setImagemDois();
     }
 
     useEffect(() => {
@@ -140,7 +163,7 @@ export default function AdicionarProduto() {
                             }
 
                             {imagem &&
-                                <img style={{width: "150px"}} src={mostrarImagem()} alt='imagem' />
+                                <img style={{ width: "150px" }} src={mostrarImagem()} alt='imagem' />
                             }
 
                             <input type='file' id='produtoImagem' onChange={e => setImagem(e.target.files[0])} />
@@ -152,7 +175,7 @@ export default function AdicionarProduto() {
                             }
 
                             {imagemDois &&
-                                <img style={{width: "150px"}} src={mostrarImagemDois()} alt='imagem-dois' />
+                                <img style={{ width: "150px" }} src={mostrarImagemDois()} alt='imagem-dois' />
                             }
 
                             <input type='file' id='produtoImagemDois' onChange={e => setImagemDois(e.target.files[0])} />
@@ -181,7 +204,8 @@ export default function AdicionarProduto() {
                     </div>
                 </div>
                 <div className='adicionar-produto-confirmar'>
-                    <button style={{ cursor: "pointer" }} onClick={adicionar} >Adicionar</button>
+                    <button style={{ cursor: "pointer" }} onClick={adicionar} >Adicionar</button> &nbsp; &nbsp;
+                    <button onClick={novo}>NOVO</button>
                 </div>
 
             </header>
