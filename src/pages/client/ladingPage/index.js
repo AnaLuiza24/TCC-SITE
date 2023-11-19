@@ -5,6 +5,7 @@ import './index.scss';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import storage from 'local-storage';
 import CabecalhoLogado from '../../../components/cabecalho-logado';
+import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
 
@@ -44,12 +45,25 @@ export default function LandingPage() {
 
                 <section className='inicial-opcoes'>
                     <div>
-                        <img alt='celular' src='/assets/images/opcoes-celular.png' />
-                        <img alt='carregador' src='/assets/images/opcoes-carreg.png' />
+                        <Link to={'/smartphones'}> 
+                            <img alt='celular' src='/assets/images/opcoes-celular.png' /> 
+                        </Link>
+                        
+                        <Link to={'/acessorios/9'}>
+                           <img alt='carregador' src='/assets/images/opcoes-carreg.png' /> 
+                        </Link>
+                        
                     </div>
+                    
                     <div>
-                        <img alt='fones' src='/assets/images/opcoes-fone.png' />
-                        <img alt='capinha' src='/assets/images/opcoes-capinha.png' />
+                        <Link to={'/acessorios/12'}>
+                            <img alt='fones' src='/assets/images/opcoes-fone.png' />
+                        </Link>
+
+                        <Link to={'/acessorios/5'}>
+                            <img alt='capinha' src='/assets/images/opcoes-capinha.png' />
+                        </Link>
+                        
                     </div>
                 </section>
 
