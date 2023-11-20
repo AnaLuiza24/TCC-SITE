@@ -1,4 +1,4 @@
-import { api_url } from '../../constant';
+import { api_url } from '../../constant.js';
 import './index.scss';
 
 export default function CaixaProduto(props) {
