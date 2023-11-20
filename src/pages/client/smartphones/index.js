@@ -72,7 +72,7 @@ export default function Smartphones() {
 
                         <div className='produto-vitrine'>
                             {produtos.map(produto => 
-                                <CaixaProduto info={produto}/>   
+                                <CaixaProduto key={produto.id} info={produto}/>   
                             )}
                         </div>
                     </article>
