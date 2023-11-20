@@ -2,12 +2,38 @@ import './index.scss';
 import storage from 'local-storage';
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
+import Storage from 'local-storage'
+import { buscaProdutoPorId } from '../../../api/produtoApi';
+
 import Cabecalho from '../../../components/cabecalho';
 
 export default function CarrinhoProduto() {
 
     const [CEP, setCEP] = useState('');
+
+    const [itens, setItens] = useState([]);
+
+     async function carregarCarrinho(){
+        let carrinho = Storage('carrinho')
+        if(carrinho){
+            console.log('passou aqui')
+            for(let produto  of carrinho){
+                let p = await buscaProdutoPorId(produto.id);
+                setItens(...itens,{
+                    produto: p,
+                    qtd: produto.qtd
+                })
+            }
+
+        }
+
+        console.log(itens);
+    }
+
+    useEffect(() =>{
+        carregarCarrinho();
+    }, [])
 
 
     return (

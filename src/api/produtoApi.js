@@ -4,6 +4,16 @@ const api = axios.create({
     baseURL: api_url
 })
 
+export async function listarProdutosInicio(){
+    const r = await api.get('/api/produto');
+    return r.data;
+}
+
+export async function buscaProdutoPorId(id) {
+    const r = await api.get('/api/produto/' + id);
+    return r.data;
+}
+
 export async function listarSmartphones(){
     const r = await api.get('/smartphones');
     return r.data;
