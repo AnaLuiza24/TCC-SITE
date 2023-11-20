@@ -195,7 +195,7 @@ export default function AdicionarProduto() {
 
                     <div>
                         {categorias.map(item => (
-                            <div key={item.id}>
+                            <div>
                                 <input type='checkbox' value={item.id} onChange={salvarCategoria} checked={categoria === item.id} />
                                 <p>{item.categoria}</p>
                             </div>
