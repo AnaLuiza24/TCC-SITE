@@ -65,7 +65,7 @@ export default function Menu() {
                     
                     {dropdownOpen && (
                         <div className="dropdown-content">
-                            <Link id='categoria-medio' to='/smartphones/1'> Iphone </Link>
+                            <Link id='categoria-medio' to='/smartphones/1'> Apple </Link>
                             <Link id='categoria-medio' to='/smartphones/2'> Samsung </Link>
                             <Link id='categoria-medio' to='/smartphones/3' > Motorola </Link>
                             <Link id='categoria-medio' to='/smartphones/4' > Xiaomi </Link>

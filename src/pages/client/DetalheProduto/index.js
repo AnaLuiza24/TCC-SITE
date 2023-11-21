@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 
 export default function Detalhe() {
 	const navigate = useNavigate();
-	const [produto, setProduto] = useState({ categorias: [], imagens: [] , info: {} })
+	const [produto, setProduto] = useState({ categorias: [], imagens: [], info: {} })
 	const [image, setImage] = useState(Iphone);
 	const [productName, setProductName] = useState(`iPhone 13 Apple 128GB Meia-noite Tela de 6,1", Câmera dupla de 12MP`);
 	const [oldPrice, setOldPrice] = useState(0);
@@ -21,35 +21,19 @@ export default function Detalhe() {
 	const [discount, setDiscount] = useState(0);
 	const { id } = useParams();
 
-	useEffect(() => {
-		setDiscount(oldPrice - newPrice);
-	}, []);
+	const [prod, setProd] = useState(produto);
+	const [carrinho, setCarrinho] = useState([]);
 
-	async function carregarPagina(){
-		const r = await buscaProdutoPorId(id);
-		setProduto(r);
-	}
+	const addProduto = (id) => {
+		const newProd = prod.find(item => item.id === id)
 
-	function adcionarProduto(){
-		let carrinho = [];
-		if(Storage('carrinho')){
-			carrinho = Storage('carrinho')
-		}
-
-		if(carrinho.find(item => item.id === id)){
-			carrinho.push({
-				id: id, 
-				qtd: 1
-			})
-			Storage('carrinho', carrinho )
-		}
-
-		toast.dark('Produto adcionado ao carrinho!')
+		const novoCarrinho = [...carrinho, newProd];
+		setCarrinho(novoCarrinho)
+		
+		localStorage.setItem('produto-carrinho', 
+		JSON.stringify(novoCarrinho));
 	}
 	
-	useEffect(() => {
-		carregarPagina();
-	}, [] )
 
 	return (
 		<main className="pagina-detalhe-produto">
@@ -57,7 +41,7 @@ export default function Detalhe() {
 			<header className="Content">
 				<div className="Main-card">
 					<div className="Card">
-			
+
 						<div className="Product">
 							{" "}
 							{/* Div parte do produto */}
