@@ -4,7 +4,7 @@ import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
 import { buscarSmartphonesPorMarca, listarSmartphones } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
 import Rodape from '../../../components/rodape';
@@ -15,6 +15,7 @@ export default function Smartphones() {
     const [erro, setErro] = useState('');
 
     let { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (id) {
@@ -55,6 +56,10 @@ export default function Smartphones() {
         listarTodos();
     }, [])
 
+    function abrirDetalhes(id){
+        navigate(`/detalhe-produto/${id}`);
+    }
+
     return (
         <main className='pagina-principal-smartphone'>
              {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
@@ -72,7 +77,7 @@ export default function Smartphones() {
 
                         <div className='produto-vitrine'>
                             {produtos.map(produto => 
-                                <CaixaProduto key={produto.id} info={produto}/>   
+                                <CaixaProduto key={produto.id} info={produto} />   
                             )}
                         </div>
                     </article>

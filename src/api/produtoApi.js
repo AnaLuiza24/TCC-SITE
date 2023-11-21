@@ -4,13 +4,8 @@ const api = axios.create({
     baseURL: api_url
 })
 
-export async function listarProdutosInicio(){
-    const r = await api.get('/api/produto');
-    return r.data;
-}
-
 export async function buscaProdutoPorId(id) {
-    const r = await api.get('/api/produto/' + id);
+    const r = await api.get('/produto/' + id);
     return r.data;
 }
 

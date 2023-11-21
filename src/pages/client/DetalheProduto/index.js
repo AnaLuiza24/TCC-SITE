@@ -2,11 +2,12 @@ import "./index.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import Iphone from "../../../assets/images/iphone13.png";
 import Iphone2 from "../../../assets/images/iphone13.webp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
 import Storage from "local-storage";
+import { buscaProdutoPorId } from '../../../api/produtoApi';
 
 
 export default function Detalhe() {
@@ -16,8 +17,18 @@ export default function Detalhe() {
 	const [oldPrice, setOldPrice] = useState(0);
 	const [newPrice, setNewPrice] = useState(0);
 	const [discount, setDiscount] = useState(0);
+	const [produto, setProduto] = useState({});
+
 	const { id } = useParams();
 
+	useEffect(() =>{
+		CarregarProduto();
+	}, [])
+
+	async function CarregarProduto() {
+		let r = await buscaProdutoPorId(id);
+		setProduto(r);
+	}
 
 	return (
 		<main className="pagina-detalhe-produto">
@@ -47,21 +58,21 @@ export default function Detalhe() {
 							</div>
 							<div className="Product-informations">
 								<div className="div-title">
-									<h1>{productName}</h1>
+									<h1>{produto.produto}</h1>
 								</div>
 								<div className="div-price">
 									<span className="old-price">
-										<s>R$ {oldPrice}</s>
+										<s>R$ {produto.preco}</s>
 									</span>
-									<span className="new-price">R$ {newPrice}</span>
+									<span className="new-price">R$ {produto.promocao}</span>
 								</div>
 								<div className="div-buttons">
 									<div className="discount">
 										<span>
-											Economize <span style={{ color: "#fff021", fontWeight: "600", fontStyle: "italic", letterSpacing: "1px" }}>R${discount}</span>
+											Economize <span style={{ color: "#fff021", fontWeight: "600", fontStyle: "italic", letterSpacing: "1px" }}>R${produto.preco - produto.promocao}</span>
 										</span>
 									</div>
-									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${newPrice / 10} sem juros</span>
+									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${produto.promocao / 10} sem juros</span>
 									<button className="buy-button">Compre Já</button>
 									<button className="cart-button">
 										<span >Adicione ao Carrinho</span>
@@ -75,9 +86,7 @@ export default function Detalhe() {
 							</div>
 							<div className="div-content">
 								<span className="description-text">
-									Apple iPhone 13 128GB Meia-noite Tela 6,1” 12MP
-									iPhone 13. O sistema de câmera dupla mais avançado em um iPhone. Chip A15 Bionic com velocidade impressionante. Um grande salto em bateria. Projetado para durar. 5G ultrarrápido*. E tela Super Retina XDR mais brilhante. Avisos legais: *É preciso ter um plano de dados. 5G só está disponível em alguns países e por meio de determinadas operadoras. As velocidades variam de acordo com as condições e operadoras locais. Para obter detalhes sobre a compatibilidade com 5G, entre em contato com sua operadora e consulte apple.com/br/iphones/.
-									with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+									{produto.descri}
 								</span>
 							</div>
 						</div>
@@ -86,7 +95,7 @@ export default function Detalhe() {
 								<span className="specification">Marca</span>
 								<div className="space"></div>
 								<div className="detail">
-									<span className="detail-text">Apple</span>
+									<span className="detail-text">{produto.marca}</span>
 								</div>
 							</div>
 
@@ -94,8 +103,8 @@ export default function Detalhe() {
 								<span className="specification">Cor</span>
 								<div className="space"></div>
 								<div className="detail">
-									<span className="detail-text">Amarelo</span>
-								</div>
+{									<span className="detail-text">{produto.cores}</span>
+}								</div>
 							</div>
 						</div>
 					</div>
