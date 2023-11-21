@@ -106,7 +106,7 @@ export default function AdicionarProduto() {
             <header className='adicionar-produto-principal'>
 
                 <section className='adicionar-produto-titulo'>
-                    <img src='/assets/images/add.png' alt='adicionar' />
+                    <img onClick={novo} style={{cursor: "pointer"}} src='/assets/images/add.png' alt='adicionar' />
                     <h1> Adicionar um novo produto </h1>
                 </section>
 
@@ -205,7 +205,6 @@ export default function AdicionarProduto() {
                 </div>
                 <div className='adicionar-produto-confirmar'>
                     <button style={{ cursor: "pointer" }} onClick={adicionar} >Adicionar</button> &nbsp; &nbsp;
-                    <button onClick={novo}>NOVO</button>
                 </div>
 
             </header>
