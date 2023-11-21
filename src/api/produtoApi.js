@@ -97,3 +97,7 @@ export async function alterarProduto(id, marca, categoria, nome, preco, cor, qtd
 
     return r.data;
 }
+
+export function mostrarImagem(img) {
+    return `${api.getUri()}/${img}`;
+}

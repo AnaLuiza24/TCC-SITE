@@ -2,18 +2,15 @@ import "./index.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import Iphone from "../../../assets/images/iphone13.png";
 import Iphone2 from "../../../assets/images/iphone13.webp";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
 import Storage from "local-storage";
-import { buscaProdutoPorId } from "../../../api/produtoApi";
-import { toast } from "react-toastify";
 
 
 export default function Detalhe() {
 	const navigate = useNavigate();
-	const [produto, setProduto] = useState({ categorias: [], imagens: [] , info: {} })
 	const [image, setImage] = useState(Iphone);
 	const [productName, setProductName] = useState(`iPhone 13 Apple 128GB Meia-noite Tela de 6,1", Câmera dupla de 12MP`);
 	const [oldPrice, setOldPrice] = useState(0);
@@ -21,35 +18,6 @@ export default function Detalhe() {
 	const [discount, setDiscount] = useState(0);
 	const { id } = useParams();
 
-	useEffect(() => {
-		setDiscount(oldPrice - newPrice);
-	}, []);
-
-	async function carregarPagina(){
-		const r = await buscaProdutoPorId(id);
-		setProduto(r);
-	}
-
-	function adcionarProduto(){
-		let carrinho = [];
-		if(Storage('carrinho')){
-			carrinho = Storage('carrinho')
-		}
-
-		if(carrinho.find(item => item.id === id)){
-			carrinho.push({
-				id: id, 
-				qtd: 1
-			})
-			Storage('carrinho', carrinho )
-		}
-
-		toast.dark('Produto adcionado ao carrinho!')
-	}
-	
-	useEffect(() => {
-		carregarPagina();
-	}, [] )
 
 	return (
 		<main className="pagina-detalhe-produto">
@@ -95,7 +63,7 @@ export default function Detalhe() {
 									</div>
 									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${newPrice / 10} sem juros</span>
 									<button className="buy-button">Compre Já</button>
-									<button onClick={adcionarProduto} className="cart-button">
+									<button className="cart-button">
 										<span >Adicione ao Carrinho</span>
 									</button>
 								</div>
