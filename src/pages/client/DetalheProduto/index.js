@@ -24,15 +24,7 @@ export default function Detalhe() {
 	const [prod, setProd] = useState(produto);
 	const [carrinho, setCarrinho] = useState([]);
 
-	const addProduto = (id) => {
-		const newProd = prod.find(item => item.id === id)
-
-		const novoCarrinho = [...carrinho, newProd];
-		setCarrinho(novoCarrinho)
-		
-		localStorage.setItem('produto-carrinho', 
-		JSON.stringify(novoCarrinho));
-	}
+	
 	
 
 	return (
@@ -79,7 +71,7 @@ export default function Detalhe() {
 									</div>
 									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${newPrice / 10} sem juros</span>
 									<button className="buy-button">Compre Já</button>
-									<button onClick={adcionarProduto} className="cart-button">
+									<button className="cart-button">
 										<span >Adicione ao Carrinho</span>
 									</button>
 								</div>
