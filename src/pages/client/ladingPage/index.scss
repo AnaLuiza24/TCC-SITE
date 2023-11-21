@@ -32,19 +32,24 @@
             align-items: center;
             flex-direction: column;
 
-            &>div {
+
+            div {
                 display: flex;
                 gap: 50px;
                 flex-direction: row;
+                
 
                 img {
+                    border-radius: 32px;
                     width: 500px;
-                
-                    transition: transform 0.3s ease-in-out;
+                    cursor: pointer;
                     
-                    & :hover{
-                        transform: translateY(-50px);
-                    }
+
+                }
+
+                img:hover{
+                    box-shadow: 4px 6px 12px 0px rgba(0, 46, 196, 0.582);
+                    transition: all 1.5s;
                 }
             }
         }

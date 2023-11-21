@@ -8,11 +8,22 @@
         box-shadow: 0px 4px 4px 0px #00000040;
         padding: 20px;
         width: 230px;
+        height: 220px;
+        
 
         img {
             display: flex;
             align-self: center;
             width: 130px;
+        }
+        
+        .nome-produto{
+            width: 90%;
+            text-align: center;
+
+            p{
+                font-size: 17px;
+            }
         }
 
         h5 {

@@ -18,14 +18,19 @@ export default function CaixaProduto(props) {
         <img alt='imagem' src={api_url + info.img1} />
 
         <h5>{info.produto}</h5>
+        <div className='nome-produto'>
+          <p> {info.nome} </p>
+        </div>
+       
+
         <div>
           <p id='preco-original'>R${formatarValorComVirgula(info.preco)}</p>
         </div>
 
         <p id='preco-promocao'>R${formatarValorComVirgula(info.promocao)}</p>
 
-        <p style={{fontSize: "12px", fontWeight: "normal"}}>
-          Ou até em R${formatarValorComVirgula(info.promocao)} em 10x de R${formatarValorComVirgula(info.promocao/10)} sem juros
+        <p style={{ fontSize: "12px", fontWeight: "normal" }}>
+          Ou até em R${formatarValorComVirgula(info.promocao)} em 10x de R${formatarValorComVirgula(info.promocao / 10)} sem juros
         </p>
       </header>
     </main>
