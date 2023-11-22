@@ -2,16 +2,16 @@ import "./index.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import Iphone from "../../../assets/images/iphone13.png";
 import Iphone2 from "../../../assets/images/iphone13.webp";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
 import Storage from "local-storage";
-import { buscaProdutoPorId } from '../../../api/produtoApi';
 
 
 export default function Detalhe() {
 	const navigate = useNavigate();
+	const [produto, setProduto] = useState({ categorias: [], imagens: [], info: {} })
 	const [image, setImage] = useState(Iphone);
 	const [productName, setProductName] = useState(`iPhone 13 Apple 128GB Meia-noite Tela de 6,1", Câmera dupla de 12MP`);
 	const [oldPrice, setOldPrice] = useState(0);
@@ -21,14 +21,6 @@ export default function Detalhe() {
 
 	const { id } = useParams();
 
-	useEffect(() =>{
-		CarregarProduto();
-	}, [])
-
-	async function CarregarProduto() {
-		let r = await buscaProdutoPorId(id);
-		setProduto(r);
-	}
 
 	return (
 		<main className="pagina-detalhe-produto">
@@ -36,7 +28,7 @@ export default function Detalhe() {
 			<header className="Content">
 				<div className="Main-card">
 					<div className="Card">
-			
+
 						<div className="Product">
 							{" "}
 							{/* Div parte do produto */}
