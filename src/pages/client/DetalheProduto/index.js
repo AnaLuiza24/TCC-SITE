@@ -13,10 +13,6 @@ import { buscaProdutoPorId } from '../../../api/produtoApi';
 export default function Detalhe() {
 	const navigate = useNavigate();
 	const [image, setImage] = useState(Iphone);
-	const [productName, setProductName] = useState(`iPhone 13 Apple 128GB Meia-noite Tela de 6,1", Câmera dupla de 12MP`);
-	const [oldPrice, setOldPrice] = useState(0);
-	const [newPrice, setNewPrice] = useState(0);
-	const [discount, setDiscount] = useState(0);
 	const [produto, setProduto] = useState({});
 
 	const { id } = useParams();
@@ -28,6 +24,7 @@ export default function Detalhe() {
 	async function CarregarProduto() {
 		let r = await buscaProdutoPorId(id);
 		setProduto(r);
+		console.log(r);
 	}
 
 	return (
@@ -43,16 +40,16 @@ export default function Detalhe() {
 							<div className="Product-image">
 								{" "}
 								{/* Div parte do produto/imagem */}
-								<img className="example" src={image} />
+								<img className="example" src={produto.img1} />
 								<div className="Other-images">
-									<img src={Iphone}
+									<img src={produto.img1}
 										onClick={() => {
-											setImage(Iphone);
+											setImage(produto.img1);
 										}} />
 
-									<img src={Iphone2}
+									<img src={produto.img2}
 										onClick={() => {
-											setImage(Iphone2);
+											setImage(produto.img2);
 										}} />
 								</div>
 							</div>

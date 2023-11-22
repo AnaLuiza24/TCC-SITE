@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 export async function buscaProdutoPorId(id) {
-    const r = await api.get('/produto/' + id);
+    const r = await api.get('/produto/'+id);
     return r.data;
 }
 

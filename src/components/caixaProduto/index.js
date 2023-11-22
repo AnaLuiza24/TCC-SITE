@@ -14,7 +14,7 @@ export default function CaixaProduto(props) {
   }
 
   return (
-    <main className='pagina-caixa-produto' id={uniqueId}>
+    <main className='pagina-caixa-produto' id={uniqueId} >
       <header className='caixa-produto-principal'>
         <img alt='imagem' src={mostrarImagem(info.img1)} />
 
@@ -22,7 +22,6 @@ export default function CaixaProduto(props) {
         <div className='nome-produto'>
           <p> {info.nome} </p>
         </div>
-       
 
         <div>
           <p id='preco-original'>R${formatarValorComVirgula(info.preco *1)}</p>

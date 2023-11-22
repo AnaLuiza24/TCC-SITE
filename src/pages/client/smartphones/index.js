@@ -26,26 +26,26 @@ export default function Smartphones() {
         }
     }, [id])
 
-    async function listarTodos(){
-        try{
+    async function listarTodos() {
+        try {
             const r = await listarSmartphones();
             setProdutos([...r]);
             console.log(r);
 
-        }catch(err){
+        } catch (err) {
             if (err.response.status === 500) {
                 setErro(err.response.data.erro);
             }
         }
     }
 
-    async function buscarPorId(){
-        try{
+    async function buscarPorId() {
+        try {
             const r = await buscarSmartphonesPorMarca(id);
             setProdutos([...r]);
             console.log(r);
 
-        }catch(err){
+        } catch (err) {
             if (err.response.status === 500) {
                 setErro(err.response.data.erro);
             }
@@ -56,13 +56,13 @@ export default function Smartphones() {
         listarTodos();
     }, [])
 
-    function abrirDetalhes(id){
+    function abrirDetalhes(id) {
         navigate(`/detalhe-produto/${id}`);
     }
 
     return (
         <main className='pagina-principal-smartphone'>
-             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho />}
             <header className='pagina-smartphone'>
                 <section className='divisoria'>
                 </section>
@@ -76,8 +76,10 @@ export default function Smartphones() {
                         </div>
 
                         <div className='produto-vitrine'>
-                            {produtos.map(produto => 
-                                <CaixaProduto key={produto.id} info={produto}  />   
+                            {produtos.map(produto =>
+                                <div onClick={() => abrirDetalhes(produto.id_produto)}>
+                                    <CaixaProduto key={produto.id} info={produto} />
+                                </div>
                             )}
                         </div>
                     </article>
