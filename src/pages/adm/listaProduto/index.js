@@ -4,10 +4,14 @@ import './index.scss';
 import { useState } from 'react';
 import { confirmAlert } from 'react-confirm-alert';
 import { buscarProdutos, deletarProduto } from '../../../api/admApi';
+import { useNavigate} from 'react-router-dom'
+
 
 export default function ListaProduto() {
     const [produtos, setProdutos] = useState([]);
     const [busca, setBusca] = useState('')
+    
+    const navigate = useNavigate();
 
     async function buscar(){
         let r = await buscarProdutos(busca);
@@ -40,8 +44,11 @@ export default function ListaProduto() {
           )
     }
 
+    function editarProduto(id){
+        navigate(`/adm/produto/alterar/${id}`);
+    }
 
-    
+
 
     return (
         <main className='pagina-lista-produto'>
@@ -81,7 +88,7 @@ export default function ListaProduto() {
                                 <td>
                                     <div>
                                         <img src='/assets/images/excluir.png' alt='lixo' style={{width: '40px', height: '40px', cursor: 'pointer'}} onClick={() => deletar(item.id)}/>
-                                        <img src='/assets/images/alterar.png' alt='alterar' style={{width: '45px', height: '45px', cursor:'pointer'}}  />
+                                        <img src='/assets/images/alterar.png' alt='alterar' style={{width: '45px', height: '45px', cursor:'pointer'}} onClick={() => editarProduto(item.id)} />
                                     </div>
                                 </td>
                             </tr>

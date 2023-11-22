@@ -1,7 +1,5 @@
 import "./index.scss";
 import { useNavigate, useParams } from "react-router-dom";
-import Iphone from "../../../assets/images/iphone13.png";
-import Iphone2 from "../../../assets/images/iphone13.webp";
 import { useEffect, useState } from "react";
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Cabecalho from "../../../components/cabecalho";
@@ -16,6 +14,13 @@ export default function Detalhe() {
 	const [produto, setProduto] = useState({});
 
 	const { id } = useParams();
+
+	function formatarValorComVirgula(valor) {
+		if (typeof valor === 'number') {
+		  return valor.toFixed(2).replace('.', ',');
+		}
+		return valor;
+	  }
 
 	useEffect(() =>{
 		CarregarProduto();
@@ -59,17 +64,17 @@ export default function Detalhe() {
 								</div>
 								<div className="div-price">
 									<span className="old-price">
-										<s>R$ {produto.preco}</s>
+										<s>R$ {formatarValorComVirgula(produto.preco *1)}</s>
 									</span>
-									<span className="new-price">R$ {produto.promocao}</span>
+									<span className="new-price">R$ {formatarValorComVirgula(produto.promocao *1)}</span>
 								</div>
 								<div className="div-buttons">
 									<div className="discount">
 										<span>
-											Economize <span style={{ color: "#fff021", fontWeight: "600", fontStyle: "italic", letterSpacing: "1px" }}>R${produto.preco - produto.promocao}</span>
+											Economize <span style={{ color: "#fff021", fontWeight: "600", fontStyle: "italic", letterSpacing: "1px" }}>R${formatarValorComVirgula(produto.preco - produto.promocao)}</span>
 										</span>
 									</div>
-									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${produto.promocao / 10} sem juros</span>
+									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${formatarValorComVirgula(produto.promocao / 10)} sem juros</span>
 									<button className="buy-button">Compre Já</button>
 									<button className="cart-button">
 										<span >Adicione ao Carrinho</span>

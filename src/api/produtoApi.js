@@ -79,7 +79,7 @@ export async function enviarImagemDois(id, imagemDois) {
 }
 
 export async function alterarProduto(id, marca, categoria, nome, preco, cor, qtd, desc, precoPromocao) {
-    const r = await api.post(`/produto/${id}`, {
+    const r = await api.put(`/produto/${id}`, {
         marca: marca,
         categoria: categoria,
         nome: nome,
@@ -94,5 +94,9 @@ export async function alterarProduto(id, marca, categoria, nome, preco, cor, qtd
 }
 
 export function mostrarImagem(img) {
+    return `${api.getUri()}/${img}`;
+}
+
+export function buscarImagem(img) {
     return `${api.getUri()}/${img}`;
 }

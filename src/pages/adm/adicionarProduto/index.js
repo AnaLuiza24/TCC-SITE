@@ -1,11 +1,11 @@
 import './index.scss';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import { useEffect, useState } from 'react';
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois, alterarProduto, buscaProdutoPorId } from '../../../api/produtoApi';
+import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois, alterarProduto, buscaProdutoPorId, buscarImagem} from '../../../api/produtoApi';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -22,7 +22,7 @@ export default function AdicionarProduto() {
     const [imagemDois, setImagemDois] = useState();
     const [id, setId] = useState(0);
 
-    const {idParam} =  useParams();
+    const { idParam } = useParams();
 
     function salvarCategoria(e) {
         const categoriaId = parseInt(e.target.value);
@@ -41,6 +41,7 @@ export default function AdicionarProduto() {
 
     async function adicionar() {
         console.log("entrou");
+        console.log(id);
         try {
 
             if (id === 0) {
@@ -49,9 +50,13 @@ export default function AdicionarProduto() {
                 await enviarImagemDois(novoProduto.id, imagemDois);
 
                 setId(novoProduto.id);
-            }else{
-                await alterarProduto(id, marca, categoria, nome, preco, cor, qtd, desc, precoPromocao); 
+            } else {
+                await alterarProduto(id, marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
+
+                if(typeof (imagem) == 'object')
                 await enviarImagemUm(id, imagem);
+
+                if(typeof (imagemDois) == 'object')
                 await enviarImagemDois(id, imagemDois);
             }
 
@@ -75,7 +80,7 @@ export default function AdicionarProduto() {
         setQtd(r.qtd);
         setDesc(r.descri);
         setPrecoPromocao(r.promocao);
-        
+
         setId(r.id);
         setImagem(r.img1);
         setImagemDois(r.img2);
@@ -85,7 +90,12 @@ export default function AdicionarProduto() {
         document.getElementById('produtoImagem').click();
     }
     function mostrarImagem() {
-        return URL.createObjectURL(imagem);
+        if (typeof (imagem) == 'object') {
+            return URL.createObjectURL(imagem);
+        }
+        else{
+            return buscarImagem(imagem);
+        }
     }
 
     //imagem dois
@@ -94,7 +104,12 @@ export default function AdicionarProduto() {
     }
 
     function mostrarImagemDois() {
-        return URL.createObjectURL(imagemDois);
+        if (typeof (imagemDois) == 'object') {
+            return URL.createObjectURL(imagemDois);
+        }
+        else{
+            return buscarImagem(imagemDois);
+        }
     }
 
     function novo() {
@@ -117,7 +132,7 @@ export default function AdicionarProduto() {
     }, [])
 
     useEffect(() => {
-        if(idParam){
+        if (idParam) {
             carregarProduto();
         }
 
@@ -129,7 +144,7 @@ export default function AdicionarProduto() {
             <header className='adicionar-produto-principal'>
 
                 <section className='adicionar-produto-titulo'>
-                    <img onClick={novo} style={{cursor: "pointer"}} src='/assets/images/add.png' alt='adicionar' />
+                    <img onClick={novo} style={{ cursor: "pointer" }} src='/assets/images/add.png' alt='adicionar' />
                     <h1> Adicionar um novo produto </h1>
                 </section>
 

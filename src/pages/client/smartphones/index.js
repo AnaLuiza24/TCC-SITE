@@ -77,7 +77,7 @@ export default function Smartphones() {
 
                         <div className='produto-vitrine'>
                             {produtos.map(produto =>
-                                <div onClick={() => abrirDetalhes(produto.id_produto)}>
+                            <div onClick={() => abrirDetalhes(produto.id_produto)} style={{cursor: "pointer"}}>
                                     <CaixaProduto key={produto.id} info={produto} />
                                 </div>
                             )}

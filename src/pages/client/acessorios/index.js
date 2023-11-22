@@ -6,7 +6,7 @@ import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
 import { buscarAcessoriosPorMarca, listarAcessorios } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Rodape from '../../../components/rodape';
 
 export default function Acessorios() {
@@ -14,6 +14,7 @@ export default function Acessorios() {
     const [produtos, setProdutos] = useState([]);
     const [erro, setErro] = useState('');
 
+    const navigate = useNavigate();
     let { id } = useParams();
 
     useEffect(() => {
@@ -26,13 +27,13 @@ export default function Acessorios() {
     }, [id])
 
 
-    async function listarTodos(){
-        try{
+    async function listarTodos() {
+        try {
             const r = await listarAcessorios();
             setProdutos([...r]);
             console.log(r);
 
-        }catch(err){
+        } catch (err) {
             if (err.response.status === 500) {
                 setErro(err.response.data.erro);
             }
@@ -40,18 +41,23 @@ export default function Acessorios() {
     }
 
 
-    async function buscarPorId(){
-        try{
+    async function buscarPorId() {
+        try {
             const r = await buscarAcessoriosPorMarca(id);
             setProdutos([...r]);
             console.log(r);
 
-        }catch(err){
+        } catch (err) {
             if (err.response.status === 500) {
                 setErro(err.response.data.erro);
             }
         }
     }
+
+    function abrirDetalhes(id) {
+        navigate(`/detalhe-produto/${id}`);
+    }
+
 
     useEffect(() => {
         listarTodos();
@@ -60,7 +66,7 @@ export default function Acessorios() {
 
     return (
         <main className='pagina-principal-acessorios'>
-            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho />}
             <header className='pagina-acessorios'>
                 <section className='divisoria'>
                 </section>
@@ -74,12 +80,14 @@ export default function Acessorios() {
                         </div>
 
                         <div className='produto-vitrine'>
-                            {produtos.map(produto => 
-                                    <CaixaProduto info={produto}/>   
-                                )}
+                            {produtos.map(produto =>
+                                <div onClick={() => abrirDetalhes(produto.id_produto)} style={{cursor:'pointer'}}>
+                                    <CaixaProduto key={produto.id} info={produto} />
+                                </div>
+                            )}
                         </div>
                     </article>
-                  
+
                 </section>
             </header>
             <Rodape />
