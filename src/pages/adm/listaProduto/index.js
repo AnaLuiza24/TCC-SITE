@@ -41,6 +41,8 @@ export default function ListaProduto() {
     }
 
 
+    
+
     return (
         <main className='pagina-lista-produto'>
             <CabecalhoAdm />
@@ -79,7 +81,7 @@ export default function ListaProduto() {
                                 <td>
                                     <div>
                                         <img src='/assets/images/excluir.png' alt='lixo' style={{width: '40px', height: '40px', cursor: 'pointer'}} onClick={() => deletar(item.id)}/>
-                                        <img src='/assets/images/alterar.png' alt='alterar' style={{width: '45px', height: '45px'}}/>
+                                        <img src='/assets/images/alterar.png' alt='alterar' style={{width: '45px', height: '45px', cursor:'pointer'}}  />
                                     </div>
                                 </td>
                             </tr>

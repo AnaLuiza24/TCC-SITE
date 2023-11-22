@@ -7,12 +7,12 @@ import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
 import Storage from "local-storage";
-import { buscaProdutoPorId } from '../../../api/produtoApi';
+import { buscaProdutoPorId, mostrarImagem } from '../../../api/produtoApi';
 
 
 export default function Detalhe() {
 	const navigate = useNavigate();
-	const [image, setImage] = useState(Iphone);
+	const [image, setImage] = useState('');
 	const [produto, setProduto] = useState({});
 
 	const { id } = useParams();
@@ -40,16 +40,16 @@ export default function Detalhe() {
 							<div className="Product-image">
 								{" "}
 								{/* Div parte do produto/imagem */}
-								<img className="example" src={produto.img1} />
+								<img className="example" src={mostrarImagem(produto.img1)} />
 								<div className="Other-images">
 									<img src={produto.img1}
 										onClick={() => {
-											setImage(produto.img1);
+											setImage(mostrarImagem(produto.img1));
 										}} />
 
-									<img src={produto.img2}
+									<img src={mostrarImagem(produto.img2)}
 										onClick={() => {
-											setImage(produto.img2);
+											setImage(mostrarImagem(produto.img2));
 										}} />
 								</div>
 							</div>

@@ -1,11 +1,11 @@
 import './index.scss';
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import { useEffect, useState } from 'react';
-
+import {useParams} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois, alterarProduto } from '../../../api/produtoApi';
+import { Categorias, Marcas, Adicionar, enviarImagemUm, enviarImagemDois, alterarProduto, buscaProdutoPorId } from '../../../api/produtoApi';
 
 export default function AdicionarProduto() {
     const [marcas, setMarcas] = useState([]);
@@ -22,6 +22,7 @@ export default function AdicionarProduto() {
     const [imagemDois, setImagemDois] = useState();
     const [id, setId] = useState(0);
 
+    const {idParam} =  useParams();
 
     function salvarCategoria(e) {
         const categoriaId = parseInt(e.target.value);
@@ -41,7 +42,6 @@ export default function AdicionarProduto() {
     async function adicionar() {
         console.log("entrou");
         try {
-            
 
             if (id === 0) {
                 let novoProduto = await Adicionar(marca, categoria, nome, preco, cor, qtd, desc, precoPromocao);
@@ -63,6 +63,22 @@ export default function AdicionarProduto() {
             console.log(err.response.data.erro);
         }
 
+    }
+
+    async function carregarProduto() {
+        let r = await buscaProdutoPorId(idParam);
+        setMarca(r.idMarca);
+        setCategoria(r.idCategoria);
+        setNome(r.produto);
+        setPreco(r.preco);
+        setCor(r.cores);
+        setQtd(r.qtd);
+        setDesc(r.descri);
+        setPrecoPromocao(r.promocao);
+        
+        setId(r.id);
+        setImagem(r.img1);
+        setImagemDois(r.img2);
     }
 
     function escolherImagem() {
@@ -98,6 +114,13 @@ export default function AdicionarProduto() {
     useEffect(() => {
         listarMarcas();
         listarCategorias();
+    }, [])
+
+    useEffect(() => {
+        if(idParam){
+            carregarProduto();
+        }
+
     }, [])
 
     return (

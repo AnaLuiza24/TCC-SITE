@@ -57,6 +57,7 @@ root.render(
         <Route path='/adm/lista-cliente' element={<ListaCliente />} />
         <Route path='/adm/produto/lista' element={<ListaProduto />} />
         <Route path='/adm/produto/cadastrar' element={<AdicionarProduto />} />
+        <Route path='/adm/produto/alterar/:idParam' element={<AdicionarProduto />} />
 
         <Route path='/rastrear' element={<Rastrear />} />
         <Route path='/minha-conta' element={<Conta />} />
@@ -72,7 +73,6 @@ root.render(
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/acessorios/:id' element={<Acessorios />} />
 
-        <Route path='/detalhe-produto' element={<Detalhe />} />
         <Route path='/detalhe-produto/:id' element={<Detalhe />} />
 
         <Route path='/lista-pedido' element={<ListaPedido />} />
