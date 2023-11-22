@@ -17,7 +17,7 @@ export default function LoginAdm() {
 
 
     useEffect(() => {
-        if(storage('usuario-logado')) {
+        if(storage('adm-logado')) {
             navigate('/adm')
         }
     }, [])
@@ -28,7 +28,7 @@ export default function LoginAdm() {
 
         try {
             const r = await loginAdm(email, senha);
-            storage('usuario-logado', r);
+            storage('adm-logado', r);
 
             setTimeout(() => {
                 navigate('/adm');

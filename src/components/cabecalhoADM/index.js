@@ -13,11 +13,11 @@ export default function CabecalhoAdm() {
     console.log("🚀 ~ file: index.js:7 ~ l:", Open);
 
     useEffect(() => {
-        if (!storage('usuario-logado')) {
+        if (!storage('adm-logado')) {
             navigate('/adm/login');
         }
         else {
-            const usuarioLogado = storage('usuario-logado');
+            const usuarioLogado = storage('adm-logado');
             setUsuario(usuarioLogado.nome)
         }
 

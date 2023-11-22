@@ -11,10 +11,10 @@ import { alterarCliente } from '../../../api/usuarioApi';
 export default function AlterarDados() {
 
     const usuario = storage('usuario-logado')
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [nascimento, setNascimento] = useState('');
-    const [telefone, setTelefone] = useState('');
+    const [nome, setNome] = useState(usuario.nome);
+    const [email, setEmail] = useState(usuario.email);
+    const [nascimento, setNascimento] = useState(usuario.nascimento);
+    const [telefone, setTelefone] = useState(usuario.telefone);
     const [erro, setErro] = useState('');
     const navigate = useNavigate();
 
@@ -33,13 +33,10 @@ export default function AlterarDados() {
         }
 
     }
-
     return (
         <main className='pagina-dados'>
             {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho />}
-
             <header className='corpo'>
-
                 <div className='textos'>
                     <h1>MINHA CONTA</h1>
                     <h2>Informações clienteis</h2>
@@ -55,14 +52,14 @@ export default function AlterarDados() {
                                 <label htmlFor="campo-de-entrada" className="input-title">
                                     Nome completo
                                 </label>
-                                <input type="text" id="campo-de-entrada" onChange={e => setNome(e.target.value)} />
+                                <input type="text" value={nome} id="campo-de-entrada" onChange={e => setNome(e.target.value)} />
                             </div>
 
                             <div className="input-container">
                                 <label htmlFor="campo-de-entrada" className="input-title">
                                     E-mail
                                 </label>
-                                <input type="text" id="campo-de-entrada" onChange={e => setEmail(e.target.value)} />
+                                <input type="text" value={email} id="campo-de-entrada" onChange={e => setEmail(e.target.value)} />
 
                             </div>
 
@@ -81,17 +78,11 @@ export default function AlterarDados() {
                                     </label>
                                     <input type="number" id="campo-de-entrada" onChange={e => setTelefone(e.target.value)} />
                                 </div>
-
-
                             </div>
                             <button onClick={alterar}>Alterar</button>
                         </div>
-
-
                     </div>
-
                 </div>
-
             </header>
             <Rodape />
         </main>
