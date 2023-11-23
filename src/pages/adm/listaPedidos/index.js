@@ -1,17 +1,31 @@
 import axios from 'axios'
 import CabecalhoAdm from '../../../components/cabecalhoADM';
 import './index.scss';
+import { listarPedidos } from '../../../api/admApi';
 import { useState } from 'react';
 
 export default function ListaPedido() {
-    const [pedidoss, setpedidoss] = useState([]);
+    const [pedidos, setPedidos] = useState([]);
     const [busca, setBusca] = useState('')
+    const [erro , setErro]=useState();
 
     async function buscar(){
-        let url = 'http://localhost:5037/listar/pedidoss?nome=' + busca;
-        let resp = await axios.get(url);
-        setpedidoss([...resp.data]);
+        try {
+            const r = await listarPedidos();
+            setPedidos([...r]);
+            console.log(r);
+
+        } catch (err) {
+            if (err.response.status === 500) {
+                setErro(err.response.data.erro);
+            }
+        }
     }
+
+
+    
+
+
 
 
 
@@ -39,18 +53,18 @@ export default function ListaPedido() {
                                 <th>Produto</th>
                                 <th>Valor</th>
                                 <th>Forma de pagamento</th>
-                                <th>Status</th>
+                                <th>Situacao</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            {pedidoss.map(item => (
+                            {pedidos.map(item => (
                                 <tr>
-                                <td>{item.nomeCliente}</td>
-                                <td>{item.produtos}</td>
+                                <td>{item.nome}</td>
+                                <td>{item.produto}</td>
                                 <td>R$ {item.valor}</td>
-                                <td>{item.formaPagamento}</td>
-                                <td>{item.Status}</td>
+                                <td>{item.pagamento}</td>
+                                <td>{item.situacao}</td>
                             </tr>
                             ))}
                         </tbody>

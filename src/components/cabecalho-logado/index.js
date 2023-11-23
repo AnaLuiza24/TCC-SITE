@@ -4,6 +4,8 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useState, useEffect } from 'react';
 import ModalLogado from '../modal-logado';
 
+import { buscarPorProduto } from '../../api/produtoApi';
+
 export default function CabecalhoLogado() {
     const [termoDeBusca, setTermoDeBusca] = useState('');
     const [contactHome, setContactHome] = useState(true);
@@ -51,7 +53,10 @@ export default function CabecalhoLogado() {
                             onKeyPress={handleKeyPress}
                             placeholder='Buscar'
                         />
-                        <img src='/assets/images/lupa.png' alt='lupa' />
+                        <Link to={`/buscar-produto/${termoDeBusca}`}>
+                            <img src='/assets/images/lupa.png' alt='lupa' />    
+                        </Link>
+                        
                     </div>
 
                     <div className='cabecalho-itens'>
