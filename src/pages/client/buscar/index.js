@@ -6,14 +6,28 @@ import storage from 'local-storage';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { buscarPorProduto } from "../../../api/produtoApi.js";
 
 export  default function Buscar(){
 
     const [produtos, setProdutos] = useState([]);
+    const termoDeBusca  = useParams();
 
-    let { id } = useParams();
+    async function chamarProdutos () {
+        const pesquisaProdutos = await buscarPorProduto(termoDeBusca.pesquisa);
+        setProdutos(pesquisaProdutos);
+        console.log(pesquisaProdutos); 
+    }
+
+    useEffect(() => {
+        chamarProdutos();
+
+        //eslint-disable-next-line
+    }, []);
+
+
+
     const navigate = useNavigate();
 
     function abrirDetalhes(id){

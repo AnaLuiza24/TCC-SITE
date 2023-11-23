@@ -76,7 +76,7 @@ root.render(
 
         <Route path='/detalhe-produto/:id' element={<Detalhe />} />
 
-        <Route path='/buscar-produto' element={<Buscar />} />
+        <Route path='/buscar-produto/:pesquisa' element={<Buscar />} />
 
         <Route path='/adm/lista-pedido' element={<ListaPedido />} />
         <Route path='/Carrinho' element={<Carrinho />} />
