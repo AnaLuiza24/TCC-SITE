@@ -8,7 +8,7 @@ export default function ListaPedido() {
     const [busca, setBusca] = useState('')
 
     async function buscar(){
-        let url = 'http://localhost:5037/listar/pedidoss?nome=' + busca;
+        let url = 'http://localhost:5039/listar/pedidoss?nome=' + busca;
         let resp = await axios.get(url);
         setpedidoss([...resp.data]);
     }

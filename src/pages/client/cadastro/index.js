@@ -18,18 +18,9 @@ export default function Cadastro() {
 
     async function inserir() {
         try {
-            const pessoa = {
-                nome: nome,
-                email: email,
-                senha: senha,
-                nasc: nasc,
-                telefone: telefone
-            }
-            console.log(pessoa)
-
             if (senha === confirmarSenha || senha.length > 6) {
 
-                const r = await axios.post('http://localhost:5037/adicionar/cliente', pessoa);
+                const r = await cadastrarUsuario(nome, email, senha, nasc, telefone)
                 navigate('/login');
                 alert('cadstrousadu')
             }
