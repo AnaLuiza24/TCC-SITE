@@ -5,7 +5,7 @@ import './index.scss';
 import storage from 'local-storage';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { buscarPorProduto } from "../../../api/produtoApi.js";
 
@@ -13,9 +13,10 @@ export  default function Buscar(){
 
     const [produtos, setProdutos] = useState([]);
     const termoDeBusca  = useParams();
+    const [pagina, setPagina] = useState(1); 
 
     async function chamarProdutos () {
-        const pesquisaProdutos = await buscarPorProduto(termoDeBusca.pesquisa);
+        const pesquisaProdutos = await buscarPorProduto(termoDeBusca.pesquisa, pagina);
         setProdutos(pesquisaProdutos);
         console.log(pesquisaProdutos); 
     }
@@ -26,7 +27,11 @@ export  default function Buscar(){
         //eslint-disable-next-line
     }, []);
 
-
+    async function trocarPagina(pagina) {
+        let r = await buscarPorProduto(termoDeBusca.pesquisa, pagina)
+        setPagina(pagina);
+        setProdutos(r);
+    }
 
     const navigate = useNavigate();
 
@@ -55,6 +60,14 @@ export  default function Buscar(){
                                     <CaixaProduto key={produto.id} info={produto} />
                                     </div>
                                 )}
+                        </div>
+
+                        <div className='mais-itens-vitrine'>
+                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(1)}>1</span></Link>
+                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(2)}>2</span></Link>
+                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(3)}>3</span></Link>
+                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(4)}>4</span></Link>
+                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(5)}>5</span></Link>
                         </div>
                     </article>
                 </section>

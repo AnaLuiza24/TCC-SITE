@@ -91,6 +91,28 @@
                     justify-content: center;
                     align-items: flex-start;
                }
+
+               .mais-itens-vitrine{
+
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                span{
+                    display: flex;
+                    padding: 8px;
+                    width: 25px;
+                    height: 35px;
+                    justify-self: center;
+                    align-self: center;
+                    margin: 5px;
+
+                    &:hover{
+                        background-color: #0083ca;
+                        color: #fff;
+
+                    }
+                }
+            }
             }
         }
 

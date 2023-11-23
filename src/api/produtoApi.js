@@ -4,8 +4,8 @@ const api = axios.create({
     baseURL: api_url
 })
 
-export async function buscarPorProduto(nome) {
-    const r = await api.get(`/produto/busca/${nome}`);
+export async function buscarPorProduto(nome, pagina) {
+    const r = await api.get(`/produto/busca/${nome}/${pagina}`);
     return r.data;
 }
 
@@ -28,7 +28,7 @@ export async function buscarSmartphonesPorMarca(marca){
     return r.data;
 }
 
-export async function listarAcessorios(){
+export async function listarAcessorios(pagina){
     const r = await api.get('/acessorios');
     return r.data;
 }
