@@ -1,0 +1,75 @@
+.pagina-principal-produtos{
+    font-family: 'Inter', sans-serif;
+
+    .pagina-menu{
+        #titulo-smartphone{
+            color: #000;
+        }
+        #titulo-acessorios{
+            color: #000;
+        }
+    }
+
+   .pagina-produtos{
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+    height: 100%;
+    width: 100%;
+
+    .divisoria{
+        height: 40px;
+        width: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+        padding: 20px;
+    }
+    
+    .produtos-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 50px;
+        width: 100%;
+        .menu{
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+            width: 30vh;
+            background-color: #fff;
+            border-radius: 17px;
+        }
+
+        .produtos-vitrine{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            width: 65vw;
+            border-radius: 17px;
+
+            .titulo-vitrine{
+                display: flex;
+                width: 100%;
+                padding: 30px 35px;
+                font-size: 22px;
+            }
+
+            .produto-individual-vitrine{
+                display: flex;
+                padding: 0px 20px 40px 20px;
+                flex-direction: row;
+                gap: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+    }
+
+
+    
+   }
+}

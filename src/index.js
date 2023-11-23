@@ -28,6 +28,7 @@ import CarrinhoProduto from './pages/client/CarrinhoProduto';
 import CarrinhoFrete from './pages/client/CarrinhoFrete';
 import DuvidasFrequentes from './pages/client/duvidasFrequentes';
 import AtendimentoCliente from './pages/client/atendimentoCliente';
+import Buscar from './pages/client/buscar';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
@@ -74,6 +75,8 @@ root.render(
         <Route path='/acessorios/:id' element={<Acessorios />} />
 
         <Route path='/detalhe-produto/:id' element={<Detalhe />} />
+
+        <Route path='/buscar-produto' element={<Buscar />} />
 
         <Route path='/lista-pedido' element={<ListaPedido />} />
         <Route path='/Carrinho' element={<Carrinho />} />
