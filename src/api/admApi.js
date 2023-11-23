@@ -28,3 +28,9 @@ export async function buscarProdutos(busca){
 export async function deletarProduto(id){
     let r = await api.delete('/deletar/' + id);
 }
+
+export async function listarPedidos(){
+    let r = await api.get('/adm/listarPedidos');
+
+    return r.data
+}
