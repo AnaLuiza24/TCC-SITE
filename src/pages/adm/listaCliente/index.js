@@ -12,7 +12,7 @@ export default function ListaCliente() {
     async function buscar(){
         try{
             let r = await buscarClientes(busca)
-            setClientes([...r.data]);
+            setClientes([...r]);
         }catch(err){
             if (err.response.status === 500) {
                 setErro(err.response.data.erro);

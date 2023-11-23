@@ -14,7 +14,7 @@ export async function loginAdm(email, senha) {
 };
 
 export async function buscarClientes(busca){
-    let r = await api.get('/listar/cliente?nome=' + busca);
+    let r = await api.get('/listar/cliente?nome='+busca);
     
     return r.data
 }

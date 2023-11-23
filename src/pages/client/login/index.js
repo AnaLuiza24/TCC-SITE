@@ -39,6 +39,7 @@ export default function Login() {
           const response = await axios.post('http://localhost:5037/login', user);
             console.log(response);
           setTimeout(() => {
+            storage('carrinho', []);
             storage('usuario-logado', response.data);
             navigate('/home');
           }, 1700)

@@ -1,37 +1,33 @@
 import './index.scss';
-import storage from 'local-storage';
+import storage, { get } from 'local-storage';
 import CabecalhoLogado from '../../../components/cabecalho-logado';
 import Rodape from '../../../components/rodape';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import Storage from 'local-storage'
-import { buscaProdutoPorId } from '../../../api/produtoApi';
+import { buscaProdutoPorId, mostrarImagem } from '../../../api/produtoApi';
 
 import Cabecalho from '../../../components/cabecalho';
 
 export default function CarrinhoProduto() {
 
     const [CEP, setCEP] = useState('');
-
     const [itens, setItens] = useState([]);
 
-     async function carregarCarrinho(){
-        let carrinho = Storage('carrinho')
-        if(carrinho){
-            console.log('passou aqui')
-            for(let produto  of carrinho){
-                let p = await buscaProdutoPorId(produto.id);
-                setItens(...itens,{
-                    produto: p,
-                    qtd: produto.qtd
-                })
-            }
+    function formatarValorComVirgula(valor) {
+		if (typeof valor === 'number') {
+		  return valor.toFixed(2).replace('.', ',');
+		}
+		return valor;
+	  }
 
-        }
+    async function carregarCarrinho() {
+        let carrinho = get('carrinho');
+        setItens(carrinho);
 
         console.log(itens);
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         carregarCarrinho();
     }, [])
 
@@ -39,7 +35,7 @@ export default function CarrinhoProduto() {
     return (
         <div className='pagina-compras'>
 
-            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho/> }
+            {storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho />}
             <div className='container'>
                 <div className='titu'>
                     <img src='/assets/images/carrinho2.png' />
@@ -58,46 +54,29 @@ export default function CarrinhoProduto() {
                         </div>
                         <hr></hr>
 
-                        <div className='produtos'>
-                            <div className='desc-produtos'>
-                                <img src='/assets/images/iphone13.png' />
-                                <p> Apple iPhone 13 Meia-Noite <br /> 5G 128GB 6GB RAM </p>
-                            </div>
-
-                            <div className='quantidade'>
-                                <div id='escolher'>
-                                    <img src='/assets/images/menos.png' />
-                                    <p> 1 </p>
-                                    <img src='/assets/images/mais.png' />
+                        {itens.map(produto =>
+                            <div className='produtos'>
+                                <div className='desc-produtos'>
+                                    <img src={mostrarImagem(produto.img1)} />
+                                    <p style={{width: "200px",  marginLeft: "10px"}}> {produto.produto} </p>
                                 </div>
 
-                                <img src='/assets/images/delete.png' />
+                                <div className='quantidade'>
+                                    <div id='escolher'>
+                                        <img src='/assets/images/menos.png' />
+                                        <p> 1 </p>
+                                        <img src='/assets/images/mais.png' />
+                                    </div>
+
+                                    <img src='/assets/images/delete.png' />
+                                </div>
+
+                                <p> R$ {formatarValorComVirgula(produto.promocao *1)} </p>
+
                             </div>
+                        )}
 
-                            <p> R$ 4.249,00 </p>
-
-                        </div>
                         <hr></hr>
-
-                        <div className='produtos'>
-                            <div className='desc-produtos'>
-                                <img src='/assets/images/iphone14.png' />
-                                <p> Apple iPhone 14 Pro Roxo- <br /> Profundo 128GB 6GB RAM  </p>
-                            </div>
-
-                            <div className='quantidade'>
-                                <div id='escolher'>
-                                    <img src='/assets/images/menos.png' />
-                                    <p> 1 </p>
-                                    <img src='/assets/images/mais.png' />
-                                </div>
-                                <img src='/assets/images/delete.png' />
-
-                            </div>
-
-                            <p> R$ 7.879,00 </p>
-
-                        </div>
 
                     </div>
 

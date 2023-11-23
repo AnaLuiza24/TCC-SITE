@@ -6,6 +6,7 @@ import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
 import Storage from "local-storage";
 import { buscaProdutoPorId, mostrarImagem } from '../../../api/produtoApi';
+import localStorage from "local-storage";
 
 
 export default function Detalhe() {
@@ -32,6 +33,14 @@ export default function Detalhe() {
 		console.log(r);
 	}
 
+	const addProduto = (id) => {
+		let carrinho = localStorage('carrinho');
+
+		carrinho.push(produto);
+
+		localStorage('carrinho', carrinho);
+	}
+
 	return (
 		<main className="pagina-detalhe-produto">
 			{Storage('usuario-logado') ? <CabecalhoLogado /> : <Cabecalho />}
@@ -50,7 +59,8 @@ export default function Detalhe() {
 									<img src={produto.img1}
 										onClick={() => {
 											setImage(mostrarImagem(produto.img1));
-										}} />
+										}} /> 
+										
 
 									<img src={mostrarImagem(produto.img2)}
 										onClick={() => {
@@ -76,7 +86,7 @@ export default function Detalhe() {
 									</div>
 									<span style={{ fontSize: ".725em", fontWeight: "500", color: "#303030" }}>Ou em até 10x de R${formatarValorComVirgula(produto.promocao / 10)} sem juros</span>
 									<button className="buy-button">Compre Já</button>
-									<button className="cart-button">
+									<button className="cart-button" onClick={() => (addProduto(produto))}>
 										<span >Adicione ao Carrinho</span>
 									</button>
 								</div>

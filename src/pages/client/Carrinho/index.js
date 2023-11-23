@@ -5,9 +5,21 @@ import Rodape from '../../../components/rodape';
 import { Link } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import Storage, { set } from 'local-storage'
+import { useEffect } from 'react';
+import setCarrinho from '../DetalheProduto'
 
 export default function Carrinho (){
-   
+    
+
+    useEffect(() =>{
+        const carrinhoDoLocalStorage =localStorage.getItem('produto');
+        if(carrinhoDoLocalStorage) {
+            setCarrinho(JSON.parse(carrinhoDoLocalStorage))
+        }
+
+      
+    } , [])
+
 
     return(
         <div className='pagina-carrinho'>
