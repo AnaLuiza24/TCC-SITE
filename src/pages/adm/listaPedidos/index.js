@@ -8,7 +8,7 @@ export default function ListaPedido() {
     const [busca, setBusca] = useState('')
 
     async function buscar(){
-        let url = 'http://localhost:5037/listar/pedidoss?nome=' + busca;
+        let url = 'http://localhost:5039/listar/pedidoss?nome=' + busca;
         let resp = await axios.get(url);
         setpedidoss([...resp.data]);
     }
@@ -38,7 +38,6 @@ export default function ListaPedido() {
                                <th>Nome do cliente</th>
                                 <th>Produto</th>
                                 <th>Valor</th>
-                                <th>Forma de pagamento</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -49,7 +48,6 @@ export default function ListaPedido() {
                                 <td>{item.nomeCliente}</td>
                                 <td>{item.produtos}</td>
                                 <td>R$ {item.valor}</td>
-                                <td>{item.formaPagamento}</td>
                                 <td>{item.Status}</td>
                             </tr>
                             ))}
