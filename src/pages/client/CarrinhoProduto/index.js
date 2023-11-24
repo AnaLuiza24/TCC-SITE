@@ -12,19 +12,45 @@ export default function CarrinhoProduto() {
 
     const [CEP, setCEP] = useState('');
     const [itens, setItens] = useState([]);
+    const [valueTotal, seValueTotal] = useState(0)
 
     function formatarValorComVirgula(valor) {
-		if (typeof valor === 'number') {
-		  return valor.toFixed(2).replace('.', ',');
-		}
-		return valor;
-	  }
+        if (typeof valor === 'number') {
+            return valor.toFixed(2).replace('.', ',');
+        }
+        return valor;
+    }
+
+    function deleteProduto(index) {
+        const updatedItens = [...itens];
+        updatedItens.splice(index, 1);
+    
+        window.localStorage.setItem('carrinho', JSON.stringify(updatedItens));
+        setItens(updatedItens);
+    
+        let novoValorTotal = updatedItens.reduce((total, item) => {
+            return total + Number(item.preco);
+        }, 0);
+    
+        seValueTotal(novoValorTotal); 
+    }
+    
+    
 
     async function carregarCarrinho() {
-        let carrinho = get('carrinho');
+        let carrinho = await get('carrinho');
         setItens(carrinho);
 
-        console.log(itens);
+        let valorTotal = 0
+
+        await carrinho.map((item) => {
+            valorTotal += Number(item.preco)
+        })
+
+
+        seValueTotal(valorTotal)
+
+
     }
 
     useEffect(() => {
@@ -54,24 +80,24 @@ export default function CarrinhoProduto() {
                         </div>
                         <hr></hr>
 
-                        {itens.map(produto =>
-                            <div className='produtos'>
+                        {itens.map((produto, index) =>
+                            <div className='produtos' key={index}>
                                 <div className='desc-produtos'>
                                     <img src={mostrarImagem(produto.img1)} />
-                                    <p style={{width: "200px",  marginLeft: "10px"}}> {produto.produto} </p>
+                                    <p style={{ width: "200px", marginLeft: "10px" }}> {produto.produto} </p>
                                 </div>
 
                                 <div className='quantidade'>
                                     <div id='escolher'>
                                         <img src='/assets/images/menos.png' />
-                                        <p> 1 </p>
+                                        <p> 1</p>
                                         <img src='/assets/images/mais.png' />
                                     </div>
-
-                                    <img src='/assets/images/delete.png' />
+                                    
+                                    <img src='/assets/images/delete.png' onClick={() => {deleteProduto(index)}}/>
                                 </div>
 
-                                <p> R$ {formatarValorComVirgula(produto.promocao *1)} </p>
+                                <p> R$ {formatarValorComVirgula(produto.promocao * 1)} </p>
 
                             </div>
                         )}
@@ -84,7 +110,7 @@ export default function CarrinhoProduto() {
                         <div className='total'>
                             <div id='valor'>
                                 <p> Total </p>
-                                <p id='valor-total'> R$ 12.128,00 </p>
+                                    <p id='valor-total'>{valueTotal.toFixed(2)}</p>
                             </div>
 
                             <button> Comprar </button>

@@ -6,7 +6,7 @@ import Cabecalho from "../../../components/cabecalho";
 import Rodape from '../../../components/rodape';
 import Storage from "local-storage";
 import { buscaProdutoPorId, mostrarImagem } from '../../../api/produtoApi';
-import localStorage from "local-storage";
+import { toast } from "react-toastify";
 
 
 export default function Detalhe() {
@@ -35,17 +35,24 @@ export default function Detalhe() {
 	}
 
 	const addProduto = (id) => {
+		const atualCarrinho = window.localStorage.getItem('carrinho');
+		
+		if (atualCarrinho) {
+		  const arrayAtualCarrinho = JSON.parse(atualCarrinho); 
+		
+		  arrayAtualCarrinho.push(produto);
+		  window.localStorage.setItem('carrinho', JSON.stringify(arrayAtualCarrinho)); 
+		} else {
+		  const newCarrinho = [produto];
+		  window.localStorage.setItem('carrinho', JSON.stringify(newCarrinho)); 
+		}
 
-		const newCarrinho = []
-
-		newCarrinho.push(produto)
-
-		localStorage('carrinho', newCarrinho);
-	}
-
+		toast.success("Produto Adicionado ao carrinho")
+	  };
+	  
 	useEffect(() => {
 		
-		const valueCarrinho = window.localStorage.getItem('çarrinho');
+		const valueCarrinho = window.localStorage.getItem('carrinho');
 
 		setCarrinho(valueCarrinho)
 	},[])
