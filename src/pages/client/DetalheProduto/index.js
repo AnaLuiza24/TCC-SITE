@@ -13,6 +13,7 @@ export default function Detalhe() {
 	const navigate = useNavigate();
 	const [image, setImage] = useState('');
 	const [produto, setProduto] = useState({});
+	const [carrinho, setCarrinho] = useState([])
 
 	const { id } = useParams();
 
@@ -34,12 +35,22 @@ export default function Detalhe() {
 	}
 
 	const addProduto = (id) => {
-		let carrinho = localStorage('carrinho');
 
-		carrinho.push(produto);
+		const newCarrinho = []
 
-		localStorage('carrinho', carrinho);
+		newCarrinho.push(produto)
+
+		localStorage('carrinho', newCarrinho);
 	}
+
+	useEffect(() => {
+		
+		const valueCarrinho = window.localStorage.getItem('çarrinho');
+
+		setCarrinho(valueCarrinho)
+	},[])
+
+
 
 	return (
 		<main className="pagina-detalhe-produto">

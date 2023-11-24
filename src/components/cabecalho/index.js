@@ -26,7 +26,7 @@ export default function Cabecalho() {
 
     const handleFaleConcosoClick = () => {
         const urlAtual = location.pathname;
-        if (urlAtual !== '/home') {
+        if (urlAtual !== '/') {
             setContactHome(false)
         }
     }
@@ -39,7 +39,7 @@ export default function Cabecalho() {
         <main className='pagina-cabecalho'>
             <header>
                 <section className='cabecalho-um'>
-                    <Link to={'/home'}>
+                    <Link to={''}>
                         <img src='/assets/images/logo.png' alt='logo' id='logo' />
                     </Link>
 
@@ -72,7 +72,7 @@ export default function Cabecalho() {
                 </section>
 
                 <section className='cabecalho-dois'>
-                    <Link id='home' to={'/home'}>Home</Link>
+                    <Link id='home' to={'/'}>Home</Link>
                     <Link id='smartphone' to={'/smartphones'}>Smartphones</Link>
                     <Link id='acessorios' to={'/acessorios'}>Acessórios</Link>
                     {
