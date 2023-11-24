@@ -51,7 +51,6 @@ export default function Detalhe() {
 	},[])
 
 
-	
 
 	return (
 		<main className="pagina-detalhe-produto">
