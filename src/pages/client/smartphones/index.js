@@ -24,7 +24,7 @@ export default function Smartphones() {
     }
 
     useEffect(() => {
-        chamarProdutos();
+        // chamarProdutos();
 
         //eslint-disable-next-line
     }, []);
@@ -100,13 +100,13 @@ export default function Smartphones() {
                             )}
                         </div>
 
-                        <div className='mais-itens-vitrine'>
+                        {/* <div className='mais-itens-vitrine'>
                             <span onClick={() => chamarProdutos(1)}>1</span>
                             <span onClick={() => chamarProdutos(2)}>2</span>
                             <span onClick={() => chamarProdutos(3)}>3</span>
                             <span onClick={() => chamarProdutos(4)}>4</span>
                             <span onClick={() => chamarProdutos(5)}>5</span>
-                        </div>
+                        </div> */}
                     </article>
                 </section>
             </header>

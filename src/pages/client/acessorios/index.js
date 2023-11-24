@@ -23,12 +23,14 @@ export default function Acessorios() {
     }
 
     useEffect(() => {
-        chamarProdutos();
+        // chamarProdutos();
 
         //eslint-disable-next-line
     }, []);
 
     async function trocarPagina(pagina) {
+     
+
         let r = await buscarPorProduto(termoDeBusca.pesquisa, pagina)
         setPagina(pagina);
         setProdutos(r);
@@ -107,13 +109,13 @@ export default function Acessorios() {
                             )}
                         </div>
 
-                        <div className='mais-itens-vitrine'>
+                        {/* <div className='mais-itens-vitrine'>
                             <span onClick={() => trocarPagina(1)}>1</span>
                             <span onClick={() => trocarPagina(2)}>2</span>
                             <span onClick={() => trocarPagina(3)}>3</span>
                             <span onClick={() => trocarPagina(4)}>4</span>
                             <span onClick={() => trocarPagina(5)}>5</span>
-                        </div>
+                        </div> */}
                     </article>
 
                 </section>
