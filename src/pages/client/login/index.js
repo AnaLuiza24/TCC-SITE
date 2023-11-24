@@ -41,7 +41,7 @@ export default function Login() {
           setTimeout(() => {
             storage('carrinho', []);
             storage('usuario-logado', response.data);
-            navigate('/home');
+            navigate('/');
           }, 1700)
         } catch (err) {
           if (ref.current && ref.current.complete) {
