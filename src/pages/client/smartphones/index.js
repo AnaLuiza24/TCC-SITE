@@ -1,18 +1,35 @@
 import './index.scss';
-import CabecalhoLogado from '../../../components/cabecalho-logado';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
-import { buscarSmartphonesPorMarca, listarSmartphones } from '../../../api/produtoApi';
+import { buscarSmartphonesPorMarca, listarSmartphones, buscarPorProduto } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
 import Rodape from '../../../components/rodape';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 
 export default function Smartphones() {
 
     const [produtos, setProdutos] = useState([]);
     const [erro, setErro] = useState('');
+
+    const termoDeBusca  = useParams();
+    const [pagina, setPagina] = useState(1); 
+
+    async function chamarProdutos () {
+        const pesquisaProdutos = await buscarPorProduto(termoDeBusca.pesquisa, pagina);
+        setProdutos(pesquisaProdutos);
+        console.log(pesquisaProdutos); 
+    }
+
+    useEffect(() => {
+        chamarProdutos();
+
+        //eslint-disable-next-line
+    }, []);
+
+    
 
     let { id } = useParams();
     const navigate = useNavigate();
@@ -84,11 +101,11 @@ export default function Smartphones() {
                         </div>
 
                         <div className='mais-itens-vitrine'>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>3</span>
-                            <span>4</span>
-                            <span>5</span>
+                            <span onClick={() => chamarProdutos(1)}>1</span>
+                            <span onClick={() => chamarProdutos(2)}>2</span>
+                            <span onClick={() => chamarProdutos(3)}>3</span>
+                            <span onClick={() => chamarProdutos(4)}>4</span>
+                            <span onClick={() => chamarProdutos(5)}>5</span>
                         </div>
                     </article>
                 </section>
