@@ -23,9 +23,7 @@ export default function Acessorios() {
     }
 
     useEffect(() => {
-        // chamarProdutos();
-
-        //eslint-disable-next-line
+       
     }, []);
 
     async function trocarPagina(pagina) {
