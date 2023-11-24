@@ -1,18 +1,38 @@
 import './index.scss';
-import CabecalhoLogado from '../../../components/cabecalho-logado';
 import CaixaProduto from '../../../components/caixaProduto';
 import Menu from '../../../components/menu';
 import Cabecalho from '../../../components/cabecalho';
 import storage from 'local-storage';
-import { buscarAcessoriosPorMarca, listarAcessorios } from '../../../api/produtoApi';
+import { buscarAcessoriosPorMarca, listarAcessorios, buscarPorProduto } from '../../../api/produtoApi';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Rodape from '../../../components/rodape';
+import CabecalhoLogado from '../../../components/cabecalho-logado';
 
 export default function Acessorios() {
 
     const [produtos, setProdutos] = useState([]);
     const [erro, setErro] = useState('');
+    const termoDeBusca  = useParams();
+    const [pagina, setPagina] = useState(1); 
+
+    async function chamarProdutos () {
+        const pesquisaProdutos = await buscarPorProduto(termoDeBusca.pesquisa, pagina);
+        setProdutos(pesquisaProdutos);
+        console.log(pesquisaProdutos); 
+    }
+
+    useEffect(() => {
+        chamarProdutos();
+
+        //eslint-disable-next-line
+    }, []);
+
+    async function trocarPagina(pagina) {
+        let r = await buscarPorProduto(termoDeBusca.pesquisa, pagina)
+        setPagina(pagina);
+        setProdutos(r);
+    }
 
     const navigate = useNavigate();
     let { id } = useParams();
@@ -88,11 +108,11 @@ export default function Acessorios() {
                         </div>
 
                         <div className='mais-itens-vitrine'>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>3</span>
-                            <span>4</span>
-                            <span>5</span>
+                            <span onClick={() => trocarPagina(1)}>1</span>
+                            <span onClick={() => trocarPagina(2)}>2</span>
+                            <span onClick={() => trocarPagina(3)}>3</span>
+                            <span onClick={() => trocarPagina(4)}>4</span>
+                            <span onClick={() => trocarPagina(5)}>5</span>
                         </div>
                     </article>
 

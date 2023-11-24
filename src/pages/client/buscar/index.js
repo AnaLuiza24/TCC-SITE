@@ -63,11 +63,11 @@ export  default function Buscar(){
                         </div>
 
                         <div className='mais-itens-vitrine'>
-                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(1)}>1</span></Link>
-                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(2)}>2</span></Link>
-                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(3)}>3</span></Link>
-                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(4)}>4</span></Link>
-                            <Link to={`/produto/busca/${pagina}`}><span onClick={() => trocarPagina(5)}>5</span></Link>
+                            <span onClick={() => trocarPagina(1)}>1</span>
+                            <span onClick={() => trocarPagina(2)}>2</span>
+                            <span onClick={() => trocarPagina(3)}>3</span>
+                            <span onClick={() => trocarPagina(4)}>4</span>
+                            <span onClick={() => trocarPagina(5)}>5</span>
                         </div>
                     </article>
                 </section>
